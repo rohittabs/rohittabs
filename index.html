@@ -6,6 +6,10 @@
 <title>RohitTabs • Guitar and Ukulele Tabs</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
+  html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   font-family: Inter, sans-serif;
@@ -14,6 +18,11 @@ body {
   line-height: 1.6;
 }
 
+  section {
+  width: 100%;
+  overflow-x: hidden;
+}
+  
 section {
 width: 100%;
 padding: 120px 20px;
@@ -54,8 +63,10 @@ text-align: center;
 
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  width: 100%;
+  box-sizing: border-box;
   text-align: center;
 }
 
@@ -222,10 +233,10 @@ text-align: center;
 }
   /* Mobile responsiveness */
 @media (max-width: 768px) {
-
   section {
-    padding: 64px 20px;
+    padding: 56px 16px;
   }
+}
 
   h1 {
     font-size: 28px;
@@ -267,6 +278,11 @@ text-align: center;
     font-size: 13px;
     line-height: 1.6;
   }
+}
+  img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 </style>
 </head>
