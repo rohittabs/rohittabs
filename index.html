@@ -92,7 +92,9 @@ text-align: center;
 }
 
 .about {
-  max-width: 700px;
+max-width: 700px;
+margin: 0 auto;
+text-align: center;
 }
 
 footer {
@@ -154,15 +156,49 @@ cursor: pointer;
 .section-dark p {
   color: #ffffff;
 }
+  /* Apple-style alternating sections */
+.section-dark {
+  background: #000000;
+  color: #ffffff;
+  width: 100%;
+}
+
+.section-light {
+  background: #ffffff;
+  color: #111111;
+  width: 100%;
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark p {
+  color: #ffffff;
+}
+
+.section-light h1,
+.section-light h2,
+.section-light h3,
+.section-light p {
+  color: #111111;
+}
+
+/* Keep content centered while background is full width */
+.section-dark > *,
+.section-light > * {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
 </head>
 <body>
-<section class="hero">
+<section class="hero section-dark">
   <h1>Guitar and Ukulele Tabs</h1>
   <p>Clean PDFs, accurate tabs, playalong and backing tracks with guitar pro file (.gp) for focused practice.</p>
   <a href="#products" class="button">Buy Tabs</a>
 </section>
-<section id="products">
+<section id="products" class="section-light">
   <h2>Products</h2>
   <div class="products">
     <div class="product">
@@ -176,7 +212,7 @@ cursor: pointer;
   <div class="price">₹499</div>
 </div>  </div>
 </section>
-<section>
+<section class="section-dark">
   <h2>Payment</h2>
   <div class="payment">
     <img src="upi-qr.png" alt="UPI QR Code">
@@ -184,7 +220,7 @@ cursor: pointer;
     <p>After payment, send the screenshot on WhatsApp.</p>
   </div>
 </section>
-<section>
+<section class="section-light">
   <h2>Delivery Process</h2>
   <div class="steps">
     1. Complete UPI payment<br>
@@ -192,7 +228,7 @@ cursor: pointer;
     3. Receive the files directly on WhatsApp within 15 minutes of payment confirmation.
   </div>
 </section>
-  <section class="faq-section">
+<section class="faq-section section-dark">
   <h2>FAQs</h2>
   <div class="faq-item">
     <h3>What exactly do I receive after payment?</h3>
@@ -240,10 +276,10 @@ cursor: pointer;
     </p>
   </div>
 </section>
-<section>
+<section class="section-light">
   <h2>About</h2>
   <div class="about">
-    I am a guitar and ukulele instructor focused on technique, rhythm, and musical clarity. These tabs are built for structured practice and steady improvement.
+    Hi, my name is Rohit Mishra. I am a music educator who teaches guitar, ukulele, and music theory. I focus on clarity, rhythm, and practical musicianship. I enjoy creating clean tabs, structured music sheets, and accurate backing tracks for focused practice. Every arrangement is designed to help you practice with purpose and improve step by step.
   </div>
 </section>
 <footer>
