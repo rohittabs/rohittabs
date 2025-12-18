@@ -5,256 +5,162 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RohitTabs · Guitar & Ukulele Tabs</title>
 
+<!-- Google Analytics (REPLACE G-XXXXXXXXXX) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SM7052FWQ4"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SM7052FWQ4');
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #ffffff;
-  color: #111111;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-section {
-  width: 100%;
-  padding: 80px 20px;
-}
-
-.section-dark {
-  background: #000000;
-  color: #ffffff;
-}
-
-.section-light {
-  background: #ffffff;
-  color: #111111;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-h1 {
-  font-size: 42px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-h2 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 24px;
-}
-
-h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-p {
-  font-size: 16px;
-  margin-bottom: 16px;
-}
-
-.logo {
-  width: 64px;
-  margin-bottom: 24px;
-}
-
-.button {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #000000;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.section-light .button {
-  background: #000000;
-  color: #ffffff;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.product {
-  text-align: center;
-}
-
-.price {
-  font-weight: 600;
-  margin-top: 8px;
-}
-
-.payment-box {
-  margin-top: 40px;
-  display: grid;
-  gap: 40px;
-}
-
-.qr {
-  width: 180px;
-  margin: 0 auto;
-}
-
-.faq {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.faq h3 {
-  margin-top: 32px;
-}
-
-footer {
-  background: #000000;
-  color: #ffffff;
-  padding: 64px 20px;
-  text-align: center;
-  font-size: 14px;
-}
-
-footer p {
-  margin: 6px 0;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 32px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  section {
-    padding: 64px 16px;
-  }
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;background:#fff;color:#111;line-height:1.6;overflow-x:hidden}
+section{padding:96px 20px}
+.section-dark{background:#000;color:#fff}
+.section-light{background:#fff;color:#111}
+.container{max-width:1100px;margin:0 auto;text-align:center}
+h1{font-size:42px;font-weight:600;margin-bottom:16px}
+h2{font-size:28px;font-weight:600;margin-bottom:24px}
+h3{font-size:18px;font-weight:500;margin-bottom:8px}
+p{font-size:16px;opacity:.85}
+.button{display:inline-block;margin-top:32px;padding:14px 28px;border-radius:999px;background:#fff;color:#000;font-weight:500;text-decoration:none}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;margin-top:48px}
+.price{font-weight:600;margin-top:8px}
+.qr{max-width:180px;margin:32px auto}
+.payment-grid{display:grid;grid-template-columns:1fr;gap:56px;margin-top:48px}
+@media(min-width:768px){.payment-grid{grid-template-columns:1fr 1fr}}
+.faq{text-align:left}
+.faq-item{margin-bottom:32px}
+footer{background:#000;color:#fff;padding:64px 20px;text-align:center}
+.contact{line-height:1.8;font-size:14px}
+iframe{width:100%;height:600px;border:none;border-radius:12px;margin-top:48px}
 </style>
 </head>
 
 <body>
 
 <section class="section-dark">
-  <div class="container">
-    <img src="logo.png" alt="RohitTabs Logo" class="logo">
-    <h1>Guitar and Ukulele Tabs</h1>
-    <p>Clean PDFs, High Quality Tabs, Playalong and Backing Tracks with GuitarPro Files for focused practice.</p>
-    <a href="https://docs.google.com/spreadsheets/d/1Evp0SI9Qt5wleCRr0B7u7irW0i42XyiLO2fdSIRx8h0/edit?usp=sharing" target="_blank" class="button">View Catalog</a>
-  </div>
+<div class="container">
+<h1>Guitar and Ukulele Tabs</h1>
+<p>Clean PDFs, High Quality Tabs, Playalong and Backing Tracks with GuitarPro Files for focused practice.</p>
+<a href="#products" class="button">Buy Tabs</a>
+</div>
 </section>
 
-<section class="section-light">
-  <div class="container">
-    <h2>Products</h2>
+<section id="products" class="section-light">
+<div class="container">
+<h2>Products</h2>
+<div class="products">
+<div>
+<h3>Guitar Tabs</h3>
+<p>PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files</p>
+<div class="price">₹499</div>
+</div>
+<div>
+<h3>Ukulele Tabs</h3>
+<p>PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files</p>
+<div class="price">₹499</div>
+</div>
+<div>
+<h3>Customised Tabs & Tracks</h3>
+<p>Buy individual PDFs, Backing Tracks or GuitarPro Files separately.</p>
+<div class="price">₹150 each</div>
+</div>
+</div>
 
-    <div class="products">
-      <div class="product">
-        <h3>Guitar Tabs</h3>
-        <p>PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files.</p>
-        <div class="price">₹499</div>
-      </div>
-
-      <div class="product">
-        <h3>Ukulele Tabs</h3>
-        <p>PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files.</p>
-        <div class="price">₹499</div>
-      </div>
-
-      <div class="product">
-        <h3>Customised Files</h3>
-        <p>Buy individual PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files separately.</p>
-        <div class="price">₹150 each</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-dark">
-  <div class="container">
-    <h2>Payment</h2>
-
-    <div class="payment-box">
-      <div>
-        <img src="whatsapp-qr.png" alt="WhatsApp QR" class="qr">
-        <p>Scan to message me directly on WhatsApp.</p>
-      </div>
-
-      <div>
-        <img src="upi-qr.png" alt="UPI QR" class="qr">
-        <p>Pay via UPI using the QR code.</p>
-        <p>After payment, send the screenshot on WhatsApp.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-light">
-  <div class="container">
-    <h2>Delivery Process</h2>
-    <p>1. Complete UPI payment</p>
-    <p>2. Send payment screenshot on WhatsApp</p>
-    <p>3. Receive files on WhatsApp within 15 minutes</p>
-  </div>
+<a href="#catalogue" class="button" style="background:#000;color:#fff">View Catalogue</a>
+</div>
 </section>
 
 <section class="section-dark">
-  <div class="container">
-    <h2>FAQs</h2>
+<div class="container">
+<h2>Payment</h2>
 
-    <div class="faq">
-      <h3>What exactly do I receive after payment?</h3>
-      <p>You receive the files listed for the selected song and instrument.</p>
+<div class="payment-grid">
+<div>
+<h3>WhatsApp</h3>
+<img src="whatsapp-qr.png" alt="WhatsApp QR" class="qr">
+<p>Scan to message me directly on WhatsApp.</p>
+</div>
 
-      <h3>How do I choose the correct tab or track?</h3>
-      <p>Open the catalog, filter by instrument and type, and note the product code.</p>
-
-      <h3>What does duration mean?</h3>
-      <p>Duration refers to the length of the provided audio or track file, not the full song length.</p>
-
-      <h3>Are these full song arrangements?</h3>
-      <p>Some tabs are full arrangements while others are short or practice-focused versions.</p>
-
-      <h3>Can I request a custom version?</h3>
-      <p>Yes. Message me on WhatsApp before purchasing.</p>
-    </div>
-  </div>
+<div>
+<h3>UPI Payment</h3>
+<img src="upi-qr.png" alt="UPI QR" class="qr">
+<p>Pay via UPI using the QR code.</p>
+<p>After payment, send the screenshot on WhatsApp.</p>
+</div>
+</div>
+</div>
 </section>
 
+<section class="section-light">
+<div class="container">
+<h2>Delivery Process</h2>
+<p>1. Complete UPI payment<br>
+2. Send payment screenshot on WhatsApp<br>
+3. Receive files directly on WhatsApp within 15 minutes</p>
+</div>
+</section>
+
+<section class="section-dark">
+<div class="container faq">
+<h2>FAQs</h2>
+
+<div class="faq-item">
+<h3>What exactly do I receive after payment?</h3>
+<p>You receive the files listed for the selected song and instrument. This can include PDFs, playalong tracks, backing tracks, or Guitar Pro files.</p>
+</div>
+
+<div class="faq-item">
+<h3>How do I choose the correct tab or track?</h3>
+<p>Open the catalogue, filter by instrument and type, and note the product code.</p>
+</div>
+
+<div class="faq-item">
+<h3>What does duration mean?</h3>
+<p>Duration refers to the total length of the provided track. It does not indicate full song length, but the usable practice section included.</p>
+</div>
+
+<div class="faq-item">
+<h3>Can I request a specific song or version?</h3>
+<p>Yes. Message me on WhatsApp before purchasing. Availability and pricing depend on the arrangement.</p>
+</div>
+</div>
+</section>
+
+<section id="catalogue" class="section-light">
+<div class="container">
+<h2>Catalogue</h2>
+
+<!-- PASTE YOUR GOOGLE SHEET EMBED LINK BELOW -->
+<iframe src="https://docs.google.com/spreadsheets/d/1Evp0SI9Qt5wleCRr0B7u7irW0i42XyiLO2fdSIRx8h0/edit?usp=sharing"></iframe>
+
+</div>
+</section>
+  
 <section class="section-light">
   <div class="container">
     <h2>About</h2>
-    <p>Hi, my name is Rohit Mishra. I am a music educator who teaches guitar, ukulele, and music theory. I focus on clarity, rhythm, and practical musicianship. I enjoy creating clean tabs, structured sheets, and accurate backing tracks designed for steady improvement.</p>
+    <p>
+      Hi, my name is Rohit Mishra. I am a music educator who teaches guitar, ukulele, and music theory.
+      I focus on clarity, rhythm, and practical musicianship. I enjoy creating high quality tabs, structured
+      music sheets, and accurate backing tracks for focused practice.
+    </p>
   </div>
 </section>
-
+  
 <footer>
-  <p>Contact:</p>
-  <p>Email: rohittabs@gmail.com</p>
-  <p>WhatsApp: +919711431855</p>
-  <p>Copyright © 2025 RohitTabs</p>
+<div class="contact">
+<p>Contact:</p>
+<p>Email: rohittabs@gmail.com</p>
+<p>WhatsApp: +919711431855</p>
+<br>
+<p>Copyright © 2025 RohitTabs</p>
+</div>
 </footer>
 
 </body>
