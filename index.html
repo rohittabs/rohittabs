@@ -17,12 +17,12 @@ gtag('config', 'G-SM7052FWQ4');
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
-line-height:1.6;
-color:#111;
 background:#fff;
+color:#111;
+line-height:1.6;
 overflow-x:hidden
 }
 section{padding:120px 20px}
@@ -43,7 +43,9 @@ text-decoration:none;
 transition:.3s
 }
 .button:hover{background:#0071e3;color:#fff}
+img{max-width:100%;display:block;margin:0 auto}
 
+/* Products */
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -51,21 +53,14 @@ gap:40px;
 margin-top:64px
 }
 .product{
+background:#f5f5f7;
 padding:40px;
-border-radius:18px;
-background:#f5f5f7
+border-radius:18px
 }
 .product h3{font-size:20px;margin-bottom:12px}
 .price{font-weight:500;margin-top:12px}
 
-iframe{
-width:100%;
-height:520px;
-border:none;
-border-radius:16px
-}
-
-/* Payment section */
+/* Payment */
 .payment-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -74,18 +69,25 @@ max-width:900px;
 margin:0 auto
 }
 .payment-card{
+background:#f5f5f7;
 padding:40px;
-border-radius:18px;
-background:#f5f5f7
+border-radius:18px
 }
 .payment-card.primary{
 background:#fff;
 box-shadow:0 20px 40px rgba(0,0,0,.08)
 }
-.payment-card img{
-width:180px;
-margin:24px auto
+.payment-card img{width:180px;margin:24px auto}
+
+/* Catalogue */
+iframe{
+width:100%;
+height:520px;
+border:none;
+border-radius:16px
 }
+
+/* Footer */
 .divider{
 height:1px;
 background:#e5e5e5;
@@ -113,6 +115,16 @@ h2{font-size:32px}
 <h1>Guitar and Ukulele Tabs</h1>
 <p>Clean PDFs, high-quality tabs, playalong and backing tracks with GuitarPro files for focused practice.</p>
 <a href="#products" class="button">Buy Tabs</a>
+<img src="hero.png" alt="Hero image">
+</div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="section-light">
+<div class="container">
+<h2>Built for Practice</h2>
+<p>Every arrangement is designed for clarity, timing and musical understanding.</p>
+<img src="workflow.png" alt="Workflow">
 </div>
 </section>
 
@@ -147,7 +159,7 @@ h2{font-size:32px}
 <h2>FAQs</h2>
 <p><strong>What do I receive?</strong><br>Files listed for the selected song and instrument.</p><br>
 <p><strong>What does duration mean?</strong><br>Duration refers to the usable practice section length.</p><br>
-<p><strong>Can I request a custom version?</strong><br>Yes. Message me on WhatsApp before purchasing.</p>
+<p><strong>Can I request a custom song?</strong><br>Yes. Message me on WhatsApp before purchasing.</p>
 </div>
 </section>
 
@@ -171,18 +183,16 @@ Every arrangement is designed to help you practice with purpose and improve step
 </div>
 </section>
 
-<!-- PAYMENT + CONTACT -->
+<!-- PAYMENT -->
 <section class="section-light">
 <div class="container">
 <h2>Payment</h2>
-
 <div class="payment-grid">
 <div class="payment-card primary">
 <h3>UPI Payment</h3>
 <img src="upi-qr.png" alt="UPI QR">
 <p>Scan using any UPI app.<br>Send screenshot on WhatsApp.</p>
 </div>
-
 <div class="payment-card">
 <h3>WhatsApp</h3>
 <img src="whatsapp-qr.png" alt="WhatsApp QR">
@@ -197,7 +207,6 @@ Email: rohittabs@gmail.com<br>
 WhatsApp: +919711431855<br><br>
 Copyright © 2025 RohitTabs
 </div>
-
 </div>
 </section>
 
