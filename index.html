@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RohitTabs • Guitar and Ukulele Tabs</title>
+<title>RohitTabs · Guitar & Ukulele Tabs</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -14,29 +14,55 @@
 
 body {
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111111;
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
 section {
   width: 100%;
-  padding: 72px 20px;
-  text-align: center;
+  padding: 80px 20px;
 }
 
 .section-dark {
-  background: #000;
-  color: #fff;
+  background: #000000;
+  color: #ffffff;
 }
 
 .section-light {
-  background: #fff;
-  color: #111;
+  background: #ffffff;
+  color: #111111;
 }
 
-.wrap {
+.container {
   max-width: 1100px;
   margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 16px;
 }
 
 .logo {
@@ -44,53 +70,46 @@ section {
   margin-bottom: 24px;
 }
 
-.hero h1 {
-  font-size: 36px;
-  font-weight: 600;
-}
-
-.hero p {
-  max-width: 640px;
-  margin: 16px auto 24px;
-  font-weight: 300;
-}
-
-.btn {
+.button {
   display: inline-block;
   padding: 14px 28px;
   border-radius: 999px;
-  border: 1px solid currentColor;
+  background: #ffffff;
+  color: #000000;
   text-decoration: none;
-  color: inherit;
-  font-size: 14px;
+  font-weight: 500;
+}
+
+.section-light .button {
+  background: #000000;
+  color: #ffffff;
 }
 
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
   margin-top: 40px;
 }
 
-.card h3 {
-  margin-bottom: 8px;
+.product {
+  text-align: center;
 }
 
 .price {
-  margin-top: 12px;
   font-weight: 600;
+  margin-top: 8px;
 }
 
-.pay-grid {
-  display: grid;
-  gap: 48px;
+.payment-box {
   margin-top: 40px;
+  display: grid;
+  gap: 40px;
 }
 
 .qr {
-  width: 160px;
-  margin: 24px auto;
-  display: block;
+  width: 180px;
+  margin: 0 auto;
 }
 
 .faq {
@@ -100,23 +119,19 @@ section {
 }
 
 .faq h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.faq p {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 24px;
+  margin-top: 32px;
 }
 
 footer {
+  background: #000000;
+  color: #ffffff;
   padding: 64px 20px;
+  text-align: center;
   font-size: 14px;
 }
 
-.contact {
-  line-height: 1.8;
+footer p {
+  margin: 6px 0;
 }
 
 img {
@@ -125,8 +140,16 @@ img {
 }
 
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: 28px;
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  section {
+    padding: 64px 16px;
   }
 }
 </style>
@@ -134,48 +157,46 @@ img {
 
 <body>
 
-<section class="section-dark hero">
-  <div class="wrap">
+<section class="section-dark">
+  <div class="container">
     <img src="logo.png" alt="RohitTabs Logo" class="logo">
     <h1>Guitar and Ukulele Tabs</h1>
-    <p>Clean PDFs, Quality Tabs, GuitarPro Files, Playalong & Backing Tracks for focused practice.</p>
-    <a href="#products" class="btn">View Catalog</a>
+    <p>Clean PDFs, High Quality Tabs, Playalong and Backing Tracks with GuitarPro Files for focused practice.</p>
+    <a href="https://docs.google.com/spreadsheets/d/1Evp0SI9Qt5wleCRr0B7u7irW0i42XyiLO2fdSIRx8h0/edit?usp=sharing" target="_blank" class="button">View Catalog</a>
   </div>
 </section>
 
-<section id="products" class="section-light">
-  <div class="wrap">
+<section class="section-light">
+  <div class="container">
     <h2>Products</h2>
 
     <div class="products">
-      <div class="card">
+      <div class="product">
         <h3>Guitar Tabs</h3>
         <p>PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files.</p>
         <div class="price">₹499</div>
       </div>
 
-      <div class="card">
+      <div class="product">
         <h3>Ukulele Tabs</h3>
         <p>PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files.</p>
         <div class="price">₹499</div>
       </div>
 
-      <div class="card">
-        <h3>Custom Items</h3>
-        <p>Buy individual PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files.</p>
+      <div class="product">
+        <h3>Customised Files</h3>
+        <p>Buy individual PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files separately.</p>
         <div class="price">₹150 each</div>
       </div>
     </div>
-
-    <a href="#catalog" class="btn" style="margin-top:40px;">Open Full Catalog</a>
   </div>
 </section>
 
 <section class="section-dark">
-  <div class="wrap">
+  <div class="container">
     <h2>Payment</h2>
 
-    <div class="pay-grid">
+    <div class="payment-box">
       <div>
         <img src="whatsapp-qr.png" alt="WhatsApp QR" class="qr">
         <p>Scan to message me directly on WhatsApp.</p>
@@ -191,56 +212,49 @@ img {
 </section>
 
 <section class="section-light">
-  <div class="wrap">
+  <div class="container">
     <h2>Delivery Process</h2>
-    <p>
-      1. Complete UPI payment<br>
-      2. Send payment screenshot on WhatsApp<br>
-      3. Receive files within 15 minutes of confirmation
-    </p>
+    <p>1. Complete UPI payment</p>
+    <p>2. Send payment screenshot on WhatsApp</p>
+    <p>3. Receive files on WhatsApp within 15 minutes</p>
   </div>
 </section>
 
 <section class="section-dark">
-  <div class="wrap">
+  <div class="container">
     <h2>FAQs</h2>
 
     <div class="faq">
-      <h3>What do I receive after payment?</h3>
+      <h3>What exactly do I receive after payment?</h3>
       <p>You receive the files listed for the selected song and instrument.</p>
 
+      <h3>How do I choose the correct tab or track?</h3>
+      <p>Open the catalog, filter by instrument and type, and note the product code.</p>
+
       <h3>What does duration mean?</h3>
-      <p>Duration refers to the length of the provided track or arrangement, not the full song.</p>
+      <p>Duration refers to the length of the provided audio or track file, not the full song length.</p>
 
-      <h3>How do I choose the correct version?</h3>
-      <p>Use the catalog to filter by instrument and type, then note the product code.</p>
+      <h3>Are these full song arrangements?</h3>
+      <p>Some tabs are full arrangements while others are short or practice-focused versions.</p>
 
-      <h3>Can I request a specific version?</h3>
+      <h3>Can I request a custom version?</h3>
       <p>Yes. Message me on WhatsApp before purchasing.</p>
     </div>
   </div>
 </section>
 
 <section class="section-light">
-  <div class="wrap">
+  <div class="container">
     <h2>About</h2>
-    <p>
-      Hi, my name is Rohit Mishra. I am a music educator who teaches guitar, ukulele, and music theory.
-      I enjoy creating high quality tabs, structured music sheets, and accurate backing tracks for focused practice.
-      Every arrangement is designed to help you improve step by step.
-    </p>
+    <p>Hi, my name is Rohit Mishra. I am a music educator who teaches guitar, ukulele, and music theory. I focus on clarity, rhythm, and practical musicianship. I enjoy creating clean tabs, structured sheets, and accurate backing tracks designed for steady improvement.</p>
   </div>
 </section>
 
-<footer class="section-dark">
-  <div class="wrap contact">
-    <p>
-      Contact:<br>
-      Email: rohittabs@gmail.com<br>
-      WhatsApp: +919711431855
-    </p>
-    <p>Copyright © 2025 RohitTabs</p>
-  </div>
+<footer>
+  <p>Contact:</p>
+  <p>Email: rohittabs@gmail.com</p>
+  <p>WhatsApp: +919711431855</p>
+  <p>Copyright © 2025 RohitTabs</p>
 </footer>
 
 </body>
