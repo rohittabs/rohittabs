@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RohitTabs · Guitar & Ukulele Tabs</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SM7052FWQ4"></script>
 <script>
@@ -16,139 +14,268 @@ gtag('js', new Date());
 gtag('config', 'G-SM7052FWQ4');
 </script>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#000;color:#fff;line-height:1.6}
-.section-dark{background:#000;color:#fff;padding:80px 20px}
-.section-light{background:#fff;color:#111;padding:80px 20px}
-.container{max-width:1100px;margin:0 auto;text-align:center}
-h1{font-size:44px;font-weight:600;margin-bottom:12px}
-h2{font-size:32px;font-weight:600;margin-bottom:16px}
-p{font-size:16px;opacity:.85}
-.button{display:inline-block;margin-top:24px;padding:10px 22px;border-radius:999px;border:1px solid #0a84ff;color:#0a84ff;text-decoration:none;font-size:14px}
-.button:hover{background:#0a84ff;color:#fff}
-.hero-image{max-width:100%;margin-top:40px}
-.image-block{max-width:800px;margin:40px auto}
-.image-block img{width:100%;border-radius:16px}
-.workflow img{max-width:420px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:40px}
-.card{background:#f4f4f6;border-radius:18px;padding:28px;color:#111}
-.card h3{font-size:18px;margin-bottom:8px}
-.price{margin-top:10px;font-weight:500}
-.catalogue img{width:100%;border-radius:12px;margin-top:30px}
-.faq{max-width:700px;margin:0 auto;text-align:left}
-.faq h3{font-size:16px;margin-top:24px}
-.payment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;margin-top:40px}
-.payment-card{background:#f4f4f6;border-radius:20px;padding:30px;color:#111}
-.payment-card img{width:100%;max-width:220px;margin:20px auto}
-footer{text-align:center;padding:60px 20px;font-size:14px;color:#666;background:#fff}
+body{
+font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+background:#fff;color:#111;line-height:1.6;overflow-x:hidden
+}
+
+/* Header */
+header{
+padding:24px 20px;
+text-align:center;
+background:#000
+}
+header img{width:44px}
+
+/* Sections */
+section{padding:120px 20px}
+.section-dark{background:#000;color:#fff}
+.section-light{background:#fff;color:#111}
+.container{max-width:1200px;margin:0 auto}
+.center{text-align:center}
+
+/* Typography */
+h1{font-size:56px;font-weight:600;margin-bottom:16px}
+h2{font-size:36px;font-weight:600;margin-bottom:24px}
+h3{font-size:20px;font-weight:500;margin-bottom:8px}
+p{font-size:17px;opacity:.85}
+
+/* Buttons */
+.btn{
+display:inline-block;
+padding:14px 32px;
+border-radius:999px;
+border:1.5px solid #0071e3;
+color:#0071e3;
+text-decoration:none;
+font-weight:500;
+transition:all .25s ease
+}
+.btn:hover{background:#0071e3;color:#fff}
+
+/* Hero */
+.hero img{
+width:100%;
+max-width:900px;
+margin:48px auto 0;
+display:block;
+transition:transform .4s ease
+}
+.hero img:hover{transform:scale(1.02)}
+
+/* Split layout */
+.split{
+display:grid;
+grid-template-columns:1fr;
+gap:64px;
+align-items:center
+}
+.split img{
+width:100%;
+border-radius:18px;
+transition:transform .4s ease
+}
+.split img:hover{transform:scale(1.03)}
+@media(min-width:900px){
+.split{grid-template-columns:1fr 1fr}
+.reverse{direction:rtl}
+.reverse>*{direction:ltr}
+}
+
+/* Cards */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px;
+margin-top:48px
+}
+.card{
+padding:48px 36px;
+border-radius:22px;
+background:#f5f5f7;
+text-align:center
+}
+.section-dark .card{background:#111}
+
+/* QR images */
+.qr{
+width:220px;
+margin:24px auto 16px;
+display:block
+}
+
+/* Catalogue */
+iframe{width:100%;height:600px;border:none;border-radius:18px}
+
+/* FAQ */
+.faq-item{
+border-bottom:1px solid rgba(255,255,255,.2);
+padding:20px 0;
+cursor:pointer
+}
+.section-light .faq-item{border-color:#ddd}
+.faq-item h3{display:flex;justify-content:space-between;align-items:center}
+.faq-item p{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.active p{max-height:300px;margin-top:12px}
+
+/* Footer */
+footer{
+background:#fff;
+color:#111;
+padding:80px 20px;
+text-align:center
+}
+
+/* Fade */
+.fade{opacity:0;transform:translateY(30px);transition:all .8s ease}
+.fade.show{opacity:1;transform:none}
 </style>
 </head>
 
 <body>
 
-<section class="section-dark">
-<div class="container">
-<img src="logo.png" alt="RohitTabs Logo" width="40">
+<header>
+<img src="logo.png" alt="RohitTabs">
+</header>
+
+<section class="section-dark hero">
+<div class="container center fade">
 <h1>Guitar and Ukulele Tabs</h1>
-<p>Clean PDFs, high-quality tabs, playalong tracks, backing tracks with GuitarPro files designed for focused practice.</p>
-<a href="#catalogue" class="button">Explore Tabs</a>
-<img src="hero.png" class="hero-image" alt="">
+<p>Clean PDFs, High Quality Tabs, Playalong Tracks, Backing Tracks & GuitarPro Files designed for focused practice.</p>
+<br>
+<a href="#products" class="btn">Explore Tabs</a>
+<img src="hero.png">
 </div>
 </section>
 
 <section class="section-light">
-<div class="container">
+<div class="container split fade">
+<div>
 <h2>Built for Practice</h2>
 <p>Every tab is designed for clarity, timing, and musical understanding.</p>
-<div class="image-block">
-<img src="product.png" alt="">
 </div>
+<img src="product.png">
 </div>
 </section>
 
 <section class="section-dark">
-<div class="container">
+<div class="container split reverse fade">
+<div>
 <h2>Simple Workflow</h2>
-<div class="image-block workflow">
-<img src="workflow.png" alt="">
+<p>Choose your song, pay via UPI, and receive your files on WhatsApp within minutes.</p>
 </div>
+<img src="workflow.png">
 </div>
 </section>
 
-<section class="section-light">
-<div class="container">
+<section id="products" class="section-light">
+<div class="container center fade">
 <h2>Products</h2>
-<div class="products">
+
+<div class="cards">
 <div class="card">
 <h3>Guitar Tabs</h3>
 <p>PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files</p>
-<div class="price">₹499</div>
+<strong>₹499</strong>
 </div>
 <div class="card">
 <h3>Ukulele Tabs</h3>
 <p>PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files</p>
-<div class="price">₹499</div>
+<strong>₹499</strong>
 </div>
 <div class="card">
 <h3>Custom Files</h3>
-<p>Individual PDFs, Backing Tracks or GuitarPro Files</p>
-<div class="price">₹150 each</div>
+<p>Individual PDF, Backing Track or GuitarPro File</p>
+<strong>₹149 each</strong>
 </div>
 </div>
-<a href="#catalogue" class="button">View Catalogue</a>
+
+<br>
+<a href="#catalogue" class="btn">View Catalogue</a>
 </div>
 </section>
 
-<section id="catalogue" class="section-dark">
-<div class="container catalogue">
-<h2>Catalogue</h2>
-<iframe src="https://docs.google.com/spreadsheets/d/1Evp0SI9Qt5wleCRr0B7u7irW0i42XyiLO2fdSIRx8h0/edit?usp=sharing" width="100%" height="500" style="border:none;border-radius:12px"></iframe>
+<section id="catalogue" class="section-light">
+<div class="container fade">
+<h2 class="center">Catalogue</h2>
+<iframe src="https://docs.google.com/spreadsheets/d/1Evp0SI9Qt5wleCRr0B7u7irW0i42XyiLO2fdSIRx8h0/edit?usp=sharing"></iframe>
 </div>
 </section>
 
 <section class="section-dark">
-<div class="container">
+<div class="container fade">
 <h2>About</h2>
-<p>Hi, my name is Rohit Mishra. I am a music educator who teaches guitar, ukulele, and music theory. I focus on clarity, rhythm, and practical musicianship. Every arrangement is designed to help you practice with purpose and improve step by step.</p>
+<p>
+Hi, my name is Rohit Mishra. I am a music educator who teaches guitar, ukulele, and music theory.
+I enjoy creating high qulaity tabs, structured sheets, and accurate backing tracks designed for steady improvement.
+</p>
 </div>
 </section>
 
 <section class="section-dark">
-<div class="container faq">
-<h2>FAQs</h2>
-<h3>What do I receive?</h3>
-<p>Files listed for the selected song and instrument.</p>
-<h3>What does duration mean?</h3>
-<p>Usable practice section length.</p>
-<h3>Can I request a custom song?</h3>
+<div class="container fade">
+<h2 class="center">FAQs</h2>
+
+<div class="faq-item">
+<h3>What do I receive?<span>+</span></h3>
+<p>Files listed for the selected song including PDFs, tracks, or Guitar Pro files.</p>
+</div>
+
+<div class="faq-item">
+<h3>What does duration mean?<span>+</span></h3>
+<p>Duration refers to the provided track length, not full song length.</p>
+</div>
+
+<div class="faq-item">
+<h3>Can I request a custom song?<span>+</span></h3>
 <p>Yes. Message me on WhatsApp before purchasing.</p>
 </div>
+</div>
 </section>
 
+<!-- PAYMENT SECTION ONLY CHANGED -->
 <section class="section-light">
-<div class="container">
+<div class="container center fade">
 <h2>Payment</h2>
-<div class="payment-grid">
-<div class="payment-card">
+
+<div class="cards">
+<div class="card">
 <h3>UPI Payment</h3>
-<img src="upi-qr.png" alt="">
+<img src="upi-qr.png" class="qr">
 <p>Scan using any UPI app.<br>Send screenshot on WhatsApp.</p>
 </div>
-<div class="payment-card">
+
+<div class="card">
 <h3>WhatsApp</h3>
-<img src="whatsapp-qr.png" alt="">
+<img src="whatsapp-qr.png" class="qr">
 <p>Message me directly for confirmation or queries.</p>
 </div>
 </div>
+
+<br><br>
+<p>Email: rohittabs@gmail.com</p>
+<p>WhatsApp: +919711431855</p>
 </div>
 </section>
 
 <footer>
-<p>Email: rohittabs@gmail.com</p>
-<p>WhatsApp: +919711431855</p>
 <p>Copyright © 2025 RohitTabs</p>
 </footer>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(i=>{
+i.onclick=()=>i.classList.toggle('active')
+})
+const f=document.querySelectorAll('.fade');
+const o=new IntersectionObserver(e=>{
+e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('show')})
+},{threshold:.15});
+f.forEach(el=>o.observe(el));
+</script>
 
 </body>
 </html>
