@@ -5,246 +5,242 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RohitTabs • Guitar and Ukulele Tabs</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-html, body {
+* {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
-  padding: 0;
-  width: 100%;
+  font-family: Inter, sans-serif;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, Helvetica Neue, Arial, sans-serif;
 }
 
 section {
   width: 100%;
-  box-sizing: border-box;
-  padding: 80px 16px;
+  padding: 72px 20px;
   text-align: center;
 }
 
 .section-dark {
-  background: #000000;
-  color: #ffffff;
+  background: #000;
+  color: #fff;
 }
 
 .section-light {
-  background: #ffffff;
-  color: #111111;
+  background: #fff;
+  color: #111;
 }
 
-.section-dark > *,
-.section-light > * {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .logo {
   width: 64px;
-  margin: 0 auto 24px;
-}
-
-h1 {
-  font-size: 40px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-h2 {
-  font-size: 28px;
-  font-weight: 600;
   margin-bottom: 24px;
 }
 
-h3 {
-  font-size: 16px;
+.hero h1 {
+  font-size: 36px;
   font-weight: 600;
-  margin-bottom: 8px;
 }
 
-p {
-  font-size: 16px;
+.hero p {
+  max-width: 640px;
+  margin: 16px auto 24px;
   font-weight: 300;
-  line-height: 1.6;
-  margin: 0 auto 16px;
-  max-width: 720px;
-  word-wrap: break-word;
 }
 
-.button {
+.btn {
   display: inline-block;
-  margin-top: 24px;
-  padding: 12px 24px;
-  border: 1px solid #ffffff;
-  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
   text-decoration: none;
+  color: inherit;
   font-size: 14px;
-}
-
-.section-light .button {
-  border-color: #111111;
-  color: #111111;
 }
 
 .products {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
 }
 
-@media (min-width: 768px) {
-  .products {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.product p {
-  max-width: none;
+.card h3 {
+  margin-bottom: 8px;
 }
 
 .price {
+  margin-top: 12px;
   font-weight: 600;
-  margin-top: 8px;
 }
 
-.payment {
-  text-align: center;
+.pay-grid {
+  display: grid;
+  gap: 48px;
+  margin-top: 40px;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.whatsapp-qr {
-  width: 180px;
+.qr {
+  width: 160px;
   margin: 24px auto;
+  display: block;
 }
 
-.faq-section {
+.faq {
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
 }
 
-.faq-item {
-  margin-bottom: 32px;
+.faq h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.faq p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
 }
 
 footer {
-  background: #000000;
-  color: #ffffff;
-  padding: 60px 16px;
-  font-size: 13px;
-  line-height: 1.6;
-  text-align: center;
+  padding: 64px 20px;
+  font-size: 14px;
+}
+
+.contact {
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 28px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<section class="section-dark">
-<img src="logo.png" alt="RohitTabs Logo" class="logo">
-<h1>Guitar and Ukulele Tabs</h1>
-<p>Clean PDFs, accurate tabs, playalong and backing tracks with Guitar Pro (.gp) files for focused practice.</p>
-<a href="#products" class="button">Buy Tabs</a>
+<section class="section-dark hero">
+  <div class="wrap">
+    <img src="logo.png" alt="RohitTabs Logo" class="logo">
+    <h1>Guitar and Ukulele Tabs</h1>
+    <p>Clean PDFs, accurate tabs, playalong and backing tracks for focused practice.</p>
+    <a href="#products" class="btn">View Catalog</a>
+  </div>
 </section>
 
 <section id="products" class="section-light">
-<h2>Products</h2>
+  <div class="wrap">
+    <h2>Products</h2>
 
-<div class="products">
-  <div class="product">
-    <h3>Guitar Tabs</h3>
-    <p>PDFs, Playalong Tracks, Guitar Pro Files, and Backing Tracks.</p>
-    <div class="price">₹499</div>
-  </div>
+    <div class="products">
+      <div class="card">
+        <h3>Guitar Tabs</h3>
+        <p>PDFs, playalong tracks, backing tracks.</p>
+        <div class="price">₹499</div>
+      </div>
 
-  <div class="product">
-    <h3>Ukulele Tabs</h3>
-    <p>PDFs, Playalong Tracks, Guitar Pro Files, and Backing Tracks.</p>
-    <div class="price">₹499</div>
-  </div>
+      <div class="card">
+        <h3>Ukulele Tabs</h3>
+        <p>PDFs, playalong tracks, backing tracks.</p>
+        <div class="price">₹499</div>
+      </div>
 
-  <div class="product">
-    <h3>Customised Tabs & Tracks</h3>
-    <p>Purchase individual items such as only PDF, Backing Tracks, or Guitar Pro files.</p>
-    <div class="price">₹150 each</div>
+      <div class="card">
+        <h3>Custom Items</h3>
+        <p>Buy individual PDF, backing track, or Guitar Pro file.</p>
+        <div class="price">₹150 each</div>
+      </div>
+    </div>
+
+    <a href="#catalog" class="btn" style="margin-top:40px;">Open Full Catalog</a>
   </div>
-</div>
 </section>
 
 <section class="section-dark">
-<h2>Payment</h2>
-<img src="whatsapp-qr.png" alt="WhatsApp QR Code" class="whatsapp-qr">
-<p>Scan the QR code to message me directly on WhatsApp.</p>
-<img src="upi-qr.png" alt="UPI QR Code" class="whatsapp-qr">
-<p>Pay via UPI using the QR code.</p>
-<p>After payment, send the screenshot on WhatsApp.</p>
+  <div class="wrap">
+    <h2>Payment</h2>
+
+    <div class="pay-grid">
+      <div>
+        <img src="whatsapp-qr.png" alt="WhatsApp QR" class="qr">
+        <p>Scan to message me directly on WhatsApp.</p>
+      </div>
+
+      <div>
+        <img src="upi-qr.png" alt="UPI QR" class="qr">
+        <p>Pay via UPI using the QR code.</p>
+        <p>After payment, send the screenshot on WhatsApp.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section-light">
-<h2>Delivery Process</h2>
-<p>1. Complete UPI payment</p>
-<p>2. Send payment screenshot on WhatsApp</p>
-<p>3. Receive the files directly on WhatsApp within 15 minutes of payment confirmation</p>
+  <div class="wrap">
+    <h2>Delivery Process</h2>
+    <p>
+      1. Complete UPI payment<br>
+      2. Send payment screenshot on WhatsApp<br>
+      3. Receive files within 15 minutes of confirmation
+    </p>
+  </div>
 </section>
 
 <section class="section-dark">
-<h2>FAQs</h2>
-<div class="faq-section">
+  <div class="wrap">
+    <h2>FAQs</h2>
 
-<div class="faq-item">
-<h3>What exactly do I receive after payment?</h3>
-<p>You will receive the files listed for the selected song and instrument. This can include PDF tabs, playalong tracks, backing tracks, or Guitar Pro files.</p>
-</div>
+    <div class="faq">
+      <h3>What do I receive after payment?</h3>
+      <p>You receive the files listed for the selected song and instrument.</p>
 
-<div class="faq-item">
-<h3>How do I choose the correct tab or track?</h3>
-<p>Open the song catalog, filter by instrument and type, and check what is included before purchasing.</p>
-</div>
+      <h3>What does duration mean?</h3>
+      <p>Duration refers to the length of the provided track or arrangement, not the full song.</p>
 
-<div class="faq-item">
-<h3>How do I place an order?</h3>
-<p>Choose a song, complete the payment, and send the screenshot with details on WhatsApp.</p>
-</div>
+      <h3>How do I choose the correct version?</h3>
+      <p>Use the catalog to filter by instrument and type, then note the product code.</p>
 
-<div class="faq-item">
-<h3>When will I receive my files?</h3>
-<p>You will receive the files directly on WhatsApp within 15 minutes of payment confirmation.</p>
-</div>
-
-<div class="faq-item">
-<h3>Are these full song arrangements?</h3>
-<p>Some tabs are full arrangements while others are short or practice focused versions. Message me on WhatsApp if you have any doubt.</p>
-</div>
-
-<div class="faq-item">
-<h3>Can I request a specific song or instrument version?</h3>
-<p>Yes. Message me on WhatsApp before purchasing. Availability and pricing depend on the arrangement.</p>
-</div>
-
-</div>
+      <h3>Can I request a specific version?</h3>
+      <p>Yes. Message me on WhatsApp before purchasing.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section-light">
-<h2>About</h2>
-<p>
-Hi, my name is Rohit Mishra. I am a music educator who teaches guitar, ukulele, and music theory.
-I focus on clarity, rhythm, and practical musicianship.
-I enjoy creating clean tabs, structured music sheets, and accurate backing tracks for focused practice.
-Every arrangement is designed to help you practice with purpose and improve step by step.
-</p>
+  <div class="wrap">
+    <h2>About</h2>
+    <p>
+      Hi, my name is Rohit Mishra. I am a music educator who teaches guitar, ukulele, and music theory.
+      I enjoy creating clean tabs, structured music sheets, and accurate backing tracks for focused practice.
+      Every arrangement is designed to help you improve step by step.
+    </p>
+  </div>
 </section>
 
-<footer>
-Contact:<br>
-Email: rohittabs@gmail.com<br>
-WhatsApp: +919711431855<br><br>
-Copyright © 2025 RohitTabs
+<footer class="section-dark">
+  <div class="wrap contact">
+    <p>
+      Contact:<br>
+      Email: rohittabs@gmail.com<br>
+      WhatsApp: +919711431855
+    </p>
+    <p>Copyright © 2025 RohitTabs</p>
+  </div>
 </footer>
 
 </body>
