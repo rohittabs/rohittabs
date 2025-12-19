@@ -25,11 +25,11 @@ background:#fff;color:#111;line-height:1.6;overflow-x:hidden
 
 /* Header */
 header{
-padding:28px 20px;
+padding:24px 20px;
 text-align:center;
 background:#000
 }
-header img{width:64px}
+header img{width:56px}
 
 /* Sections */
 section{padding:120px 20px}
@@ -39,10 +39,23 @@ section{padding:120px 20px}
 .center{text-align:center}
 
 /* Typography */
-h1{font-size:56px;font-weight:600;margin-bottom:16px}
+h1{
+font-size:56px;
+font-weight:600;
+margin-bottom:16px;
+letter-spacing:-0.02em
+}
 h2{font-size:36px;font-weight:600;margin-bottom:24px}
 h3{font-size:20px;font-weight:500;margin-bottom:8px}
 p{font-size:17px;opacity:.85}
+
+/* Apple-style bullet headline */
+.headline span.bullet{
+font-weight:700;
+margin:0 12px;
+display:inline-block;
+transform:translateY(-1px)
+}
 
 /* Buttons */
 .btn{
@@ -101,7 +114,7 @@ text-align:center
 }
 .section-dark .card{background:#111}
 
-/* QR images */
+/* QR */
 .qr{
 width:220px;
 margin:24px auto 16px;
@@ -126,7 +139,7 @@ cursor:pointer
 footer{
 background:#fff;
 color:#111;
-padding:40px 20px;
+padding:48px 20px;
 text-align:center
 }
 
@@ -144,8 +157,10 @@ text-align:center
 
 <section class="section-dark hero">
 <div class="container center fade">
-<h1>Teach. Inspire. Create.</h1>
-<p>High quality tabs, playalongs, backing tracks & GuitarPro files designed for teachers, students, and music schools.</p>
+<h1 class="headline">
+Teach<span class="bullet">•</span>Inspire<span class="bullet">•</span>Create
+</h1>
+<p>High quality tabs, playalongs, backing tracks & Guitar Pro files designed for teachers, students, and music schools.</p>
 <br>
 <a href="#products" class="btn">Explore Tabs</a>
 <img src="hero.png">
@@ -179,17 +194,17 @@ text-align:center
 <div class="cards">
 <div class="card">
 <h3>Guitar Tabs</h3>
-<p>PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files</p>
+<p>PDFs, Playalong Tracks, Backing Tracks & Guitar Pro Files</p>
 <strong>₹499</strong>
 </div>
 <div class="card">
 <h3>Ukulele Tabs</h3>
-<p>PDFs, Playalong Tracks, Backing Tracks & GuitarPro Files</p>
+<p>PDFs, Playalong Tracks, Backing Tracks & Guitar Pro Files</p>
 <strong>₹499</strong>
 </div>
 <div class="card">
 <h3>Custom Files</h3>
-<p>Individual PDF, Backing Track or GuitarPro File</p>
+<p>Individual PDF, Backing Track or Guitar Pro File</p>
 <strong>₹149 each</strong>
 </div>
 </div>
@@ -230,18 +245,20 @@ text-align:center
 <section class="section-light">
 <div class="container fade">
 <h2>Refund policy</h2>
-<p>
-<strong>All sales are final.</strong> Once payment is completed and files are delivered, no refunds are provided.
-<br><br>
-<strong>Can I request changes after payment</strong><br>
-Any specific requests or changes must be communicated before the files are delivered. Once delivery is complete, changes are not possible.
-<br><br>
-<strong>What if I selected the wrong song or version</strong><br>
-Please double-check the song, version, instrument, and product code before making payment. Files are delivered exactly as selected from the catalogue.
-<br><br>
-<strong>What if there is a technical issue with the file</strong><br>
-If there is a genuine technical issue such as a corrupted file, it will be fixed or re-sent. This does not qualify for a refund.
-</p>
+
+<p><strong>All sales are final.</strong> Once payment is completed and files are delivered, no refunds are provided.</p>
+<br>
+
+<h3>Can I request changes after payment</h3>
+<p>Any specific requests or changes must be communicated before the files are delivered. Once delivery is complete, changes are not possible.</p>
+<br>
+
+<h3>What if I selected the wrong song or version</h3>
+<p>Please double-check the song, version, instrument, and product code before making payment. Files are delivered exactly as selected from the catalogue.</p>
+<br>
+
+<h3>What if there is a technical issue with the file</h3>
+<p>If there is a genuine technical issue such as a corrupted file, it will be fixed or re-sent. This does not qualify for a refund.</p>
 </div>
 </section>
 
