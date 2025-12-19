@@ -5,13 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RohitTabs · Guitar & Ukulele Tabs</title>
 
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SM7052FWQ4"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-SM7052FWQ4');
+window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-SM7052FWQ4')
 </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,33 +26,29 @@ line-height:1.6;
 overflow-x:hidden
 }
 
-/* Header */
 header{
-padding:16px 20px;
+padding:14px 20px;
 text-align:center;
 background:#000
 }
 header img{width:56px}
 
-/* Sections */
 section{padding:120px 20px}
 .section-dark{background:#000;color:#fff}
 .section-light{background:#fff;color:#111}
 .container{max-width:1200px;margin:0 auto}
 .center{text-align:center}
 
-/* Typography */
 h1{
 font-size:56px;
 font-weight:600;
-margin-bottom:16px;
+margin-bottom:14px;
 white-space:nowrap
 }
 h2{font-size:36px;font-weight:600;margin-bottom:24px}
 h3{font-size:20px;font-weight:500;margin-bottom:8px}
 p{font-size:17px;opacity:.85}
 
-/* Headline bullets */
 .hero-title{
 display:inline-flex;
 align-items:center;
@@ -66,7 +61,6 @@ line-height:1;
 transform:translateY(-1px)
 }
 
-/* Buttons */
 .btn{
 display:inline-block;
 padding:14px 32px;
@@ -79,9 +73,8 @@ transition:all .25s ease
 }
 .btn:hover{background:#0071e3;color:#fff}
 
-/* Hero */
 .hero{
-padding-top:80px
+padding-top:60px
 }
 .hero img{
 width:100%;
@@ -90,7 +83,6 @@ margin:48px auto 0;
 display:block
 }
 
-/* Split layout */
 .split{
 display:grid;
 grid-template-columns:1fr;
@@ -107,7 +99,6 @@ border-radius:18px
 .reverse>*{direction:ltr}
 }
 
-/* Cards */
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -122,17 +113,14 @@ text-align:center
 }
 .section-dark .card{background:#111}
 
-/* QR */
 .qr{
 width:220px;
 margin:24px auto 16px;
 display:block
 }
 
-/* Catalogue */
 iframe{width:100%;height:600px;border:none;border-radius:18px}
 
-/* FAQ */
 .faq-item{
 border-bottom:1px solid rgba(255,255,255,.2);
 padding:20px 0;
@@ -143,7 +131,6 @@ cursor:pointer
 .faq-item p{max-height:0;overflow:hidden;transition:max-height .4s ease}
 .faq-item.active p{max-height:300px;margin-top:12px}
 
-/* Footer */
 footer{
 background:#fff;
 color:#111;
@@ -151,14 +138,20 @@ padding:40px 20px;
 text-align:center
 }
 
-/* Fade */
 .fade{opacity:0;transform:translateY(30px);transition:all .8s ease}
 .fade.show{opacity:1;transform:none}
 
-/* Mobile fixes */
+/* MOBILE FIXES ONLY */
 @media(max-width:768px){
-h1{font-size:42px}
-.hero{padding-top:60px}
+h1{
+font-size:38px
+}
+.hero{
+padding-top:40px
+}
+.hero-title{
+gap:14px
+}
 }
 </style>
 </head>
@@ -330,11 +323,11 @@ These resources are built to support guitar teachers, students, and music school
 document.querySelectorAll('.faq-item').forEach(i=>{
 i.onclick=()=>i.classList.toggle('active')
 })
-const f=document.querySelectorAll('.fade');
+const f=document.querySelectorAll('.fade')
 const o=new IntersectionObserver(e=>{
 e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('show')})
-},{threshold:.15});
-f.forEach(el=>o.observe(el));
+},{threshold:.15})
+f.forEach(el=>o.observe(el))
 </script>
 
 </body>
