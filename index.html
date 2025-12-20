@@ -39,8 +39,8 @@ h1{
 font-size:56px;
 font-weight:600;
 margin-bottom:20px;
-white-space:nowrap
 }
+
 h2{font-size:36px;font-weight:600;margin-bottom:24px}
 h3{font-size:20px;font-weight:500;margin-bottom:8px}
 p{font-size:17px;opacity:.85}
@@ -118,7 +118,7 @@ overflow:hidden;
 transition:max-height .4s ease
 }
 .faq-item.active p{
-max-height:600px;
+max-height:800px;
 margin-top:12px
 }
 
@@ -138,15 +138,17 @@ opacity:1;
 transform:none
 }
 
-/* MOBILE FIXES */
+/* MOBILE FIX — THIS IS THE KEY */
 @media(max-width:768px){
 h1{
-font-size:36px;
-max-width:92%;
-margin:12px auto 16px;
+font-size:34px;
+line-height:1.25;
+padding:0 16px;
+max-width:100%;
+white-space:normal;
 }
-header{
-padding-bottom:10px
+.hero .container{
+padding-top:40px;
 }
 }
 
@@ -238,9 +240,15 @@ padding-bottom:10px
 </div>
 
 <div class="faq-item">
-<h3>Guitar Pro file details<span>+</span></h3>
-<p>The Guitar Pro file you receive is non-editable. You can change tempo, loop sections, transpose, and mute or unmute parts. Editing notes or structure is not allowed. Editable Guitar Pro files are available at extra cost depending on song duration.</p>
+<h3>Can I request a custom song or file?<span>+</span></h3>
+<p>Yes. You can request custom songs or files. Please message on WhatsApp before making payment to discuss feasibility and pricing.</p>
 </div>
+
+<div class="faq-item">
+<h3>Guitar Pro file details<span>+</span></h3>
+<p>The Guitar Pro file you receive is non-editable. You can slow down tempo, loop sections, transpose, and mute or unmute parts. Editing notes or structure is not allowed. Editable Guitar Pro files are available at extra cost depending on song duration.</p>
+</div>
+
 </div>
 </section>
 
