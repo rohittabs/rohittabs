@@ -28,13 +28,11 @@ overflow-x:hidden;
 
 /* Header */
 header{
-padding:14px 20px;
+padding:12px 20px;
 text-align:center;
 background:#000;
 }
-header img{
-width:56px;
-}
+header img{width:56px}
 
 /* Sections */
 section{padding:120px 20px}
@@ -49,6 +47,7 @@ font-weight:600;
 white-space:nowrap;
 font-size:clamp(30px,6vw,56px);
 margin-bottom:12px;
+padding:0 16px;
 }
 h2{font-size:36px;font-weight:600;margin-bottom:24px}
 h3{font-size:20px;font-weight:500;margin-bottom:8px}
@@ -81,9 +80,7 @@ transition:all .25s ease;
 .btn:hover{background:#0071e3;color:#fff}
 
 /* Hero */
-.hero{
-padding-top:48px;
-}
+.hero{padding-top:48px}
 .hero img{
 width:100%;
 max-width:900px;
@@ -98,10 +95,7 @@ grid-template-columns:1fr;
 gap:64px;
 align-items:center;
 }
-.split img{
-width:100%;
-border-radius:18px;
-}
+.split img{width:100%;border-radius:18px}
 @media(min-width:900px){
 .split{grid-template-columns:1fr 1fr}
 .reverse{direction:rtl}
@@ -156,7 +150,7 @@ overflow:hidden;
 transition:max-height .4s ease;
 }
 .faq-item.active p{
-max-height:300px;
+max-height:500px;
 margin-top:12px;
 }
 
@@ -179,13 +173,12 @@ opacity:1;
 transform:none;
 }
 
-/* MOBILE REFINEMENT ONLY */
+/* Mobile tightening */
 @media(max-width:600px){
 section{padding:80px 20px}
 .hero{padding-top:24px}
 header{padding:10px 20px}
 header img{width:48px}
-h1{margin-bottom:8px}
 .hero img{margin-top:32px}
 }
 </style>
@@ -290,6 +283,19 @@ High quality tabs, playalongs, backing tracks & Guitar Pro files designed for te
 </div>
 
 <div class="faq-item">
+<h3>Guitar Pro file details<span>+</span></h3>
+<p>
+The Guitar Pro file which you will receive is non editable. You can slow the tempo down, loop sections, transpose sections and mute or unmute parts.
+<br><br>
+You cannot edit the tab content, title, or structure inside the file.
+<br><br>
+If you want a Guitar Pro file which can be edited by you, meaning you own the file and can do whatever you want with it, you will have to pay extra for this.
+<br><br>
+Payment depends upon the song duration which can be discussed in chat.
+</p>
+</div>
+
+<div class="faq-item">
 <h3>Can I request a custom song?<span>+</span></h3>
 <p>Yes. Message me on WhatsApp before purchasing.</p>
 </div>
@@ -356,7 +362,7 @@ These resources are built to support guitar teachers, students, and music school
 
 <script>
 document.querySelectorAll('.faq-item').forEach(i=>{
-i.onclick=()=>i.classList.toggle('active')
+i.onclick=()=>i.classList.toggle('active');
 });
 const f=document.querySelectorAll('.fade');
 const o=new IntersectionObserver(e=>{
