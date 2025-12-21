@@ -3,98 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RohitTabs · Guitar & Ukulele Tabs for Teachers & Music Schools</title>
 
-<title>RohitTabs | Guitar & Ukulele Tabs for Teachers</title>
-
-<meta name="description" content="High quality guitar and ukulele tabs, playalongs, backing tracks and Guitar Pro files designed for teachers, students and music schools in India.">
-
-<meta name="keywords" content="guitar tabs, ukulele tabs, guitar pro files, playalong tracks, backing tracks, music teachers india">
-
+<meta name="description" content="High quality guitar and ukulele tabs, playalongs, backing tracks and Guitar Pro files designed for teachers, students, and music schools in India.">
+<meta name="robots" content="index, follow">
 <meta name="author" content="Rohit Mishra">
+
+<link rel="canonical" href="https://rohittabs.in/">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
 body{
 font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
-background:#fff;
-color:#111;
-line-height:1.6;
-overflow-x:hidden
+background:#fff;color:#111;line-height:1.6;overflow-x:hidden
 }
-
 header{
-padding:20px;
+padding:20px 20px 0;
 text-align:center;
 background:#000
 }
+header img{width:52px}
 
-header img{
-width:56px
-}
+section{padding:120px 20px}
+.section-dark{background:#000;color:#fff}
+.section-light{background:#fff;color:#111}
+.container{max-width:1200px;margin:0 auto}
+.center{text-align:center}
 
-section{
-padding:100px 20px
-}
-
-.section-dark{
-background:#000;
-color:#fff
-}
-
-.section-light{
-background:#fff;
-color:#111
-}
-
-.container{
-max-width:1200px;
-margin:0 auto
-}
-
-.center{
-text-align:center
-}
-
-h1{
-font-size:52px;
-font-weight:600;
-margin-bottom:16px
-}
-
-h2{
-font-size:36px;
-font-weight:600;
-margin-bottom:24px
-}
-
-h3{
-font-size:18px;
-font-weight:500
-}
-
-p{
-font-size:17px;
-opacity:.85
-}
+h1{font-size:56px;font-weight:600;margin:40px 0 16px}
+h2{font-size:36px;font-weight:600;margin-bottom:24px}
+h3{font-size:20px;font-weight:500;margin-bottom:8px}
+p{font-size:17px;opacity:.85}
 
 .btn{
 display:inline-block;
-padding:14px 36px;
+padding:14px 32px;
 border-radius:999px;
 border:1.5px solid #0071e3;
 color:#0071e3;
 text-decoration:none;
 font-weight:500;
-transition:.25s
+transition:all .25s ease
 }
-
-.btn:hover{
-background:#0071e3;
-color:#fff
-}
+.btn:hover{background:#0071e3;color:#fff}
 
 .hero img{
 width:100%;
@@ -109,22 +62,14 @@ grid-template-columns:1fr;
 gap:64px;
 align-items:center
 }
-
-@media(min-width:900px){
-.split{
-grid-template-columns:1fr 1fr
-}
-.reverse{
-direction:rtl
-}
-.reverse>*{
-direction:ltr
-}
-}
-
 .split img{
 width:100%;
 border-radius:18px
+}
+@media(min-width:900px){
+.split{grid-template-columns:1fr 1fr}
+.reverse{direction:rtl}
+.reverse>*{direction:ltr}
 }
 
 .cards{
@@ -133,63 +78,51 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:40px;
 margin-top:48px
 }
-
 .card{
-padding:40px;
+padding:48px 36px;
 border-radius:22px;
 background:#f5f5f7;
 text-align:center
 }
+.section-dark .card{background:#111}
 
-.section-dark .card{
-background:#111
-}
-
-iframe{
-width:100%;
-height:600px;
-border:none;
-border-radius:18px
-}
+iframe{width:100%;height:600px;border:none;border-radius:18px}
 
 .faq-item{
 border-bottom:1px solid rgba(255,255,255,.2);
 padding:20px 0;
 cursor:pointer
 }
-
 .faq-item h3{
 display:flex;
 justify-content:space-between;
 align-items:center
 }
-
 .faq-item p{
 max-height:0;
 overflow:hidden;
 transition:max-height .4s ease
 }
-
 .faq-item.active p{
-max-height:500px;
+max-height:400px;
 margin-top:12px
 }
 
+.qr{
+width:220px;
+margin:24px auto 16px;
+display:block
+}
+
 footer{
+background:#fff;
+color:#111;
 padding:60px 20px;
 text-align:center
 }
 
-.fade{
-opacity:0;
-transform:translateY(30px);
-transition:.8s
-}
-
-.fade.show{
-opacity:1;
-transform:none
-}
+.fade{opacity:0;transform:translateY(30px);transition:all .8s ease}
+.fade.show{opacity:1;transform:none}
 </style>
 </head>
 
@@ -205,7 +138,7 @@ transform:none
 <p>High quality tabs, playalongs, backing tracks & Guitar Pro files designed for teachers, students, and music schools.</p>
 <br>
 <a href="#products" class="btn">Explore Tabs</a>
-<img src="hero.png">
+<img src="hero.png" alt="Guitar and Ukulele Tabs">
 </div>
 </section>
 
@@ -215,7 +148,7 @@ transform:none
 <h2>Built to teach & inspire learning</h2>
 <p>Structured tabs & tracks created for effective teaching and focused practice.</p>
 </div>
-<img src="product.png">
+<img src="product.png" alt="Tab preview">
 </div>
 </section>
 
@@ -225,34 +158,30 @@ transform:none
 <h2>Seamless payment process</h2>
 <p>Choose your song, pay via UPI, share the screenshot with the product code, and receive your files on WhatsApp within minutes.</p>
 </div>
-<img src="workflow.png">
+<img src="workflow.png" alt="Workflow">
 </div>
 </section>
 
 <section id="products" class="section-light">
 <div class="container center fade">
 <h2>Products</h2>
-
 <div class="cards">
 <div class="card">
 <h3>Guitar Tabs</h3>
 <p>PDFs, playalongs, backing tracks & Guitar Pro files</p>
 <strong>₹499</strong>
 </div>
-
 <div class="card">
 <h3>Ukulele Tabs</h3>
 <p>PDFs, playalongs, backing tracks & Guitar Pro files</p>
 <strong>₹499</strong>
 </div>
-
 <div class="card">
 <h3>Custom Files</h3>
 <p>Individual PDF, backing track or Guitar Pro file</p>
 <strong>₹149 each</strong>
 </div>
 </div>
-
 <br>
 <a href="#catalogue" class="btn">View Catalogue</a>
 </div>
@@ -261,7 +190,7 @@ transform:none
 <section id="catalogue" class="section-light">
 <div class="container fade">
 <h2 class="center">Catalogue</h2>
-<iframe src="https://docs.google.com/spreadsheets/d/1Evp0SI9Qt5wleCRr0B7u7irW0i42XyiLO2fdSIRx8h0/preview"></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/1Evp0SI9Qt5wleCRr0B7u7irW0i42XyiLO2fdSIRx8h0/edit?usp=sharing"></iframe>
 </div>
 </section>
 
@@ -281,20 +210,45 @@ transform:none
 
 <div class="faq-item">
 <h3>Guitar Pro file details<span>+</span></h3>
-<p>
-The Guitar Pro file you receive is non-editable. You can slow the tempo down, loop sections, transpose sections, and mute or unmute parts.
-<br><br>
-You cannot edit the tab content or title.
-<br><br>
-Editable Guitar Pro files are available at extra cost depending on song duration and can be discussed in chat.
-</p>
+<p>The Guitar Pro file you receive is non-editable. You can slow the tempo down, loop sections, transpose sections, and mute or unmute parts. You cannot edit the tab content or title.<br><br>
+Editable Guitar Pro files are available at extra cost depending on song duration and can be discussed in chat.</p>
 </div>
 
 <div class="faq-item">
 <h3>Can I request a custom song or file?<span>+</span></h3>
 <p>Yes. Message on WhatsApp before purchasing to discuss feasibility and pricing.</p>
 </div>
+</div>
+</section>
 
+<section class="section-dark">
+<div class="container fade">
+<h2>About</h2>
+<p>
+Hi, my name is Rohit Mishra. I am a music educator specializing in guitar, ukulele, and music theory. I create high-quality tabs, structured music sheets, and backing tracks designed for clarity, timing, and real musical understanding.
+<br><br>
+These resources are built to support guitar teachers, students, and music schools who need reliable, well-organized material for lessons, practice sessions, and classroom use. Every arrangement focuses on practical musicianship, consistency, and steady improvement.
+</p>
+</div>
+</section>
+
+<section class="section-light">
+<div class="container center fade">
+<h2>Payment</h2>
+<div class="cards">
+<div class="card">
+<h3>UPI Payment</h3>
+<img src="upi-qr.png" class="qr" alt="UPI QR">
+<p>Scan using any UPI app.<br>Send screenshot on WhatsApp.</p>
+</div>
+<div class="card">
+<h3>WhatsApp</h3>
+<img src="whatsapp-qr.png" class="qr" alt="WhatsApp QR">
+<p>Message directly for confirmation or queries.</p>
+</div>
+</div>
+<br>
+<p>Email: rohittabs@gmail.com</p>
 </div>
 </section>
 
@@ -306,14 +260,11 @@ Editable Guitar Pro files are available at extra cost depending on song duration
 document.querySelectorAll('.faq-item').forEach(i=>{
 i.onclick=()=>i.classList.toggle('active')
 })
-
-const obs=new IntersectionObserver(e=>{
-e.forEach(x=>{
-if(x.isIntersecting)x.target.classList.add('show')
-})
-},{threshold:.15})
-
-document.querySelectorAll('.fade').forEach(el=>obs.observe(el))
+const f=document.querySelectorAll('.fade');
+const o=new IntersectionObserver(e=>{
+e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('show')})
+},{threshold:.15});
+f.forEach(el=>o.observe(el));
 </script>
 
 </body>
