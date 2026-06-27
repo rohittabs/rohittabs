@@ -1,68 +1,17 @@
 [
   {
     "id": 1,
-    "title": "Tum Hi Ho",
-    "movie": "Aashiqui 2",
+    "title": "Ajeeb Daastan Hai Yeh",
+    "movie": "Dil Apna Aur Preet Parayi",
     "type": "Guitar",
-    "style": "Fingerpicking",
-    "coverage": "Intro · Verse · Chorus · Outro",
-    "sample": "samples/tum-hi-ho.jpg",
+    "style": "Chord Melody",
+    "coverage": "Main Intro · Verse · Chorus · Bridge",
+    "sample": "samples/ajeeb_daastan_hai_yeh_guitar_tab_page1.png",
     "assets": {
-      "pdf":     { "price": 79,  "pages": 3, "note": "Staff notation and tabs" },
-      "track":   { "price": 49,  "duration": "3:12", "note": "Full song" },
-      "backing": { "price": 49,  "duration": "3:12", "note": "No lead guitar" }
-    }
-  },
-  {
-    "id": 2,
-    "title": "Iktara",
-    "movie": "Wake Up Sid",
-    "type": "Ukulele",
-    "style": "Strumming",
-    "coverage": "Verse · Chorus",
-    "sample": "samples/iktara.jpg",
-    "assets": {
-      "pdf":     { "price": 69, "pages": 2, "note": "Staff notation and tabs" },
-      "backing": { "price": 39, "duration": "1:48", "note": "Verse and chorus only" }
-    }
-  },
-  {
-    "id": 3,
-    "title": "Chaiyya Chaiyya",
-    "movie": "Dil Se",
-    "type": "Guitar",
-    "style": "Riff and chords",
-    "coverage": "Full song",
-    "sample": "samples/chaiyya.jpg",
-    "assets": {
-      "pdf":     { "price": 89, "pages": 4, "note": "Staff notation and tabs" },
-      "track":   { "price": 59, "duration": "5:28", "note": "Full song" },
-      "backing": { "price": 59, "duration": "5:28", "note": "No lead guitar" }
-    }
-  },
-  {
-    "id": 4,
-    "title": "Kaise Hua",
-    "movie": "Kabir Singh",
-    "type": "Ukulele",
-    "style": "Chords and melody",
-    "coverage": "Verse · Chorus",
-    "sample": null,
-    "assets": {
-      "pdf": { "price": 69, "pages": 2, "note": "Staff notation and tabs" }
-    }
-  },
-  {
-    "id": 5,
-    "title": "Phir Le Aya Dil",
-    "movie": "Barfi!",
-    "type": "Guitar",
-    "style": "Fingerstyle",
-    "coverage": "Intro · Verse · Chorus",
-    "sample": "samples/phir-le-aya.jpg",
-    "assets": {
-      "pdf":     { "price": 79, "pages": 3, "note": "Staff notation and tabs" },
-      "backing": { "price": 49, "duration": "2:20", "note": "Intro, verse and chorus" }
+      "pdf":     { "price": 79,  "pages": 1, "note": "Staff notation and tabs" },
+      "track":   { "price": 99,  "duration": "3:30", "note": "Full song" },
+      "backing": { "price": 99,  "duration": "3:30", "note": "No lead guitar" },
+      "bundle":  { "price": 249, "note": "PDF + Track + Backing track — save ₹28" }
     }
   }
 ]
