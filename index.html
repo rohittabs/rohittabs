@@ -20,21 +20,10 @@
     --border: rgba(0,0,0,0.1); --border-strong: rgba(0,0,0,0.18);
     --radius: 8px;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --text: #f0f0ee; --text-2: #aaa; --text-3: #666;
-      --bg: #161614; --card: #1e1e1c;
-      --border: rgba(255,255,255,0.1); --border-strong: rgba(255,255,255,0.18);
-    }
-  }
-  html { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; }
+  html { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; color-scheme: light; }
   body { background: var(--bg); color: var(--text); }
 
-  nav {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 16px 28px; border-bottom: 0.5px solid var(--border);
-    position: sticky; top: 0; background: var(--bg); z-index: 10;
-  }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 28px; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10; }
   .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
   .logo img { height: 32px; width: auto; display: block; }
   .logo-text { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; color: var(--text); }
@@ -61,6 +50,13 @@
   .s-label { font-size: 11px; color: var(--text-3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
   .s-title { font-size: 24px; font-weight: 600; color: var(--text); margin-bottom: 4px; letter-spacing: -0.5px; }
   .s-sub { font-size: 13px; color: var(--text-3); margin-bottom: 22px; }
+
+  .search-bar { display: flex; gap: 8px; margin-bottom: 16px; }
+  .search-input { flex: 1; padding: 10px 16px; border: 0.5px solid var(--border-strong); border-radius: 24px; font-size: 14px; background: var(--card); color: var(--text); outline: none; }
+  .search-input:focus { border-color: var(--red); }
+  .search-input::placeholder { color: var(--text-3); }
+  .search-clear { background: none; border: none; color: var(--text-3); font-size: 18px; cursor: pointer; padding: 0 4px; display: none; }
+  .search-clear.visible { display: block; }
 
   .filters { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
   .f-btn { font-size: 13px; padding: 7px 16px; border-radius: 20px; border: 0.5px solid var(--border-strong); background: transparent; color: var(--text-2); cursor: pointer; transition: all 0.15s; }
@@ -99,7 +95,6 @@
 
   .sample-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; cursor: pointer; }
   .sample-overlay img { max-width: 100%; max-height: 90vh; border-radius: 8px; object-fit: contain; cursor: default; }
-
   .sample-thumb { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; cursor: pointer; position: relative; }
   .sample-thumb img { width: 100%; max-height: 160px; object-fit: cover; display: block; transition: opacity 0.15s; }
   .sample-thumb:hover img { opacity: 0.85; }
@@ -157,30 +152,47 @@
   .faq-a { font-size: 13px; color: var(--text-2); line-height: 1.65; margin-top: 10px; display: none; }
   .faq-item.open .faq-a { display: block; }
 
-  .sig-section { padding: 24px 28px 36px; text-align: center; }
-  .sig-section img { height: 80px; width: auto; opacity: 0.85; }
-  @media (prefers-color-scheme: dark) { .sig-section img { filter: invert(1); } }
+  .reviews-section { padding: 36px 28px; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 20px; margin-bottom: 28px; }
+  .review-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 12px; padding: 18px; }
+  .review-stars { color: #F5A623; font-size: 14px; margin-bottom: 8px; letter-spacing: 1px; }
+  .review-text { font-size: 13px; color: var(--text-2); line-height: 1.6; margin-bottom: 12px; }
+  .review-author { font-size: 12px; font-weight: 600; color: var(--text); }
+  .review-song { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+  .review-form { background: var(--card); border: 0.5px solid var(--border); border-radius: 12px; padding: 20px; }
+  .review-form h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
+  .star-picker { display: flex; gap: 6px; margin-bottom: 12px; }
+  .star-picker button { font-size: 22px; background: none; border: none; cursor: pointer; opacity: 0.3; transition: opacity 0.1s; padding: 0; line-height: 1; }
+  .star-picker button.lit { opacity: 1; }
+  .rf-row { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .rf-row input, .rf-row select { flex: 1; min-width: 120px; padding: 10px 13px; border: 0.5px solid var(--border-strong); border-radius: var(--radius); font-size: 13px; background: var(--bg); color: var(--text); }
+  .rf-row input:focus, .rf-row select:focus { outline: none; border-color: var(--red); }
+  .rf-textarea { width: 100%; padding: 10px 13px; border: 0.5px solid var(--border-strong); border-radius: var(--radius); font-size: 13px; background: var(--bg); color: var(--text); resize: vertical; min-height: 80px; font-family: inherit; margin-bottom: 12px; }
+  .rf-textarea:focus { outline: none; border-color: var(--red); }
+  .rf-submit { background: var(--red); color: #fff; border: none; border-radius: 24px; padding: 12px 28px; font-size: 14px; font-weight: 500; cursor: pointer; }
+  .rf-submit:hover { opacity: 0.9; }
+  .review-success { text-align: center; padding: 20px; font-size: 14px; color: var(--teal-tag); display: none; }
 
   footer { background: var(--card); border-top: 0.5px solid var(--border); padding: 24px 28px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
   .foot-left { font-size: 13px; color: var(--text-2); line-height: 1.5; }
   .foot-left strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 2px; }
   .foot-center { display: flex; justify-content: center; }
-  .foot-center img { height: 80px; width: auto; opacity: 0.9; }
-  @media (prefers-color-scheme: dark) { .foot-center img { filter: invert(1); } }
+  .foot-center img { height: 110px; width: auto; opacity: 1; }
   .foot-links { display: flex; justify-content: flex-end; gap: 18px; }
   .foot-links a { font-size: 13px; color: var(--text-3); text-decoration: none; }
   .foot-links a:hover { color: var(--text); }
 
   .empty { text-align: center; padding: 40px 20px; color: var(--text-3); font-size: 14px; }
+
   @media (max-width: 600px) {
     nav { padding: 14px 16px; }
     .nav-links { display: none; }
     .hero { padding: 48px 16px 20px; }
-    .section, .how-section, .faq-section { padding: 32px 16px; }
+    .section, .how-section, .faq-section, .reviews-section { padding: 32px 16px; }
     .divider { margin: 0 16px; }
-    footer { grid-template-columns: 1fr; text-align: center; padding: 20px 16px; gap: 12px; }
+    footer { grid-template-columns: 1fr; text-align: center; padding: 20px 16px; gap: 16px; }
     .foot-left { font-size: 12px; }
-    .foot-center img { height: 60px; }
+    .foot-center img { height: 80px; }
     .foot-links { justify-content: center; }
   }
 </style>
@@ -203,8 +215,8 @@
 </nav>
 
 <section class="hero">
-  <h1>your <em>tab</em> store.</h1>
-  <div class="hero-sub">high quality PDFs, tracks, backing tracks and guitar pro files</div>
+  <h1>Your <em>tab</em> store.</h1>
+  <div class="hero-sub">High quality PDFs, Tracks, Backing Tracks and Guitar Pro files</div>
   <p>Pick a song, choose what you need, get your files.</p>
   <div class="hero-btns">
     <a href="#catalog" class="btn-dark">Browse tabs</a>
@@ -218,6 +230,12 @@
   <div class="s-label">Pick a song</div>
   <div class="s-title">Available <span style="color:var(--red);">tabs</span></div>
   <div class="s-sub">PDF, Tracks, Backing Tracks and Guitar Pro files — every <span style="color:var(--red);font-weight:500;">tab</span> you need</div>
+
+  <div class="search-bar">
+    <input class="search-input" id="search-input" type="search" placeholder="Search songs..." oninput="onSearch(this.value)">
+    <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Clear search">×</button>
+  </div>
+
   <div class="filters" id="filters">
     <button class="f-btn active" data-filter="all">All</button>
     <button class="f-btn" data-filter="Guitar">Guitar</button>
@@ -243,13 +261,38 @@
 
 <div class="divider"></div>
 
+<section class="reviews-section" id="reviews">
+  <div class="s-label">What customers say</div>
+  <div class="s-title">Reviews</div>
+  <div class="reviews-grid" id="reviews-grid"></div>
+  <div class="review-form" id="review-form">
+    <h3>Leave a review</h3>
+    <div class="star-picker" id="star-picker">
+      <button onclick="setStar(1)">★</button>
+      <button onclick="setStar(2)">★</button>
+      <button onclick="setStar(3)">★</button>
+      <button onclick="setStar(4)">★</button>
+      <button onclick="setStar(5)">★</button>
+    </div>
+    <div class="rf-row">
+      <input type="text" id="rv-name" placeholder="Your name">
+      <input type="text" id="rv-song" placeholder="Song you purchased (optional)">
+    </div>
+    <textarea class="rf-textarea" id="rv-text" placeholder="Share your experience..."></textarea>
+    <button class="rf-submit" onclick="submitReview()">Submit review</button>
+    <div class="review-success" id="rv-success">Thank you for your review!</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <section class="faq-section" id="faq">
   <div class="s-label">FAQ</div>
   <div class="s-title">Common questions</div>
   <div class="faq-list" id="faq-list">
     <div class="faq-item">
       <div class="faq-q"><span>How do I receive my files after payment?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">Once you place your order and complete the UPI payment, your files will be sent to you via the same channel you used to order WhatsApp or email.</div>
+      <div class="faq-a">Once you place your order and complete the UPI payment, your files will be sent to you via the same channel you used to order — WhatsApp or email.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span>How long does delivery take?</span><span class="faq-icon">+</span></div>
@@ -261,7 +304,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q"><span>Which UPI apps are accepted?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">You can pay via any UPI app Google Pay, PhonePe, Paytm, BHIM, or any other UPI-enabled app. A QR code will be shared with you after you place your order.</div>
+      <div class="faq-a">You can pay via any UPI app — Google Pay, PhonePe, Paytm, BHIM, or any other UPI-enabled app. A QR code will be shared with you after you place your order.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span>What is a Guitar Pro file?</span><span class="faq-icon">+</span></div>
@@ -275,8 +318,6 @@
 </section>
 
 <div class="divider"></div>
-
-
 
 <footer>
   <div class="foot-left">
@@ -297,14 +338,66 @@
 
 <script>
 const YOUR_WHATSAPP = '919711431855';
-const YOUR_EMAIL    = 'acoustics1990@gmail.com';
+const YOUR_EMAIL    = 'rohittabs@gmail.com';
 
 let songs        = [];
 let activeFilter = 'all';
+let searchQuery  = '';
 let selectedSong = null;
 let checked      = { pdf: false, tracks: false, gp: false, bundle: false };
 let audioEl      = null;
 let isPlaying    = false;
+let starRating   = 0;
+
+const STORAGE_KEY = 'rohittabs_reviews';
+
+const DEFAULT_REVIEWS = [];
+
+function loadReviews() {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    return stored ? JSON.parse(stored) : DEFAULT_REVIEWS;
+  } catch { return DEFAULT_REVIEWS; }
+}
+
+function saveReviews(reviews) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews)); } catch {}
+}
+
+function renderReviews() {
+  const reviews = loadReviews();
+  const grid = document.getElementById('reviews-grid');
+  if (!reviews.length) { grid.innerHTML = '<p style="color:var(--text-3);font-size:14px;">No reviews yet. Be the first!</p>'; return; }
+  grid.innerHTML = reviews.map(r => `
+    <div class="review-card">
+      <div class="review-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
+      <div class="review-text">${r.text}</div>
+      <div class="review-author">${r.name}</div>
+      ${r.song ? `<div class="review-song">Purchased: ${r.song}</div>` : ''}
+    </div>`).join('');
+}
+
+function setStar(n) {
+  starRating = n;
+  document.querySelectorAll('#star-picker button').forEach((b, i) => b.classList.toggle('lit', i < n));
+}
+
+function submitReview() {
+  const name = document.getElementById('rv-name').value.trim();
+  const text = document.getElementById('rv-text').value.trim();
+  if (!name || !text || !starRating) { alert('Please fill in your name, a review, and select a star rating.'); return; }
+  const song = document.getElementById('rv-song').value.trim();
+  const reviews = loadReviews();
+  reviews.unshift({ name, song, stars: starRating, text, date: new Date().toISOString().slice(0,10) });
+  saveReviews(reviews);
+  renderReviews();
+  document.getElementById('rv-name').value = '';
+  document.getElementById('rv-song').value = '';
+  document.getElementById('rv-text').value = '';
+  setStar(0);
+  document.getElementById('rv-success').style.display = 'block';
+  setTimeout(() => document.getElementById('rv-success').style.display = 'none', 3000);
+}
 
 async function loadSongs() {
   const res = await fetch('songs.json');
@@ -324,10 +417,22 @@ function pillsHTML(s) {
   return h;
 }
 
+function getFilteredList() {
+  let list = activeFilter === 'all' ? songs : songs.filter(s => s.type === activeFilter);
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    list = list.filter(s => s.title.toLowerCase().includes(q) || s.movie.toLowerCase().includes(q) || s.style.toLowerCase().includes(q));
+  }
+  return list;
+}
+
 function renderGrid() {
-  const list = activeFilter === 'all' ? songs : songs.filter(s => s.type === activeFilter);
+  const list = getFilteredList();
   const grid = document.getElementById('cards-grid');
-  if (!list.length) { grid.innerHTML = '<div class="empty">No songs in this category yet check back soon.</div>'; return; }
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty">${searchQuery ? 'No songs found for "' + searchQuery + '"' : 'No songs in this category yet — check back soon.'}</div>`;
+    return;
+  }
   grid.innerHTML = list.map(s => `
     <div class="song-card${selectedSong && selectedSong.id === s.id ? ' selected' : ''}"
          onclick="openDetail(${s.id})" role="button" tabindex="0" aria-label="Select ${s.title}">
@@ -344,6 +449,19 @@ function renderGrid() {
         <span style="font-size:11px;color:var(--text-3);">Select →</span>
       </div>
     </div>`).join('');
+}
+
+function onSearch(val) {
+  searchQuery = val.trim();
+  document.getElementById('search-clear').classList.toggle('visible', searchQuery.length > 0);
+  selectedSong = null;
+  document.getElementById('detail-panel').innerHTML = '';
+  renderGrid();
+}
+
+function clearSearch() {
+  document.getElementById('search-input').value = '';
+  onSearch('');
 }
 
 function setFilter(f) {
@@ -389,8 +507,7 @@ function assetRowHTML(key, label) {
   const a = selectedSong.assets[key];
   if (!a) return '';
   let meta = '';
-  if (key === 'pdf')    meta = `${a.pages} page${a.pages !== 1 ? 's' : ''} · ${a.note}`;
-  else if (key === 'bundle') meta = a.note;
+  if (key === 'pdf') meta = `${a.pages} page${a.pages !== 1 ? 's' : ''} · ${a.note}`;
   else meta = a.note;
   return `
     <div class="a-row" id="arow-${key}" onclick="toggleAsset('${key}')">
@@ -413,12 +530,10 @@ function stopAudio() {
 function togglePlay() {
   if (!audioEl) return;
   if (isPlaying) {
-    audioEl.pause();
-    isPlaying = false;
+    audioEl.pause(); isPlaying = false;
     document.getElementById('play-btn').textContent = '▶';
   } else {
-    audioEl.play();
-    isPlaying = true;
+    audioEl.play(); isPlaying = true;
     document.getElementById('play-btn').textContent = '⏸';
   }
 }
@@ -432,21 +547,19 @@ function openDetail(id) {
   const sampleBlock = selectedSong.sample
     ? `<div class="sample-thumb" onclick="openSampleOverlay('${selectedSong.sample}')">
          <img src="${selectedSong.sample}" alt="Sample from ${selectedSong.title}"
-              onerror="this.parentElement.innerHTML='<div class=\\'sample-placeholder\\'>Sample image loads from your repo</div>'">
+              onerror="this.parentElement.innerHTML='<div class=\\'sample-placeholder\\'>Sample loads from your repo</div>'">
          <span class="sample-thumb-label">Tap to enlarge</span>
-       </div>`
-    : '';
+       </div>` : '';
 
   const previewBlock = selectedSong.preview
     ? `<div class="preview-player">
          <button class="play-btn" id="play-btn" onclick="togglePlay()">▶</button>
          <div class="preview-info">
            <div class="preview-label">Preview</div>
-           <div class="preview-note">Short clip get a feel for the arrangement</div>
+           <div class="preview-note">Short clip — get a feel for the arrangement</div>
          </div>
          <audio id="preview-audio" src="${selectedSong.preview}" onended="stopAudio()"></audio>
-       </div>`
-    : '';
+       </div>` : '';
 
   document.getElementById('detail-panel').innerHTML = `
     <div class="detail-panel">
@@ -461,7 +574,7 @@ function openDetail(id) {
       ${previewBlock}
       <div class="choose-label">Choose what you want</div>
       <div class="asset-rows">
-        ${assetRowHTML('pdf',    'PDF staff notation and tabs')}
+        ${assetRowHTML('pdf',    'PDF — staff notation and tabs')}
         ${assetRowHTML('tracks', 'Track and backing track')}
         ${assetRowHTML('gp',     'Guitar Pro file (.gp)')}
         ${selectedSong.assets.bundle ? '<div class="bundle-divider"></div>' + assetRowHTML('bundle', 'Full bundle') : ''}
@@ -536,6 +649,7 @@ document.getElementById('faq-list').addEventListener('click', e => {
 });
 
 loadSongs();
+renderReviews();
 </script>
 </body>
 </html>
