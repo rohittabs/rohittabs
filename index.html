@@ -7,155 +7,116 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --red: #E24B4A;
-    --red-bg: #FCEBEB;
-    --red-border: #F7C1C1;
-    --blue-tag: #185FA5;
-    --blue-bg: #E6F1FB;
-    --green-tag: #3B6D11;
-    --green-bg: #EAF3DE;
-    --purple-tag: #534AB7;
-    --purple-bg: #EEEDFE;
-    --purple-border: #AFA9EC;
-    --teal-tag: #0F6E56;
-    --teal-bg: #E1F5EE;
-    --teal-border: #9FE1CB;
-    --amber-tag: #854F0B;
-    --amber-bg: #FAEEDA;
-    --amber-border: #FAC775;
+    --red: #E24B4A; --red-bg: #FCEBEB; --red-border: #F7C1C1;
+    --blue-tag: #185FA5; --blue-bg: #E6F1FB;
+    --green-tag: #3B6D11; --green-bg: #EAF3DE;
+    --purple-tag: #534AB7; --purple-bg: #EEEDFE; --purple-border: #AFA9EC;
+    --teal-tag: #0F6E56; --teal-bg: #E1F5EE; --teal-border: #9FE1CB;
+    --amber-tag: #854F0B; --amber-bg: #FAEEDA; --amber-border: #FAC775;
     --wa: #25D366;
-    --text: #1a1a1a;
-    --text-2: #555;
-    --text-3: #888;
-    --bg: #f5f5f3;
-    --card: #fff;
-    --border: rgba(0,0,0,0.1);
-    --border-strong: rgba(0,0,0,0.18);
+    --text: #1a1a1a; --text-2: #555; --text-3: #888;
+    --bg: #f5f5f3; --card: #fff;
+    --border: rgba(0,0,0,0.1); --border-strong: rgba(0,0,0,0.18);
     --radius: 8px;
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
-      --text: #f0f0ee;
-      --text-2: #aaa;
-      --text-3: #666;
-      --bg: #161614;
-      --card: #1e1e1c;
-      --border: rgba(255,255,255,0.1);
-      --border-strong: rgba(255,255,255,0.18);
+      --text: #f0f0ee; --text-2: #aaa; --text-3: #666;
+      --bg: #161614; --card: #1e1e1c;
+      --border: rgba(255,255,255,0.1); --border-strong: rgba(255,255,255,0.18);
     }
   }
-
   html { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; }
   body { background: var(--bg); color: var(--text); }
 
-  /* NAV */
   nav {
     display: flex; justify-content: space-between; align-items: center;
     padding: 16px 28px; border-bottom: 0.5px solid var(--border);
     position: sticky; top: 0; background: var(--bg); z-index: 10;
   }
-  .logo { font-size: 18px; font-weight: 600; color: var(--text); letter-spacing: -0.3px; text-decoration: none; }
-  .logo span { color: var(--red); }
+  .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .logo img { height: 32px; width: auto; display: block; }
+  .logo-text { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; color: var(--text); }
+  .logo-text .red { color: #E24B4A; }
   .nav-links { display: flex; gap: 20px; }
   .nav-links a { font-size: 13px; color: var(--text-2); text-decoration: none; }
   .nav-links a:hover { color: var(--text); }
-  .nav-cta {
-    font-size: 13px; background: var(--text); color: var(--bg);
-    padding: 7px 16px; border-radius: 20px; border: none; cursor: pointer; text-decoration: none;
-  }
+  .nav-cta { font-size: 13px; background: var(--text); color: var(--bg); padding: 7px 16px; border-radius: 20px; border: none; cursor: pointer; text-decoration: none; }
 
-  /* HERO */
-  .hero { padding: 64px 28px 48px; text-align: center; }
-  .hero h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 600; line-height: 1.12; letter-spacing: -1.5px; color: var(--text); margin-bottom: 14px; }
+  .hero { padding: 64px 28px 20px; text-align: center; }
+  .hero h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 600; line-height: 1.12; letter-spacing: -1.5px; color: var(--text); margin-bottom: 12px; }
   .hero h1 em { font-style: normal; color: var(--red); }
-  .hero p { font-size: 16px; color: var(--text-2); max-width: 420px; margin: 0 auto 28px; line-height: 1.65; }
+  .hero-sub { font-size: 14px; color: var(--text-3); margin-bottom: 6px; letter-spacing: 0.1px; }
+  .hero p { font-size: 15px; color: var(--text-2); max-width: 420px; margin: 0 auto 28px; line-height: 1.65; }
   .hero-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .btn-dark { background: var(--text); color: var(--bg); padding: 12px 28px; border-radius: 24px; border: none; font-size: 15px; cursor: pointer; text-decoration: none; display: inline-block; }
   .btn-outline { background: transparent; color: var(--text); padding: 12px 28px; border-radius: 24px; border: 0.5px solid var(--border-strong); font-size: 15px; cursor: pointer; text-decoration: none; display: inline-block; }
   .btn-dark:hover { opacity: 0.88; }
   .btn-outline:hover { background: var(--card); }
 
-  /* DIVIDER */
   .divider { height: 0.5px; background: var(--border); margin: 0 28px; }
 
-  /* SECTION */
   .section { padding: 44px 28px; }
   .s-label { font-size: 11px; color: var(--text-3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
   .s-title { font-size: 24px; font-weight: 600; color: var(--text); margin-bottom: 4px; letter-spacing: -0.5px; }
-  .s-sub { font-size: 14px; color: var(--text-2); margin-bottom: 22px; }
+  .s-sub { font-size: 13px; color: var(--text-3); margin-bottom: 22px; }
 
-  /* FILTERS */
   .filters { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
-  .f-btn {
-    font-size: 13px; padding: 7px 16px; border-radius: 20px;
-    border: 0.5px solid var(--border-strong); background: transparent;
-    color: var(--text-2); cursor: pointer; transition: all 0.15s;
-  }
+  .f-btn { font-size: 13px; padding: 7px 16px; border-radius: 20px; border: 0.5px solid var(--border-strong); background: transparent; color: var(--text-2); cursor: pointer; transition: all 0.15s; }
   .f-btn:hover { color: var(--text); border-color: var(--text); }
   .f-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
 
-  /* CARDS GRID */
-  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: 12px; }
-
-  .song-card {
-    background: var(--card); border: 0.5px solid var(--border);
-    border-radius: 14px; padding: 18px; cursor: pointer;
-    transition: border-color 0.15s, transform 0.1s;
-  }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+  .song-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 18px; cursor: pointer; transition: border-color 0.15s, transform 0.1s; }
   .song-card:hover { border-color: var(--border-strong); }
   .song-card:active { transform: scale(0.98); }
   .song-card.selected { border-color: var(--red); border-width: 1.5px; }
-
   .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 11px; }
   .tag { font-size: 11px; border-radius: 10px; padding: 3px 9px; font-weight: 500; }
-  .tag-guitar  { color: var(--blue-tag);   background: var(--blue-bg); }
-  .tag-ukulele { color: var(--green-tag);  background: var(--green-bg); }
+  .tag-guitar  { color: var(--blue-tag);  background: var(--blue-bg); }
+  .tag-ukulele { color: var(--green-tag); background: var(--green-bg); }
   .see-sample-btn { font-size: 11px; color: var(--red); background: none; border: none; cursor: pointer; padding: 0; }
   .see-sample-btn:hover { text-decoration: underline; }
-
   .song-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
   .song-movie { font-size: 11px; color: var(--text-3); margin-bottom: 6px; }
-  .song-cov   { font-size: 11px; color: var(--text-2); margin-bottom: 10px; line-height: 1.45; }
-
+  .song-style { font-size: 11px; color: var(--text-2); margin-bottom: 10px; }
   .asset-pills { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 11px; }
   .ap { font-size: 10px; padding: 2px 7px; border-radius: 8px; border: 0.5px solid var(--border); color: var(--text-2); }
-  .ap-pdf  { color: var(--purple-tag); background: var(--purple-bg); border-color: var(--purple-border); }
-  .ap-trk  { color: var(--teal-tag);   background: var(--teal-bg);   border-color: var(--teal-border); }
-  .ap-back { color: var(--amber-tag);  background: var(--amber-bg);  border-color: var(--amber-border); }
-
+  .ap-pdf    { color: var(--purple-tag); background: var(--purple-bg); border-color: var(--purple-border); }
+  .ap-tracks { color: var(--teal-tag);   background: var(--teal-bg);   border-color: var(--teal-border); }
+  .ap-gp     { color: var(--amber-tag);  background: var(--amber-bg);  border-color: var(--amber-border); }
   .card-foot { display: flex; justify-content: space-between; align-items: center; }
   .from-price { font-size: 12px; color: var(--text-3); }
   .from-price strong { font-size: 15px; font-weight: 600; color: var(--text); }
 
-  /* DETAIL PANEL */
-  .detail-panel {
-    background: var(--card); border: 0.5px solid var(--border);
-    border-radius: 14px; padding: 22px; margin-top: 16px;
-  }
+  .detail-panel { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 22px; margin-top: 16px; }
   .d-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
   .d-title { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
   .d-sub { font-size: 12px; color: var(--text-3); }
   .close-btn { font-size: 22px; color: var(--text-3); background: none; border: none; cursor: pointer; line-height: 1; padding: 0 2px; }
   .close-btn:hover { color: var(--text); }
 
-  .sample-box {
-    background: var(--bg); border: 0.5px solid var(--border);
-    border-radius: var(--radius); overflow: hidden; margin-bottom: 16px;
-  }
-  .sample-box img { width: 100%; max-height: 180px; object-fit: cover; display: block; }
+  .sample-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; cursor: pointer; }
+  .sample-overlay img { max-width: 100%; max-height: 90vh; border-radius: 8px; object-fit: contain; cursor: default; }
+
+  .sample-thumb { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; cursor: pointer; position: relative; }
+  .sample-thumb img { width: 100%; max-height: 160px; object-fit: cover; display: block; transition: opacity 0.15s; }
+  .sample-thumb:hover img { opacity: 0.85; }
+  .sample-thumb-label { position: absolute; bottom: 8px; right: 10px; font-size: 11px; background: rgba(0,0,0,0.6); color: #fff; padding: 3px 8px; border-radius: 10px; }
   .sample-placeholder { padding: 24px; text-align: center; font-size: 13px; color: var(--text-3); }
 
-  .choose-label { font-size: 12px; color: var(--text-3); margin-bottom: 10px; }
+  .preview-player { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .play-btn { width: 36px; height: 36px; border-radius: 50%; background: var(--text); color: var(--bg); border: none; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .play-btn:hover { opacity: 0.85; }
+  .preview-info { flex: 1; }
+  .preview-label { font-size: 12px; font-weight: 500; color: var(--text); }
+  .preview-note  { font-size: 11px; color: var(--text-3); }
+  audio { display: none; }
 
+  .choose-label { font-size: 12px; color: var(--text-3); margin-bottom: 10px; }
   .asset-rows { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
-  .a-row {
-    display: flex; align-items: center; gap: 12px;
-    padding: 13px 15px; border: 0.5px solid var(--border);
-    border-radius: var(--radius); cursor: pointer; transition: border-color 0.12s;
-  }
+  .a-row { display: flex; align-items: center; gap: 12px; padding: 13px 15px; border: 0.5px solid var(--border); border-radius: var(--radius); cursor: pointer; transition: border-color 0.12s; }
   .a-row:hover { border-color: var(--border-strong); }
   .a-row.on { border-color: var(--red); background: var(--red-bg); }
   .a-row input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--red); flex-shrink: 0; cursor: pointer; }
@@ -163,70 +124,56 @@
   .a-name { font-size: 13px; font-weight: 500; color: var(--text); }
   .a-meta { font-size: 11px; color: var(--text-2); margin-top: 2px; }
   .a-price { font-size: 14px; font-weight: 600; color: var(--text); }
+  .bundle-divider { height: 0.5px; background: var(--border); margin: 4px 0; }
 
-  .total-row {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 13px 0; border-top: 0.5px solid var(--border);
-    border-bottom: 0.5px solid var(--border); margin-bottom: 14px;
-  }
+  .total-row { display: flex; justify-content: space-between; align-items: center; padding: 13px 0; border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); margin-bottom: 14px; }
   .total-row span { font-size: 13px; color: var(--text-2); }
   .total-row strong { font-size: 20px; font-weight: 600; color: var(--text); }
-
   .order-fields { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
-  .order-fields input {
-    flex: 1; min-width: 130px; padding: 10px 13px;
-    border: 0.5px solid var(--border-strong); border-radius: var(--radius);
-    font-size: 14px; background: var(--bg); color: var(--text);
-  }
+  .order-fields input { flex: 1; min-width: 130px; padding: 10px 13px; border: 0.5px solid var(--border-strong); border-radius: var(--radius); font-size: 14px; background: var(--bg); color: var(--text); }
   .order-fields input:focus { outline: none; border-color: var(--red); }
-
-  .wa-btn {
-    width: 100%; background: var(--wa); color: #fff; border: none;
-    border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer;
-    margin-bottom: 8px; font-weight: 500;
-  }
+  .wa-btn { width: 100%; background: var(--wa); color: #fff; border: none; border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer; margin-bottom: 8px; font-weight: 500; }
   .wa-btn:hover { opacity: 0.9; }
   .or-row { text-align: center; font-size: 12px; color: var(--text-3); margin: 6px 0; }
-  .em-btn {
-    width: 100%; background: var(--text); color: var(--bg); border: none;
-    border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer; font-weight: 500;
-  }
+  .em-btn { width: 100%; background: var(--text); color: var(--bg); border: none; border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer; font-weight: 500; }
   .em-btn:hover { opacity: 0.88; }
 
-  /* HOW IT WORKS */
   .how-section { padding: 36px 28px 32px; }
   .steps { display: flex; position: relative; margin-top: 20px; }
   .step-line { position: absolute; top: 14px; left: 14%; right: 14%; height: 0.5px; background: var(--border); }
   .step { flex: 1; text-align: center; padding: 0 4px; }
-  .step-num {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: var(--card); border: 0.5px solid var(--border);
-    font-size: 12px; font-weight: 600; color: var(--text);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 9px; position: relative; z-index: 1;
-  }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--card); border: 0.5px solid var(--border); font-size: 12px; font-weight: 600; color: var(--text); display: flex; align-items: center; justify-content: center; margin: 0 auto 9px; position: relative; z-index: 1; }
   .step h4 { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
   .step p { font-size: 11px; color: var(--text-2); line-height: 1.4; }
 
-  /* FOOTER */
-  footer {
-    background: var(--card); border-top: 0.5px solid var(--border);
-    padding: 20px 28px; display: flex; justify-content: space-between;
-    align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 12px;
-  }
-  footer p { font-size: 13px; color: var(--text-2); }
+  .faq-section { padding: 36px 28px; }
+  .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 20px; }
+  .faq-item { border-top: 0.5px solid var(--border); padding: 16px 0; cursor: pointer; }
+  .faq-item:last-child { border-bottom: 0.5px solid var(--border); }
+  .faq-q { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq-q span { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.4; }
+  .faq-icon { font-size: 18px; color: var(--text-3); flex-shrink: 0; transition: transform 0.2s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a { font-size: 13px; color: var(--text-2); line-height: 1.65; margin-top: 10px; display: none; }
+  .faq-item.open .faq-a { display: block; }
+
+  .sig-section { padding: 24px 28px 36px; text-align: center; }
+  .sig-section img { height: 80px; width: auto; opacity: 0.85; }
+  @media (prefers-color-scheme: dark) { .sig-section img { filter: invert(1); } }
+
+  footer { background: var(--card); border-top: 0.5px solid var(--border); padding: 20px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .foot-left { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+  .foot-left strong { color: var(--text); font-weight: 600; }
   .foot-links { display: flex; gap: 18px; }
   .foot-links a { font-size: 13px; color: var(--text-3); text-decoration: none; }
   .foot-links a:hover { color: var(--text); }
 
-  /* EMPTY STATE */
   .empty { text-align: center; padding: 40px 20px; color: var(--text-3); font-size: 14px; }
-
   @media (max-width: 500px) {
     nav { padding: 14px 16px; }
     .nav-links { display: none; }
-    .hero { padding: 48px 16px 36px; }
-    .section, .how-section { padding: 32px 16px; }
+    .hero { padding: 48px 16px 20px; }
+    .section, .how-section, .faq-section { padding: 32px 16px; }
     .divider { margin: 0 16px; }
     footer { padding: 18px 16px; }
   }
@@ -235,18 +182,24 @@
 <body>
 
 <nav>
-  <a href="/" class="logo" style="display:flex;align-items:center;gap:8px;"><img src="logo.png" alt="" style="height:32px;width:auto;display:block;"><span style="color:var(--text);letter-spacing:-0.3px;font-size:18px;font-weight:600;">rohit<span style="color:var(--red);">tabs</span></span></a>
+  <a href="/" class="logo">
+    <img src="logo.png" alt="">
+    <span class="logo-text">rohit<span class="red">tabs</span></span>
+  </a>
   <div class="nav-links">
+    <a href="/">Home</a>
     <a href="#catalog">Guitar</a>
     <a href="#catalog">Ukulele</a>
     <a href="#how">How it works</a>
+    <a href="#faq">FAQ</a>
   </div>
   <a href="#catalog" class="nav-cta">Order now</a>
 </nav>
 
 <section class="hero">
   <h1>Play it by <em>tab.</em></h1>
-  <p>Guitar and ukulele tabs with backing tracks. Pick a song, choose what you need, get your files.</p>
+  <div class="hero-sub">High quality PDFs, Tracks, Backing Tracks and Guitar Pro files</div>
+  <p>Pick a song, choose what you need, get your files.</p>
   <div class="hero-btns">
     <a href="#catalog" class="btn-dark">Browse tabs</a>
     <a href="#catalog" class="btn-outline">See samples</a>
@@ -258,14 +211,12 @@
 <section class="section" id="catalog">
   <div class="s-label">Pick a song</div>
   <div class="s-title">Available tabs</div>
-  <div class="s-sub">Select a song to see what's available and choose exactly what you need</div>
-
+  <div class="s-sub">PDF, Tracks, Backing Tracks and Guitar Pro files</div>
   <div class="filters" id="filters">
     <button class="f-btn active" data-filter="all">All</button>
     <button class="f-btn" data-filter="Guitar">Guitar</button>
     <button class="f-btn" data-filter="Ukulele">Ukulele</button>
   </div>
-
   <div class="cards" id="cards-grid"></div>
   <div id="detail-panel"></div>
 </section>
@@ -278,29 +229,75 @@
   <div class="steps">
     <div class="step-line"></div>
     <div class="step"><div class="step-num">1</div><h4>Pick a song</h4><p>Browse the catalog</p></div>
-    <div class="step"><div class="step-num">2</div><h4>Choose what you need</h4><p>PDF, track, or backing</p></div>
+    <div class="step"><div class="step-num">2</div><h4>Choose what you need</h4><p>PDF, tracks, or GP file</p></div>
     <div class="step"><div class="step-num">3</div><h4>Scan UPI QR</h4><p>GPay, PhonePe, Paytm</p></div>
     <div class="step"><div class="step-num">4</div><h4>Get your files</h4><p>Delivered to your inbox</p></div>
   </div>
 </section>
 
+<div class="divider"></div>
+
+<section class="faq-section" id="faq">
+  <div class="s-label">FAQ</div>
+  <div class="s-title">Common questions</div>
+  <div class="faq-list" id="faq-list">
+    <div class="faq-item">
+      <div class="faq-q"><span>How do I receive my files after payment?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">Once you place your order and complete the UPI payment, your files will be sent to you via the same channel you used to order — WhatsApp or email.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>How long does delivery take?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">I always try to deliver as soon as I receive your request. In case of a delay it just means I'm tied up at the moment, but rest assured your money is safe and delivery will be made at the earliest. You're welcome to follow up via WhatsApp or call anytime.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Are payments refundable?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">All sales are final. Since these are digital products, no refunds are offered once payment is made. Please check the sample before purchasing to make sure it suits your needs.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Which UPI apps are accepted?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">You can pay via any UPI app — Google Pay, PhonePe, Paytm, BHIM, or any other UPI-enabled app. A QR code will be shared with you after you place your order.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>What is a Guitar Pro file?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">A Guitar Pro (.gp) file is an interactive tab file that you can open in Guitar Pro or the free TuxGuitar app. It lets you view the notation, slow down sections, and hear the arrangement. The file is password protected so you can view and play it but not edit the content.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Can I share the files with others?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a">Files are for personal use only and may not be shared, redistributed, or resold. Each purchase is a single-user license.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="sig-section">
+  <img src="signature.png" alt="Rohit Mishra — Music Educator">
+</section>
+
 <footer>
-  <p>rohittabs.in &nbsp;·&nbsp; Guitar and ukulele tabs by Rohit Mishra</p>
+  <div class="foot-left">
+    <strong>rohittabs.in</strong><br>
+    High quality PDFs, Tracks, Backing Tracks and Guitar Pro files
+  </div>
   <div class="foot-links">
-    <a href="https://instagram.com/rohittabs" target="_blank">Instagram</a>
-    <a href="https://youtube.com/@rohittabs" target="_blank">YouTube</a>
     <a href="https://wa.me/919711431855" target="_blank">WhatsApp</a>
   </div>
 </footer>
 
+<div id="sample-overlay" class="sample-overlay" style="display:none;" onclick="closeSampleOverlay()">
+  <img id="overlay-img" src="" alt="Sample" onclick="event.stopPropagation()">
+</div>
+
 <script>
-const YOUR_WHATSAPP = '919711431855'; // ← replace with your number
-const YOUR_EMAIL    = 'acoustics1990@gmail.com'; // ← replace with your email
+const YOUR_WHATSAPP = '919711431855';
+const YOUR_EMAIL    = 'acoustics1990@gmail.com';
 
 let songs        = [];
 let activeFilter = 'all';
 let selectedSong = null;
-let checked      = { pdf: false, track: false, backing: false, bundle: false };
+let checked      = { pdf: false, tracks: false, gp: false, bundle: false };
+let audioEl      = null;
+let isPlaying    = false;
 
 async function loadSongs() {
   const res = await fetch('songs.json');
@@ -314,32 +311,26 @@ function minPrice(s) {
 
 function pillsHTML(s) {
   let h = '';
-  if (s.assets.pdf)     h += '<span class="ap ap-pdf">PDF</span>';
-  if (s.assets.track)   h += '<span class="ap ap-trk">Track</span>';
-  if (s.assets.backing) h += '<span class="ap ap-back">Backing track</span>';
+  if (s.assets.pdf)    h += '<span class="ap ap-pdf">PDF</span>';
+  if (s.assets.tracks) h += '<span class="ap ap-tracks">Tracks</span>';
+  if (s.assets.gp)     h += '<span class="ap ap-gp">Guitar Pro</span>';
   return h;
 }
 
 function renderGrid() {
   const list = activeFilter === 'all' ? songs : songs.filter(s => s.type === activeFilter);
   const grid = document.getElementById('cards-grid');
-  if (!list.length) {
-    grid.innerHTML = '<div class="empty">No songs in this category yet — check back soon.</div>';
-    return;
-  }
+  if (!list.length) { grid.innerHTML = '<div class="empty">No songs in this category yet — check back soon.</div>'; return; }
   grid.innerHTML = list.map(s => `
     <div class="song-card${selectedSong && selectedSong.id === s.id ? ' selected' : ''}"
-         onclick="openDetail(${s.id})" role="button" tabindex="0"
-         aria-label="Select ${s.title}">
+         onclick="openDetail(${s.id})" role="button" tabindex="0" aria-label="Select ${s.title}">
       <div class="card-top">
         <span class="tag tag-${s.type.toLowerCase()}">${s.type}</span>
-        ${s.sample
-          ? `<button class="see-sample-btn" onclick="event.stopPropagation(); openDetail(${s.id})">👁 See sample</button>`
-          : ''}
+        ${s.sample ? `<button class="see-sample-btn" onclick="event.stopPropagation(); openDetail(${s.id})">👁 See sample</button>` : ''}
       </div>
       <div class="song-title">${s.title}</div>
       <div class="song-movie">${s.movie}</div>
-      <div class="song-cov">${s.style} · ${s.coverage}</div>
+      <div class="song-style">${s.style}</div>
       <div class="asset-pills">${pillsHTML(s)}</div>
       <div class="card-foot">
         <div class="from-price">from <strong>₹${minPrice(s)}</strong></div>
@@ -351,10 +342,9 @@ function renderGrid() {
 function setFilter(f) {
   activeFilter = f;
   selectedSong = null;
-  checked = { pdf: false, track: false, backing: false, bundle: false };
-  document.querySelectorAll('.f-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.filter === f);
-  });
+  checked = { pdf: false, tracks: false, gp: false, bundle: false };
+  stopAudio();
+  document.querySelectorAll('.f-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
   renderGrid();
   document.getElementById('detail-panel').innerHTML = '';
 }
@@ -367,10 +357,10 @@ document.getElementById('filters').addEventListener('click', e => {
 function calcTotal() {
   if (!selectedSong) return 0;
   let t = 0;
-  if (checked.pdf     && selectedSong.assets.pdf)     t += selectedSong.assets.pdf.price;
-  if (checked.track   && selectedSong.assets.track)   t += selectedSong.assets.track.price;
-  if (checked.backing && selectedSong.assets.backing) t += selectedSong.assets.backing.price;
-  if (checked.bundle  && selectedSong.assets.bundle)  t += selectedSong.assets.bundle.price;
+  if (checked.pdf    && selectedSong.assets.pdf)    t += selectedSong.assets.pdf.price;
+  if (checked.tracks && selectedSong.assets.tracks) t += selectedSong.assets.tracks.price;
+  if (checked.gp     && selectedSong.assets.gp)     t += selectedSong.assets.gp.price;
+  if (checked.bundle && selectedSong.assets.bundle) t += selectedSong.assets.bundle.price;
   return t;
 }
 
@@ -394,12 +384,10 @@ function assetRowHTML(key, label) {
   let meta = '';
   if (key === 'pdf')    meta = `${a.pages} page${a.pages !== 1 ? 's' : ''} · ${a.note}`;
   else if (key === 'bundle') meta = a.note;
-  else meta = `${a.duration} · ${a.note}`;
+  else meta = a.note;
   return `
     <div class="a-row" id="arow-${key}" onclick="toggleAsset('${key}')">
-      <input type="checkbox" id="cb-${key}"
-             onclick="event.stopPropagation(); toggleAsset('${key}')"
-             aria-label="${label}">
+      <input type="checkbox" id="cb-${key}" onclick="event.stopPropagation(); toggleAsset('${key}')" aria-label="${label}">
       <div class="a-info">
         <div class="a-name">${label}</div>
         <div class="a-meta">${meta}</div>
@@ -408,16 +396,48 @@ function assetRowHTML(key, label) {
     </div>`;
 }
 
+function stopAudio() {
+  if (audioEl) { audioEl.pause(); audioEl.currentTime = 0; }
+  isPlaying = false;
+  const btn = document.getElementById('play-btn');
+  if (btn) btn.textContent = '▶';
+}
+
+function togglePlay() {
+  if (!audioEl) return;
+  if (isPlaying) {
+    audioEl.pause();
+    isPlaying = false;
+    document.getElementById('play-btn').textContent = '▶';
+  } else {
+    audioEl.play();
+    isPlaying = true;
+    document.getElementById('play-btn').textContent = '⏸';
+  }
+}
+
 function openDetail(id) {
+  stopAudio();
   selectedSong = songs.find(s => s.id === id);
-  checked = { pdf: false, track: false, backing: false, bundle: false };
+  checked = { pdf: false, tracks: false, gp: false, bundle: false };
   renderGrid();
 
   const sampleBlock = selectedSong.sample
-    ? `<div class="sample-box">
-         <img src="${selectedSong.sample}"
-              alt="Sample page from ${selectedSong.title}"
-              onerror="this.parentElement.innerHTML='<div class=\\'sample-placeholder\\'>Sample image — upload to your samples/ folder</div>'">
+    ? `<div class="sample-thumb" onclick="openSampleOverlay('${selectedSong.sample}')">
+         <img src="${selectedSong.sample}" alt="Sample from ${selectedSong.title}"
+              onerror="this.parentElement.innerHTML='<div class=\\'sample-placeholder\\'>Sample image loads from your repo</div>'">
+         <span class="sample-thumb-label">Tap to enlarge</span>
+       </div>`
+    : '';
+
+  const previewBlock = selectedSong.preview
+    ? `<div class="preview-player">
+         <button class="play-btn" id="play-btn" onclick="togglePlay()">▶</button>
+         <div class="preview-info">
+           <div class="preview-label">Preview</div>
+           <div class="preview-note">Short clip — get a feel for the arrangement</div>
+         </div>
+         <audio id="preview-audio" src="${selectedSong.preview}" onended="stopAudio()"></audio>
        </div>`
     : '';
 
@@ -426,17 +446,18 @@ function openDetail(id) {
       <div class="d-head">
         <div>
           <div class="d-title">${selectedSong.title}</div>
-          <div class="d-sub">${selectedSong.movie} · ${selectedSong.type} · ${selectedSong.coverage}</div>
+          <div class="d-sub">${selectedSong.movie} · ${selectedSong.type} · ${selectedSong.style}</div>
         </div>
         <button class="close-btn" onclick="closeDetail()" aria-label="Close">×</button>
       </div>
       ${sampleBlock}
+      ${previewBlock}
       <div class="choose-label">Choose what you want</div>
       <div class="asset-rows">
-        ${assetRowHTML('pdf',     'PDF — staff notation and tabs')}
-        ${assetRowHTML('track',   'Track')}
-        ${assetRowHTML('backing', 'Backing track')}
-        ${selectedSong.assets.bundle ? `<div style="height:0.5px;background:var(--border);margin:4px 0;"></div>${assetRowHTML('bundle', 'Full bundle')}` : ''}
+        ${assetRowHTML('pdf',    'PDF — staff notation and tabs')}
+        ${assetRowHTML('tracks', 'Track and backing track')}
+        ${assetRowHTML('gp',     'Guitar Pro file (.gp)')}
+        ${selectedSong.assets.bundle ? '<div class="bundle-divider"></div>' + assetRowHTML('bundle', 'Full bundle') : ''}
       </div>
       <div class="total-row">
         <span>Total</span>
@@ -451,24 +472,39 @@ function openDetail(id) {
       <button class="em-btn" onclick="sendEmail()">✉ Send order via email</button>
     </div>`;
 
+  audioEl = document.getElementById('preview-audio');
   document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function closeDetail() {
+  stopAudio();
   selectedSong = null;
-  checked = { pdf: false, track: false, backing: false, bundle: false };
+  checked = { pdf: false, tracks: false, gp: false, bundle: false };
   renderGrid();
   document.getElementById('detail-panel').innerHTML = '';
 }
+
+function openSampleOverlay(src) {
+  document.getElementById('overlay-img').src = src;
+  document.getElementById('sample-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSampleOverlay() {
+  document.getElementById('sample-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSampleOverlay(); });
 
 function buildOrderSummary() {
   const name  = (document.getElementById('inp-name')?.value  || '').trim() || 'not provided';
   const email = (document.getElementById('inp-email')?.value || '').trim() || 'not provided';
   const items = [];
-  if (checked.pdf     && selectedSong.assets.pdf)     items.push(`PDF — ₹${selectedSong.assets.pdf.price}`);
-  if (checked.track   && selectedSong.assets.track)   items.push(`Track — ₹${selectedSong.assets.track.price}`);
-  if (checked.backing && selectedSong.assets.backing) items.push(`Backing track — ₹${selectedSong.assets.backing.price}`);
-  if (checked.bundle  && selectedSong.assets.bundle)  items.push(`Full bundle — ₹${selectedSong.assets.bundle.price}`);
+  if (checked.pdf    && selectedSong.assets.pdf)    items.push(`PDF — ₹${selectedSong.assets.pdf.price}`);
+  if (checked.tracks && selectedSong.assets.tracks) items.push(`Track and backing track — ₹${selectedSong.assets.tracks.price}`);
+  if (checked.gp     && selectedSong.assets.gp)     items.push(`Guitar Pro file — ₹${selectedSong.assets.gp.price}`);
+  if (checked.bundle && selectedSong.assets.bundle) items.push(`Full bundle — ₹${selectedSong.assets.bundle.price}`);
   return { name, email, items, total: calcTotal() };
 }
 
@@ -486,6 +522,11 @@ function sendEmail() {
   const body    = `Hi Rohit,\n\nOrder request:\nSong: ${selectedSong.title} (${selectedSong.type})\nItems: ${o.items.join(', ')}\nTotal: ₹${o.total}\nName: ${o.name}\nReply to: ${o.email}\n\nPlease send the UPI QR. Thanks!`;
   window.open(`mailto:${YOUR_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
 }
+
+document.getElementById('faq-list').addEventListener('click', e => {
+  const item = e.target.closest('.faq-item');
+  if (item) item.classList.toggle('open');
+});
 
 loadSongs();
 </script>
