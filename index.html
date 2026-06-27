@@ -300,7 +300,7 @@ const YOUR_EMAIL    = 'acoustics1990@gmail.com'; // ← replace with your email
 let songs        = [];
 let activeFilter = 'all';
 let selectedSong = null;
-let checked      = { pdf: false, track: false, backing: false };
+let checked      = { pdf: false, track: false, backing: false, bundle: false };
 
 async function loadSongs() {
   const res = await fetch('songs.json');
@@ -351,7 +351,7 @@ function renderGrid() {
 function setFilter(f) {
   activeFilter = f;
   selectedSong = null;
-  checked = { pdf: false, track: false, backing: false };
+  checked = { pdf: false, track: false, backing: false, bundle: false };
   document.querySelectorAll('.f-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.filter === f);
   });
@@ -370,6 +370,7 @@ function calcTotal() {
   if (checked.pdf     && selectedSong.assets.pdf)     t += selectedSong.assets.pdf.price;
   if (checked.track   && selectedSong.assets.track)   t += selectedSong.assets.track.price;
   if (checked.backing && selectedSong.assets.backing) t += selectedSong.assets.backing.price;
+  if (checked.bundle  && selectedSong.assets.bundle)  t += selectedSong.assets.bundle.price;
   return t;
 }
 
@@ -390,9 +391,10 @@ function toggleAsset(key) {
 function assetRowHTML(key, label) {
   const a = selectedSong.assets[key];
   if (!a) return '';
-  const meta = key === 'pdf'
-    ? `${a.pages} page${a.pages !== 1 ? 's' : ''} · ${a.note}`
-    : `${a.duration} · ${a.note}`;
+  let meta = '';
+  if (key === 'pdf')    meta = `${a.pages} page${a.pages !== 1 ? 's' : ''} · ${a.note}`;
+  else if (key === 'bundle') meta = a.note;
+  else meta = `${a.duration} · ${a.note}`;
   return `
     <div class="a-row" id="arow-${key}" onclick="toggleAsset('${key}')">
       <input type="checkbox" id="cb-${key}"
@@ -408,7 +410,7 @@ function assetRowHTML(key, label) {
 
 function openDetail(id) {
   selectedSong = songs.find(s => s.id === id);
-  checked = { pdf: false, track: false, backing: false };
+  checked = { pdf: false, track: false, backing: false, bundle: false };
   renderGrid();
 
   const sampleBlock = selectedSong.sample
@@ -434,6 +436,7 @@ function openDetail(id) {
         ${assetRowHTML('pdf',     'PDF — staff notation and tabs')}
         ${assetRowHTML('track',   'Track')}
         ${assetRowHTML('backing', 'Backing track')}
+        ${selectedSong.assets.bundle ? `<div style="height:0.5px;background:var(--border);margin:4px 0;"></div>${assetRowHTML('bundle', 'Full bundle')}` : ''}
       </div>
       <div class="total-row">
         <span>Total</span>
@@ -453,7 +456,7 @@ function openDetail(id) {
 
 function closeDetail() {
   selectedSong = null;
-  checked = { pdf: false, track: false, backing: false };
+  checked = { pdf: false, track: false, backing: false, bundle: false };
   renderGrid();
   document.getElementById('detail-panel').innerHTML = '';
 }
@@ -465,6 +468,7 @@ function buildOrderSummary() {
   if (checked.pdf     && selectedSong.assets.pdf)     items.push(`PDF — ₹${selectedSong.assets.pdf.price}`);
   if (checked.track   && selectedSong.assets.track)   items.push(`Track — ₹${selectedSong.assets.track.price}`);
   if (checked.backing && selectedSong.assets.backing) items.push(`Backing track — ₹${selectedSong.assets.backing.price}`);
+  if (checked.bundle  && selectedSong.assets.bundle)  items.push(`Full bundle — ₹${selectedSong.assets.bundle.price}`);
   return { name, email, items, total: calcTotal() };
 }
 
