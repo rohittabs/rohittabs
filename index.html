@@ -33,11 +33,11 @@
   .nav-links a:hover { color: var(--text); }
   .nav-cta { font-size: 13px; background: var(--text); color: var(--bg); padding: 7px 16px; border-radius: 20px; border: none; cursor: pointer; text-decoration: none; white-space: nowrap; }
 
-  .hero { padding: 64px 28px 20px; text-align: center; }
+  .hero { padding: 28px 28px 12px; text-align: center; }
   .hero h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 600; line-height: 1.12; letter-spacing: -1.5px; color: var(--text); margin-bottom: 12px; }
   .hero h1 em { font-style: normal; color: var(--red); }
   .hero-sub { font-size: 14px; color: var(--text-3); margin-bottom: 6px; letter-spacing: 0.1px; }
-  .hero p { font-size: 15px; color: var(--text-2); max-width: 420px; margin: 0 auto 28px; line-height: 1.65; }
+  .hero p { font-size: 15px; color: var(--text-2); max-width: 420px; margin: 0 auto 18px; line-height: 1.65; }
   .hero-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .btn-dark { background: var(--text); color: var(--bg); padding: 12px 28px; border-radius: 24px; border: none; font-size: 15px; cursor: pointer; text-decoration: none; display: inline-block; }
   .btn-outline { background: transparent; color: var(--text); padding: 12px 28px; border-radius: 24px; border: 0.5px solid var(--border-strong); font-size: 15px; cursor: pointer; text-decoration: none; display: inline-block; }
@@ -46,7 +46,7 @@
 
   .divider { height: 0.5px; background: var(--border); margin: 0 28px; }
 
-  .section { padding: 44px 28px; }
+  .section { padding: 24px 28px; }
   .s-label { font-size: 11px; color: var(--text-3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
   .s-title { font-size: 24px; font-weight: 600; color: var(--text); margin-bottom: 4px; letter-spacing: -0.5px; }
   .s-sub { font-size: 13px; color: var(--text-3); margin-bottom: 22px; }
@@ -133,7 +133,7 @@
   .em-btn { width: 100%; background: var(--text); color: var(--bg); border: none; border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer; font-weight: 500; }
   .em-btn:hover { opacity: 0.88; }
 
-  .how-section { padding: 36px 28px 32px; }
+  .how-section { padding: 24px 28px 20px; }
   .steps { display: flex; position: relative; margin-top: 20px; }
   .step-line { position: absolute; top: 14px; left: 14%; right: 14%; height: 0.5px; background: var(--border); }
   .step { flex: 1; text-align: center; padding: 0 4px; }
@@ -141,7 +141,7 @@
   .step h4 { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
   .step p { font-size: 11px; color: var(--text-2); line-height: 1.4; }
 
-  .faq-section { padding: 36px 28px; }
+  .faq-section { padding: 24px 28px; }
   .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 20px; }
   .faq-item { border-top: 0.5px solid var(--border); padding: 16px 0; cursor: pointer; }
   .faq-item:last-child { border-bottom: 0.5px solid var(--border); }
@@ -152,7 +152,7 @@
   .faq-a { font-size: 13px; color: var(--text-2); line-height: 1.65; margin-top: 10px; display: none; }
   .faq-item.open .faq-a { display: block; }
 
-  .reviews-section { padding: 36px 28px; }
+  .reviews-section { padding: 24px 28px; }
   .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 20px; margin-bottom: 28px; }
   .review-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 12px; padding: 18px; }
   .review-stars { color: #F5A623; font-size: 14px; margin-bottom: 8px; letter-spacing: 1px; }
@@ -173,11 +173,11 @@
   .rf-submit:hover { opacity: 0.9; }
   .review-success { text-align: center; padding: 20px; font-size: 14px; color: var(--teal-tag); display: none; }
 
-  footer { background: var(--card); border-top: 0.5px solid var(--border); padding: 24px 28px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+  footer { background: var(--card); border-top: 0.5px solid var(--border); padding: 20px 28px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
   .foot-left { font-size: 13px; color: var(--text-2); line-height: 1.5; }
   .foot-left strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 2px; }
   .foot-center { display: flex; justify-content: center; }
-  .foot-center img { height: 110px; width: auto; opacity: 1; }
+  .foot-center img { height: 330px; width: auto; opacity: 1; }
   .foot-links { display: flex; justify-content: flex-end; gap: 18px; }
   .foot-links a { font-size: 13px; color: var(--text-3); text-decoration: none; }
   .foot-links a:hover { color: var(--text); }
@@ -187,12 +187,12 @@
   @media (max-width: 600px) {
     nav { padding: 14px 16px; }
     .nav-links { display: none; }
-    .hero { padding: 48px 16px 20px; }
-    .section, .how-section, .faq-section, .reviews-section { padding: 32px 16px; }
+    .hero { padding: 20px 16px 10px; }
+    .section, .how-section, .faq-section, .reviews-section { padding: 20px 16px; }
     .divider { margin: 0 16px; }
     footer { grid-template-columns: 1fr; text-align: center; padding: 20px 16px; gap: 16px; }
     .foot-left { font-size: 12px; }
-    .foot-center img { height: 80px; }
+    .foot-center img { height: 240px; }
     .foot-links { justify-content: center; }
   }
 </style>
@@ -216,7 +216,7 @@
 
 <section class="hero">
   <h1>Your <em>tab</em> store.</h1>
-  <div class="hero-sub">High quality PDFs, Tracks, Backing Tracks and Guitar Pro files</div>
+  <div class="hero-sub">PDFs · Tracks · Backing Tracks · Guitar Pro files</div>
   <p>Pick a song, choose what you need, get your files.</p>
   <div class="hero-btns">
     <a href="#catalog" class="btn-dark">Browse tabs</a>
@@ -229,7 +229,7 @@
 <section class="section" id="catalog">
   <div class="s-label">Pick a song</div>
   <div class="s-title">Available <span style="color:var(--red);">tabs</span></div>
-  <div class="s-sub">PDF, Tracks, Backing Tracks and Guitar Pro files — every <span style="color:var(--red);font-weight:500;">tab</span> you need</div>
+  <div class="s-sub">Every <span style="color:var(--red);font-weight:500;">tab</span> you need: PDF, Tracks, Backing Tracks, Guitar Pro</div>
 
   <div class="search-bar">
     <input class="search-input" id="search-input" type="search" placeholder="Search songs..." oninput="onSearch(this.value)">
@@ -292,7 +292,7 @@
   <div class="faq-list" id="faq-list">
     <div class="faq-item">
       <div class="faq-q"><span>How do I receive my files after payment?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">Once you place your order and complete the UPI payment, your files will be sent to you via the same channel you used to order — WhatsApp or email.</div>
+      <div class="faq-a">Once you place your order and complete the UPI payment, your files will be sent to you via the same channel you used to order via WhatsApp or email.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span>How long does delivery take?</span><span class="faq-icon">+</span></div>
@@ -304,7 +304,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q"><span>Which UPI apps are accepted?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">You can pay via any UPI app — Google Pay, PhonePe, Paytm, BHIM, or any other UPI-enabled app. A QR code will be shared with you after you place your order.</div>
+      <div class="faq-a">You can pay via any UPI app: Google Pay, PhonePe, Paytm, BHIM, or any other UPI-enabled app. A QR code will be shared with you after you place your order.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span>What is a Guitar Pro file?</span><span class="faq-icon">+</span></div>
@@ -430,7 +430,7 @@ function renderGrid() {
   const list = getFilteredList();
   const grid = document.getElementById('cards-grid');
   if (!list.length) {
-    grid.innerHTML = `<div class="empty">${searchQuery ? 'No songs found for "' + searchQuery + '"' : 'No songs in this category yet — check back soon.'}</div>`;
+    grid.innerHTML = `<div class="empty">${searchQuery ? 'No songs found for "' + searchQuery + '"' : 'No songs in this category yet, check back soon.'}</div>`;
     return;
   }
   grid.innerHTML = list.map(s => `
@@ -503,17 +503,18 @@ function toggleAsset(key) {
   updateTotal();
 }
 
-function assetRowHTML(key, label) {
+function assetRowHTML(key, label, saving = '') {
   const a = selectedSong.assets[key];
   if (!a) return '';
   let meta = '';
   if (key === 'pdf') meta = `${a.pages} page${a.pages !== 1 ? 's' : ''} · ${a.note}`;
   else meta = a.note;
+  const savingBadge = saving ? `<span style="font-size:10px;background:#E1F5EE;color:#0F6E56;border:0.5px solid #9FE1CB;border-radius:8px;padding:2px 7px;margin-left:6px;">${saving}</span>` : '';
   return `
     <div class="a-row" id="arow-${key}" onclick="toggleAsset('${key}')">
       <input type="checkbox" id="cb-${key}" onclick="event.stopPropagation(); toggleAsset('${key}')" aria-label="${label}">
       <div class="a-info">
-        <div class="a-name">${label}</div>
+        <div class="a-name">${label}${savingBadge}</div>
         <div class="a-meta">${meta}</div>
       </div>
       <div class="a-price">₹${a.price}</div>
@@ -556,7 +557,7 @@ function openDetail(id) {
          <button class="play-btn" id="play-btn" onclick="togglePlay()">▶</button>
          <div class="preview-info">
            <div class="preview-label">Preview</div>
-           <div class="preview-note">Short clip — get a feel for the arrangement</div>
+           <div class="preview-note">Short clip, get a feel for the arrangement</div>
          </div>
          <audio id="preview-audio" src="${selectedSong.preview}" onended="stopAudio()"></audio>
        </div>` : '';
@@ -574,10 +575,14 @@ function openDetail(id) {
       ${previewBlock}
       <div class="choose-label">Choose what you want</div>
       <div class="asset-rows">
-        ${assetRowHTML('pdf',    'PDF — staff notation and tabs')}
+        ${assetRowHTML('pdf',    'PDF, staff notation and tabs')}
         ${assetRowHTML('tracks', 'Track and backing track')}
         ${assetRowHTML('gp',     'Guitar Pro file (.gp)')}
-        ${selectedSong.assets.bundle ? '<div class="bundle-divider"></div>' + assetRowHTML('bundle', 'Full bundle') : ''}
+        ${selectedSong.assets.bundle ? (() => {
+          const individualTotal = (selectedSong.assets.pdf ? selectedSong.assets.pdf.price : 0) + (selectedSong.assets.tracks ? selectedSong.assets.tracks.price : 0) + (selectedSong.assets.gp ? selectedSong.assets.gp.price : 0);
+          const saving = individualTotal - selectedSong.assets.bundle.price;
+          return '<div class="bundle-divider"></div>' + assetRowHTML('bundle', 'Full bundle', saving > 0 ? `Save ₹${saving}` : '');
+        })() : ''}
       </div>
       <div class="total-row">
         <span>Total</span>
