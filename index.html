@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rohit Tabs — Guitar and Ukulele Tabs</title>
+<title>Rohit Tabs Guitar and Ukulele Tabs</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -197,7 +197,7 @@
 </nav>
 
 <section class="hero">
-  <h1>Play it by <em>tab.</em></h1>
+  <h1>Your tab <em>store.</em></h1>
   <div class="hero-sub">High quality PDFs, Tracks, Backing Tracks and Guitar Pro files</div>
   <p>Pick a song, choose what you need, get your files.</p>
   <div class="hero-btns">
@@ -243,7 +243,7 @@
   <div class="faq-list" id="faq-list">
     <div class="faq-item">
       <div class="faq-q"><span>How do I receive my files after payment?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">Once you place your order and complete the UPI payment, your files will be sent to you via the same channel you used to order — WhatsApp or email.</div>
+      <div class="faq-a">Once you place your order and complete the UPI payment, your files will be sent to you via the same channel you used to order WhatsApp or email.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span>How long does delivery take?</span><span class="faq-icon">+</span></div>
@@ -255,7 +255,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q"><span>Which UPI apps are accepted?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">You can pay via any UPI app — Google Pay, PhonePe, Paytm, BHIM, or any other UPI-enabled app. A QR code will be shared with you after you place your order.</div>
+      <div class="faq-a">You can pay via any UPI app Google Pay, PhonePe, Paytm, BHIM, or any other UPI-enabled app. A QR code will be shared with you after you place your order.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span>What is a Guitar Pro file?</span><span class="faq-icon">+</span></div>
@@ -270,14 +270,15 @@
 
 <div class="divider"></div>
 
-<section class="sig-section">
-  <img src="Rohit-Mishra-black-high-res.png" alt="Rohit Mishra — Music Educator">
-</section>
+
 
 <footer>
   <div class="foot-left">
     <strong>rohittabs.in</strong><br>
     High quality PDFs, Tracks, Backing Tracks and Guitar Pro files
+  </div>
+  <div style="text-align:center;">
+    <img src="Rohit-Mishra-black-high-res.png" alt="Rohit Mishra Music Educator" style="height:60px;width:auto;opacity:0.85;">
   </div>
   <div class="foot-links">
     <a href="https://wa.me/919711431855" target="_blank">WhatsApp</a>
@@ -320,7 +321,7 @@ function pillsHTML(s) {
 function renderGrid() {
   const list = activeFilter === 'all' ? songs : songs.filter(s => s.type === activeFilter);
   const grid = document.getElementById('cards-grid');
-  if (!list.length) { grid.innerHTML = '<div class="empty">No songs in this category yet — check back soon.</div>'; return; }
+  if (!list.length) { grid.innerHTML = '<div class="empty">No songs in this category yet check back soon.</div>'; return; }
   grid.innerHTML = list.map(s => `
     <div class="song-card${selectedSong && selectedSong.id === s.id ? ' selected' : ''}"
          onclick="openDetail(${s.id})" role="button" tabindex="0" aria-label="Select ${s.title}">
@@ -435,7 +436,7 @@ function openDetail(id) {
          <button class="play-btn" id="play-btn" onclick="togglePlay()">▶</button>
          <div class="preview-info">
            <div class="preview-label">Preview</div>
-           <div class="preview-note">Short clip — get a feel for the arrangement</div>
+           <div class="preview-note">Short clip get a feel for the arrangement</div>
          </div>
          <audio id="preview-audio" src="${selectedSong.preview}" onended="stopAudio()"></audio>
        </div>`
@@ -454,8 +455,8 @@ function openDetail(id) {
       ${previewBlock}
       <div class="choose-label">Choose what you want</div>
       <div class="asset-rows">
-        ${assetRowHTML('pdf',    'PDF — staff notation and tabs')}
-        ${assetRowHTML('tracks', 'Track and backing track')}
+        ${assetRowHTML('pdf',    'PDF staff notation and tabs')}
+        ${assetRowHTML('tracks', 'Track and Backing track')}
         ${assetRowHTML('gp',     'Guitar Pro file (.gp)')}
         ${selectedSong.assets.bundle ? '<div class="bundle-divider"></div>' + assetRowHTML('bundle', 'Full bundle') : ''}
       </div>
@@ -501,10 +502,10 @@ function buildOrderSummary() {
   const name  = (document.getElementById('inp-name')?.value  || '').trim() || 'not provided';
   const email = (document.getElementById('inp-email')?.value || '').trim() || 'not provided';
   const items = [];
-  if (checked.pdf    && selectedSong.assets.pdf)    items.push(`PDF — ₹${selectedSong.assets.pdf.price}`);
-  if (checked.tracks && selectedSong.assets.tracks) items.push(`Track and backing track — ₹${selectedSong.assets.tracks.price}`);
-  if (checked.gp     && selectedSong.assets.gp)     items.push(`Guitar Pro file — ₹${selectedSong.assets.gp.price}`);
-  if (checked.bundle && selectedSong.assets.bundle) items.push(`Full bundle — ₹${selectedSong.assets.bundle.price}`);
+  if (checked.pdf    && selectedSong.assets.pdf)    items.push(`PDF ₹${selectedSong.assets.pdf.price}`);
+  if (checked.tracks && selectedSong.assets.tracks) items.push(`Track and backing track ₹${selectedSong.assets.tracks.price}`);
+  if (checked.gp     && selectedSong.assets.gp)     items.push(`Guitar Pro file ₹${selectedSong.assets.gp.price}`);
+  if (checked.bundle && selectedSong.assets.bundle) items.push(`Full bundle ₹${selectedSong.assets.bundle.price}`);
   return { name, email, items, total: calcTotal() };
 }
 
