@@ -5,13 +5,13 @@
     "movie": "Dil Apna Aur Preet Parayi",
     "type": "Guitar",
     "style": "Chord Melody",
-    "coverage": "Main Intro · Verse · Chorus · Bridge",
+    "preview": "previews/ajeeb-daastan-preview.mp3",
     "sample": "samples/ajeeb_daastan_hai_yeh_guitar_tab_page1.png",
     "assets": {
       "pdf":     { "price": 79,  "pages": 1, "note": "Staff notation and tabs" },
-      "track":   { "price": 99,  "duration": "3:30", "note": "Full song" },
-      "backing": { "price": 99,  "duration": "3:30", "note": "No lead guitar" },
-      "bundle":  { "price": 249, "note": "PDF + Track + Backing track — save ₹28" }
+      "tracks":  { "price": 149, "note": "Full song track and backing track" },
+      "gp":      { "price": 199, "note": "Guitar Pro file — view and play only, password protected" },
+      "bundle":  { "price": 349, "note": "PDF + Tracks + Guitar Pro file" }
     }
   }
 ]
