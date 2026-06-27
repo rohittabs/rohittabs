@@ -8,9 +8,9 @@
     "preview": "previews/Ajeeb Daastan Hai Yeh (Chord Melody)_[cut_15sec].mp3",
     "sample": "samples/ajeeb_daastan_hai_yeh_guitar_tab_page1.png",
     "assets": {
-      "pdf":     { "price": 79,  "pages": 1, "note": "Staff notation and tabs" },
-      "tracks":  { "price": 149, "note": "Full song track and backing track" },
-      "gp":      { "price": 199, "note": "Guitar Pro file — view and play only, password protected" },
+      "pdf":     { "price": 79,  "pages": 3, "note": "Staff notation and tabs" },
+      "tracks":  { "price": 149, "note": "Track and Backing Track for play along, reference and practice" },
+      "gp":      { "price": 199, "note": "Guitar Pro file, view and play only, password protected" },
       "bundle":  { "price": 349, "note": "PDF + Tracks + Guitar Pro file" }
     }
   }
