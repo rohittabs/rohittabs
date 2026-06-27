@@ -3,340 +3,486 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>RohitTabs | Guitar & Ukulele Tabs for Teachers & Music Schools</title>
-
-<meta name="description" content="High quality guitar and ukulele tabs, playalongs, backing tracks and Guitar Pro files designed for teachers, students and music schools in India.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://rohittabs.in/">
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<!-- FAQ Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What do I receive?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Files listed for the selected song including PDFs, tracks, or Guitar Pro files."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does duration mean?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Duration refers to the provided track length."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Guitar Pro file details",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Guitar Pro file is non-editable. You can slow the tempo, loop sections, transpose sections, and mute or unmute parts. Editable Guitar Pro files are available at extra cost depending on song duration."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I request a custom song or file?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Message on WhatsApp before purchasing to discuss feasibility and pricing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Refund policy",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "All sales are final. Once payment is completed and files are delivered, no refunds are provided. Technical issues will be fixed or re-sent."
-      }
-    }
-  ]
-}
-</script>
-
+<title>Rohit Tabs — Guitar and Ukulele Tabs</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-body{
-font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
-background:#fff;
-color:#111;
-line-height:1.6;
-overflow-x:hidden
-}
+  :root {
+    --red: #E24B4A;
+    --red-bg: #FCEBEB;
+    --red-border: #F7C1C1;
+    --blue-tag: #185FA5;
+    --blue-bg: #E6F1FB;
+    --green-tag: #3B6D11;
+    --green-bg: #EAF3DE;
+    --purple-tag: #534AB7;
+    --purple-bg: #EEEDFE;
+    --purple-border: #AFA9EC;
+    --teal-tag: #0F6E56;
+    --teal-bg: #E1F5EE;
+    --teal-border: #9FE1CB;
+    --amber-tag: #854F0B;
+    --amber-bg: #FAEEDA;
+    --amber-border: #FAC775;
+    --wa: #25D366;
+    --text: #1a1a1a;
+    --text-2: #555;
+    --text-3: #888;
+    --bg: #f5f5f3;
+    --card: #fff;
+    --border: rgba(0,0,0,0.1);
+    --border-strong: rgba(0,0,0,0.18);
+    --radius: 8px;
+  }
 
-/* Header */
-header{
-padding:20px 20px 0;
-text-align:center;
-background:#000
-}
-header img{width:60px}
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #f0f0ee;
+      --text-2: #aaa;
+      --text-3: #666;
+      --bg: #161614;
+      --card: #1e1e1c;
+      --border: rgba(255,255,255,0.1);
+      --border-strong: rgba(255,255,255,0.18);
+    }
+  }
 
-/* Sections */
-section{padding:120px 20px}
-.section-dark{background:#000;color:#fff}
-.section-light{background:#fff;color:#111}
-.container{max-width:1200px;margin:0 auto}
-.center{text-align:center}
+  html { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; }
+  body { background: var(--bg); color: var(--text); }
 
-/* Typography */
-h1{
-font-size:56px;
-font-weight:600;
-margin:24px 0 16px;
-white-space:nowrap;
-}
-h2{font-size:36px;font-weight:600;margin-bottom:24px}
-h3{font-size:20px;font-weight:500;margin-bottom:8px}
-p{font-size:17px;opacity:.85}
+  /* NAV */
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 28px; border-bottom: 0.5px solid var(--border);
+    position: sticky; top: 0; background: var(--bg); z-index: 10;
+  }
+  .logo { font-size: 18px; font-weight: 600; color: var(--text); letter-spacing: -0.3px; text-decoration: none; }
+  .logo span { color: var(--red); }
+  .nav-links { display: flex; gap: 20px; }
+  .nav-links a { font-size: 13px; color: var(--text-2); text-decoration: none; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    font-size: 13px; background: var(--text); color: var(--bg);
+    padding: 7px 16px; border-radius: 20px; border: none; cursor: pointer; text-decoration: none;
+  }
 
-/* Buttons */
-.btn{
-display:inline-block;
-padding:14px 32px;
-border-radius:999px;
-border:1.5px solid #0071e3;
-color:#0071e3;
-text-decoration:none;
-font-weight:500;
-transition:all .25s ease
-}
-.btn:hover{background:#0071e3;color:#fff}
+  /* HERO */
+  .hero { padding: 64px 28px 48px; text-align: center; }
+  .hero h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 600; line-height: 1.12; letter-spacing: -1.5px; color: var(--text); margin-bottom: 14px; }
+  .hero h1 em { font-style: normal; color: var(--red); }
+  .hero p { font-size: 16px; color: var(--text-2); max-width: 420px; margin: 0 auto 28px; line-height: 1.65; }
+  .hero-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn-dark { background: var(--text); color: var(--bg); padding: 12px 28px; border-radius: 24px; border: none; font-size: 15px; cursor: pointer; text-decoration: none; display: inline-block; }
+  .btn-outline { background: transparent; color: var(--text); padding: 12px 28px; border-radius: 24px; border: 0.5px solid var(--border-strong); font-size: 15px; cursor: pointer; text-decoration: none; display: inline-block; }
+  .btn-dark:hover { opacity: 0.88; }
+  .btn-outline:hover { background: var(--card); }
 
-/* Hero */
-.hero img{
-width:100%;
-max-width:900px;
-margin:48px auto 0;
-display:block
-}
+  /* DIVIDER */
+  .divider { height: 0.5px; background: var(--border); margin: 0 28px; }
 
-/* Split */
-.split{
-display:grid;
-grid-template-columns:1fr;
-gap:64px;
-align-items:center
-}
-.split img{
-width:100%;
-border-radius:18px
-}
-@media(min-width:900px){
-.split{grid-template-columns:1fr 1fr}
-.reverse{direction:rtl}
-.reverse>*{direction:ltr}
-}
+  /* SECTION */
+  .section { padding: 44px 28px; }
+  .s-label { font-size: 11px; color: var(--text-3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
+  .s-title { font-size: 24px; font-weight: 600; color: var(--text); margin-bottom: 4px; letter-spacing: -0.5px; }
+  .s-sub { font-size: 14px; color: var(--text-2); margin-bottom: 22px; }
 
-/* Cards */
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;
-margin-top:48px
-}
-.card{
-padding:48px 36px;
-border-radius:22px;
-background:#f5f5f7;
-text-align:center
-}
-.section-dark .card{background:#111}
+  /* FILTERS */
+  .filters { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
+  .f-btn {
+    font-size: 13px; padding: 7px 16px; border-radius: 20px;
+    border: 0.5px solid var(--border-strong); background: transparent;
+    color: var(--text-2); cursor: pointer; transition: all 0.15s;
+  }
+  .f-btn:hover { color: var(--text); border-color: var(--text); }
+  .f-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
 
-/* Catalogue */
-iframe{
-width:100%;
-height:600px;
-border:none;
-border-radius:18px
-}
+  /* CARDS GRID */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: 12px; }
 
-/* FAQ */
-.faq-item{
-border-bottom:1px solid rgba(0,0,0,.15);
-padding:20px 0;
-cursor:pointer
-}
-.faq-item h3{
-display:flex;
-justify-content:space-between;
-align-items:center
-}
-.faq-item p{
-max-height:0;
-overflow:hidden;
-transition:max-height .4s ease
-}
-.faq-item.active p{
-max-height:700px;
-margin-top:12px
-}
+  .song-card {
+    background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 14px; padding: 18px; cursor: pointer;
+    transition: border-color 0.15s, transform 0.1s;
+  }
+  .song-card:hover { border-color: var(--border-strong); }
+  .song-card:active { transform: scale(0.98); }
+  .song-card.selected { border-color: var(--red); border-width: 1.5px; }
 
-/* QR */
-.qr{
-width:220px;
-margin:24px auto 16px;
-display:block
-}
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 11px; }
+  .tag { font-size: 11px; border-radius: 10px; padding: 3px 9px; font-weight: 500; }
+  .tag-guitar  { color: var(--blue-tag);   background: var(--blue-bg); }
+  .tag-ukulele { color: var(--green-tag);  background: var(--green-bg); }
+  .see-sample-btn { font-size: 11px; color: var(--red); background: none; border: none; cursor: pointer; padding: 0; }
+  .see-sample-btn:hover { text-decoration: underline; }
 
-/* Footer */
-footer{
-background:#fff;
-color:#111;
-padding:40px 20px;
-text-align:center
-}
+  .song-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .song-movie { font-size: 11px; color: var(--text-3); margin-bottom: 6px; }
+  .song-cov   { font-size: 11px; color: var(--text-2); margin-bottom: 10px; line-height: 1.45; }
 
-/* Fade */
-.fade{
-opacity:0;
-transform:translateY(30px);
-transition:all .8s ease
-}
-.fade.show{
-opacity:1;
-transform:none
-}
+  .asset-pills { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 11px; }
+  .ap { font-size: 10px; padding: 2px 7px; border-radius: 8px; border: 0.5px solid var(--border); color: var(--text-2); }
+  .ap-pdf  { color: var(--purple-tag); background: var(--purple-bg); border-color: var(--purple-border); }
+  .ap-trk  { color: var(--teal-tag);   background: var(--teal-bg);   border-color: var(--teal-border); }
+  .ap-back { color: var(--amber-tag);  background: var(--amber-bg);  border-color: var(--amber-border); }
 
-/* Mobile title fix */
-@media (max-width:480px){
-h1{
-font-size:32px;
-white-space:nowrap;
-}
-}
+  .card-foot { display: flex; justify-content: space-between; align-items: center; }
+  .from-price { font-size: 12px; color: var(--text-3); }
+  .from-price strong { font-size: 15px; font-weight: 600; color: var(--text); }
+
+  /* DETAIL PANEL */
+  .detail-panel {
+    background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 14px; padding: 22px; margin-top: 16px;
+  }
+  .d-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+  .d-title { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .d-sub { font-size: 12px; color: var(--text-3); }
+  .close-btn { font-size: 22px; color: var(--text-3); background: none; border: none; cursor: pointer; line-height: 1; padding: 0 2px; }
+  .close-btn:hover { color: var(--text); }
+
+  .sample-box {
+    background: var(--bg); border: 0.5px solid var(--border);
+    border-radius: var(--radius); overflow: hidden; margin-bottom: 16px;
+  }
+  .sample-box img { width: 100%; max-height: 180px; object-fit: cover; display: block; }
+  .sample-placeholder { padding: 24px; text-align: center; font-size: 13px; color: var(--text-3); }
+
+  .choose-label { font-size: 12px; color: var(--text-3); margin-bottom: 10px; }
+
+  .asset-rows { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .a-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 15px; border: 0.5px solid var(--border);
+    border-radius: var(--radius); cursor: pointer; transition: border-color 0.12s;
+  }
+  .a-row:hover { border-color: var(--border-strong); }
+  .a-row.on { border-color: var(--red); background: var(--red-bg); }
+  .a-row input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--red); flex-shrink: 0; cursor: pointer; }
+  .a-info { flex: 1; }
+  .a-name { font-size: 13px; font-weight: 500; color: var(--text); }
+  .a-meta { font-size: 11px; color: var(--text-2); margin-top: 2px; }
+  .a-price { font-size: 14px; font-weight: 600; color: var(--text); }
+
+  .total-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 13px 0; border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border); margin-bottom: 14px;
+  }
+  .total-row span { font-size: 13px; color: var(--text-2); }
+  .total-row strong { font-size: 20px; font-weight: 600; color: var(--text); }
+
+  .order-fields { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .order-fields input {
+    flex: 1; min-width: 130px; padding: 10px 13px;
+    border: 0.5px solid var(--border-strong); border-radius: var(--radius);
+    font-size: 14px; background: var(--bg); color: var(--text);
+  }
+  .order-fields input:focus { outline: none; border-color: var(--red); }
+
+  .wa-btn {
+    width: 100%; background: var(--wa); color: #fff; border: none;
+    border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer;
+    margin-bottom: 8px; font-weight: 500;
+  }
+  .wa-btn:hover { opacity: 0.9; }
+  .or-row { text-align: center; font-size: 12px; color: var(--text-3); margin: 6px 0; }
+  .em-btn {
+    width: 100%; background: var(--text); color: var(--bg); border: none;
+    border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer; font-weight: 500;
+  }
+  .em-btn:hover { opacity: 0.88; }
+
+  /* HOW IT WORKS */
+  .how-section { padding: 36px 28px 32px; }
+  .steps { display: flex; position: relative; margin-top: 20px; }
+  .step-line { position: absolute; top: 14px; left: 14%; right: 14%; height: 0.5px; background: var(--border); }
+  .step { flex: 1; text-align: center; padding: 0 4px; }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--card); border: 0.5px solid var(--border);
+    font-size: 12px; font-weight: 600; color: var(--text);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 9px; position: relative; z-index: 1;
+  }
+  .step h4 { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .step p { font-size: 11px; color: var(--text-2); line-height: 1.4; }
+
+  /* FOOTER */
+  footer {
+    background: var(--card); border-top: 0.5px solid var(--border);
+    padding: 20px 28px; display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 12px;
+  }
+  footer p { font-size: 13px; color: var(--text-2); }
+  .foot-links { display: flex; gap: 18px; }
+  .foot-links a { font-size: 13px; color: var(--text-3); text-decoration: none; }
+  .foot-links a:hover { color: var(--text); }
+
+  /* EMPTY STATE */
+  .empty { text-align: center; padding: 40px 20px; color: var(--text-3); font-size: 14px; }
+
+  @media (max-width: 500px) {
+    nav { padding: 14px 16px; }
+    .nav-links { display: none; }
+    .hero { padding: 48px 16px 36px; }
+    .section, .how-section { padding: 32px 16px; }
+    .divider { margin: 0 16px; }
+    footer { padding: 18px 16px; }
+  }
 </style>
 </head>
-
 <body>
 
-<header>
-<img src="logo.png" alt="RohitTabs">
-</header>
+<nav>
+  <a href="/" class="logo">rohit<span>tabs</span></a>
+  <div class="nav-links">
+    <a href="#catalog">Guitar</a>
+    <a href="#catalog">Ukulele</a>
+    <a href="#how">How it works</a>
+  </div>
+  <a href="#catalog" class="nav-cta">Order now</a>
+</nav>
 
-<section class="section-dark hero">
-<div class="container center fade">
-<h1>Teach • Inspire • Create</h1>
-<p>High quality tabs, playalongs, backing tracks & Guitar Pro files designed for teachers, students, and music schools.</p>
-<br>
-<a href="#products" class="btn">Explore Tabs</a>
-<img src="hero.png" alt="Guitar and Ukulele Tabs">
-</div>
+<section class="hero">
+  <h1>Play it by <em>tab.</em></h1>
+  <p>Guitar and ukulele tabs with backing tracks. Pick a song, choose what you need, get your files.</p>
+  <div class="hero-btns">
+    <a href="#catalog" class="btn-dark">Browse tabs</a>
+    <a href="#catalog" class="btn-outline">See samples</a>
+  </div>
 </section>
 
-<section class="section-light">
-<div class="container split fade">
-<div>
-<h2>Built to teach & inspire learning</h2>
-<p>Structured tabs & tracks created for effective teaching and focused practice.</p>
-</div>
-<img src="product.png" alt="Tab preview">
-</div>
+<div class="divider"></div>
+
+<section class="section" id="catalog">
+  <div class="s-label">Pick a song</div>
+  <div class="s-title">Available tabs</div>
+  <div class="s-sub">Select a song to see what's available and choose exactly what you need</div>
+
+  <div class="filters" id="filters">
+    <button class="f-btn active" data-filter="all">All</button>
+    <button class="f-btn" data-filter="Guitar">Guitar</button>
+    <button class="f-btn" data-filter="Ukulele">Ukulele</button>
+  </div>
+
+  <div class="cards" id="cards-grid"></div>
+  <div id="detail-panel"></div>
 </section>
 
-<section class="section-dark">
-<div class="container split reverse fade">
-<div>
-<h2>Seamless payment process</h2>
-<p>Choose your song, pay via UPI, share the screenshot with the product code, and receive your files on WhatsApp within minutes.</p>
-</div>
-<img src="workflow.png" alt="Workflow">
-</div>
-</section>
+<div class="divider"></div>
 
-<section id="products" class="section-light">
-<div class="container center fade">
-<h2>Products</h2>
-
-<div class="cards">
-<div class="card">
-<h3>Guitar Tabs</h3>
-<p>PDFs, playalongs, backing tracks & Guitar Pro files</p>
-<strong>₹499</strong>
-</div>
-<div class="card">
-<h3>Ukulele Tabs</h3>
-<p>PDFs, playalongs, backing tracks & Guitar Pro files</p>
-<strong>₹499</strong>
-</div>
-<div class="card">
-<h3>Custom Files</h3>
-<p>Individual PDF, backing track or Guitar Pro file</p>
-<strong>₹149 each</strong>
-</div>
-</div>
-
-<br>
-<a href="#catalogue" class="btn">View Catalogue</a>
-</div>
-</section>
-
-<section id="catalogue" class="section-dark">
-<div class="container fade">
-<h2 class="center">Catalogue</h2>
-<iframe src="https://docs.google.com/spreadsheets/d/1Evp0SI9Qt5wleCRr0B7u7irW0i42XyiLO2fdSIRx8h0/edit?usp=sharing"></iframe>
-</div>
-</section>
-
-<section class="section-light">
-<div class="container fade">
-<h2 class="center">FAQs</h2>
-
-<div class="faq-item"><h3>What do I receive?<span>+</span></h3><p>Files listed for the selected song including PDFs, tracks, or Guitar Pro files.</p></div>
-<div class="faq-item"><h3>What does duration mean?<span>+</span></h3><p>Duration refers to the provided track length.</p></div>
-<div class="faq-item"><h3>Guitar Pro file details<span>+</span></h3><p>The Guitar Pro file is non-editable. Editable versions are available at extra cost.</p></div>
-<div class="faq-item"><h3>Can I request a custom song or file?<span>+</span></h3><p>Yes. Message on WhatsApp before purchasing.</p></div>
-<div class="faq-item"><h3>Refund policy<span>+</span></h3><p>All sales are final. Files once delivered are not refundable.</p></div>
-
-</div>
-</section>
-
-<section class="section-dark">
-<div class="container fade">
-<h2>About</h2>
-<p>Hi, my name is Rohit Mishra. I am a music educator specializing in guitar, ukulele, and music theory.</p>
-</div>
-</section>
-
-<section class="section-light">
-<div class="container center fade">
-<h2>Payment</h2>
-<div class="cards">
-<div class="card"><h3>UPI Payment</h3><img src="upi-qr.png" class="qr"><p>Scan and send screenshot on WhatsApp.</p></div>
-<div class="card"><h3>WhatsApp</h3><img src="whatsapp-qr.png" class="qr"><p>Message directly for confirmation.</p></div>
-</div>
-<br>
-<p>Email: rohittabs@gmail.com</p>
-</div>
+<section class="how-section" id="how">
+  <div class="s-label">How it works</div>
+  <div class="s-title">Four simple steps</div>
+  <div class="steps">
+    <div class="step-line"></div>
+    <div class="step"><div class="step-num">1</div><h4>Pick a song</h4><p>Browse the catalog</p></div>
+    <div class="step"><div class="step-num">2</div><h4>Choose what you need</h4><p>PDF, track, or backing</p></div>
+    <div class="step"><div class="step-num">3</div><h4>Scan UPI QR</h4><p>GPay, PhonePe, Paytm</p></div>
+    <div class="step"><div class="step-num">4</div><h4>Get your files</h4><p>Delivered to your inbox</p></div>
+  </div>
 </section>
 
 <footer>
-<p>© 2025 RohitTabs</p>
+  <p>rohittabs.in &nbsp;·&nbsp; Guitar and ukulele tabs by Rohit Mishra</p>
+  <div class="foot-links">
+    <a href="https://instagram.com/rohittabs" target="_blank">Instagram</a>
+    <a href="https://youtube.com/@rohittabs" target="_blank">YouTube</a>
+    <a href="https://wa.me/919999999999" target="_blank">WhatsApp</a>
+  </div>
 </footer>
 
 <script>
-document.querySelectorAll('.faq-item').forEach(i=>{
-i.onclick=()=>i.classList.toggle('active')
-})
-const f=document.querySelectorAll('.fade');
-const o=new IntersectionObserver(e=>{
-e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('show')})
-},{threshold:.15});
-f.forEach(el=>o.observe(el));
-</script>
+const YOUR_WHATSAPP = '919999999999'; // ← replace with your number
+const YOUR_EMAIL    = 'rohit@rohittabs.in'; // ← replace with your email
 
+let songs        = [];
+let activeFilter = 'all';
+let selectedSong = null;
+let checked      = { pdf: false, track: false, backing: false };
+
+async function loadSongs() {
+  const res = await fetch('songs.json');
+  songs = await res.json();
+  renderGrid();
+}
+
+function minPrice(s) {
+  return Math.min(...Object.values(s.assets).map(a => a.price));
+}
+
+function pillsHTML(s) {
+  let h = '';
+  if (s.assets.pdf)     h += '<span class="ap ap-pdf">PDF</span>';
+  if (s.assets.track)   h += '<span class="ap ap-trk">Track</span>';
+  if (s.assets.backing) h += '<span class="ap ap-back">Backing track</span>';
+  return h;
+}
+
+function renderGrid() {
+  const list = activeFilter === 'all' ? songs : songs.filter(s => s.type === activeFilter);
+  const grid = document.getElementById('cards-grid');
+  if (!list.length) {
+    grid.innerHTML = '<div class="empty">No songs in this category yet — check back soon.</div>';
+    return;
+  }
+  grid.innerHTML = list.map(s => `
+    <div class="song-card${selectedSong && selectedSong.id === s.id ? ' selected' : ''}"
+         onclick="openDetail(${s.id})" role="button" tabindex="0"
+         aria-label="Select ${s.title}">
+      <div class="card-top">
+        <span class="tag tag-${s.type.toLowerCase()}">${s.type}</span>
+        ${s.sample
+          ? `<button class="see-sample-btn" onclick="event.stopPropagation(); openDetail(${s.id})">👁 See sample</button>`
+          : ''}
+      </div>
+      <div class="song-title">${s.title}</div>
+      <div class="song-movie">${s.movie}</div>
+      <div class="song-cov">${s.style} · ${s.coverage}</div>
+      <div class="asset-pills">${pillsHTML(s)}</div>
+      <div class="card-foot">
+        <div class="from-price">from <strong>₹${minPrice(s)}</strong></div>
+        <span style="font-size:11px;color:var(--text-3);">Select →</span>
+      </div>
+    </div>`).join('');
+}
+
+function setFilter(f) {
+  activeFilter = f;
+  selectedSong = null;
+  checked = { pdf: false, track: false, backing: false };
+  document.querySelectorAll('.f-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.filter === f);
+  });
+  renderGrid();
+  document.getElementById('detail-panel').innerHTML = '';
+}
+
+document.getElementById('filters').addEventListener('click', e => {
+  const btn = e.target.closest('.f-btn');
+  if (btn) setFilter(btn.dataset.filter);
+});
+
+function calcTotal() {
+  if (!selectedSong) return 0;
+  let t = 0;
+  if (checked.pdf     && selectedSong.assets.pdf)     t += selectedSong.assets.pdf.price;
+  if (checked.track   && selectedSong.assets.track)   t += selectedSong.assets.track.price;
+  if (checked.backing && selectedSong.assets.backing) t += selectedSong.assets.backing.price;
+  return t;
+}
+
+function updateTotal() {
+  const el = document.getElementById('order-total');
+  if (el) el.textContent = '₹' + calcTotal();
+}
+
+function toggleAsset(key) {
+  checked[key] = !checked[key];
+  const row = document.getElementById('arow-' + key);
+  const cb  = document.getElementById('cb-' + key);
+  if (row) row.classList.toggle('on', checked[key]);
+  if (cb)  cb.checked = checked[key];
+  updateTotal();
+}
+
+function assetRowHTML(key, label) {
+  const a = selectedSong.assets[key];
+  if (!a) return '';
+  const meta = key === 'pdf'
+    ? `${a.pages} page${a.pages !== 1 ? 's' : ''} · ${a.note}`
+    : `${a.duration} · ${a.note}`;
+  return `
+    <div class="a-row" id="arow-${key}" onclick="toggleAsset('${key}')">
+      <input type="checkbox" id="cb-${key}"
+             onclick="event.stopPropagation(); toggleAsset('${key}')"
+             aria-label="${label}">
+      <div class="a-info">
+        <div class="a-name">${label}</div>
+        <div class="a-meta">${meta}</div>
+      </div>
+      <div class="a-price">₹${a.price}</div>
+    </div>`;
+}
+
+function openDetail(id) {
+  selectedSong = songs.find(s => s.id === id);
+  checked = { pdf: false, track: false, backing: false };
+  renderGrid();
+
+  const sampleBlock = selectedSong.sample
+    ? `<div class="sample-box">
+         <img src="${selectedSong.sample}"
+              alt="Sample page from ${selectedSong.title}"
+              onerror="this.parentElement.innerHTML='<div class=\\'sample-placeholder\\'>Sample image — upload to your samples/ folder</div>'">
+       </div>`
+    : '';
+
+  document.getElementById('detail-panel').innerHTML = `
+    <div class="detail-panel">
+      <div class="d-head">
+        <div>
+          <div class="d-title">${selectedSong.title}</div>
+          <div class="d-sub">${selectedSong.movie} · ${selectedSong.type} · ${selectedSong.coverage}</div>
+        </div>
+        <button class="close-btn" onclick="closeDetail()" aria-label="Close">×</button>
+      </div>
+      ${sampleBlock}
+      <div class="choose-label">Choose what you want</div>
+      <div class="asset-rows">
+        ${assetRowHTML('pdf',     'PDF — staff notation and tabs')}
+        ${assetRowHTML('track',   'Track')}
+        ${assetRowHTML('backing', 'Backing track')}
+      </div>
+      <div class="total-row">
+        <span>Total</span>
+        <strong id="order-total">₹0</strong>
+      </div>
+      <div class="order-fields">
+        <input type="text"  id="inp-name"  placeholder="Your name">
+        <input type="email" id="inp-email" placeholder="Email address">
+      </div>
+      <button class="wa-btn" onclick="sendWhatsApp()">📲 Send order via WhatsApp</button>
+      <div class="or-row">or</div>
+      <button class="em-btn" onclick="sendEmail()">✉ Send order via email</button>
+    </div>`;
+
+  document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function closeDetail() {
+  selectedSong = null;
+  checked = { pdf: false, track: false, backing: false };
+  renderGrid();
+  document.getElementById('detail-panel').innerHTML = '';
+}
+
+function buildOrderSummary() {
+  const name  = (document.getElementById('inp-name')?.value  || '').trim() || 'not provided';
+  const email = (document.getElementById('inp-email')?.value || '').trim() || 'not provided';
+  const items = [];
+  if (checked.pdf     && selectedSong.assets.pdf)     items.push(`PDF — ₹${selectedSong.assets.pdf.price}`);
+  if (checked.track   && selectedSong.assets.track)   items.push(`Track — ₹${selectedSong.assets.track.price}`);
+  if (checked.backing && selectedSong.assets.backing) items.push(`Backing track — ₹${selectedSong.assets.backing.price}`);
+  return { name, email, items, total: calcTotal() };
+}
+
+function sendWhatsApp() {
+  const o = buildOrderSummary();
+  if (!o.items.length) { alert('Please select at least one item.'); return; }
+  const text = `Hi Rohit!\n\nOrder request:\nSong: ${selectedSong.title} (${selectedSong.type})\nItems: ${o.items.join(', ')}\nTotal: ₹${o.total}\nName: ${o.name}\nEmail: ${o.email}\n\nPlease send the UPI QR. Thanks!`;
+  window.open(`https://wa.me/${YOUR_WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+function sendEmail() {
+  const o = buildOrderSummary();
+  if (!o.items.length) { alert('Please select at least one item.'); return; }
+  const subject = `Tab order: ${selectedSong.title}`;
+  const body    = `Hi Rohit,\n\nOrder request:\nSong: ${selectedSong.title} (${selectedSong.type})\nItems: ${o.items.join(', ')}\nTotal: ₹${o.total}\nName: ${o.name}\nReply to: ${o.email}\n\nPlease send the UPI QR. Thanks!`;
+  window.open(`mailto:${YOUR_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+}
+
+loadSongs();
+</script>
 </body>
 </html>
