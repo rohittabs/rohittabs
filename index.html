@@ -3,268 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rohit Tabs Guitar and Ukulele Tabs</title>
+<title>Freebies · Rohit Tabs</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --red: #E24B4A; --red-bg: #FCEBEB; --red-border: #F7C1C1;
+    --red: #E24B4A;
     --blue-tag: #185FA5; --blue-bg: #E6F1FB;
     --green-tag: #3B6D11; --green-bg: #EAF3DE;
     --purple-tag: #534AB7; --purple-bg: #EEEDFE; --purple-border: #AFA9EC;
     --teal-tag: #0F6E56; --teal-bg: #E1F5EE; --teal-border: #9FE1CB;
     --amber-tag: #854F0B; --amber-bg: #FAEEDA; --amber-border: #FAC775;
-    --wa: #25D366;
     --text: #1a1a1a; --text-2: #555; --text-3: #888;
     --bg: #f5f5f3; --card: #fff;
     --border: rgba(0,0,0,0.1); --border-strong: rgba(0,0,0,0.18);
     --radius: 8px;
   }
-  html { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; color-scheme: light; }
+  html { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color-scheme: light; }
   body { background: var(--bg); color: var(--text); }
 
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 28px; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 10; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 28px; border-bottom: 0.5px solid var(--border); background: var(--bg); }
   .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-  .logo img { height: 32px; width: auto; display: block; }
+  .logo img { height: 32px; width: auto; }
   .logo-text { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; color: var(--text); }
-  .logo-text .red { color: #E24B4A; }
-  .nav-links { display: flex; gap: 20px; }
-  .nav-links a { font-size: 13px; color: var(--text-2); text-decoration: none; }
-  .nav-links a:hover { color: var(--text); }
-  .nav-cta { font-size: 13px; background: var(--text); color: var(--bg); padding: 7px 16px; border-radius: 20px; border: none; cursor: pointer; text-decoration: none; white-space: nowrap; }
+  .logo-text .red { color: var(--red); }
+  .back-btn { font-size: 13px; color: var(--text-2); text-decoration: none; display: flex; align-items: center; gap: 5px; }
+  .back-btn:hover { color: var(--text); }
 
-  .hero { padding: 36px 28px 20px; text-align: center; }
-  .hero h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; line-height: 1.12; letter-spacing: -1.5px; color: var(--text); margin-bottom: 12px; }
+  .hero { padding: 40px 28px 28px; }
+  .hero .s-label { font-size: 11px; color: var(--text-3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
+  .hero h1 { font-size: 32px; font-weight: 800; color: var(--text); letter-spacing: -1px; margin-bottom: 8px; }
   .hero h1 em { font-style: normal; color: var(--red); }
-  .hero-sub { font-size: 17px; color: var(--text-3); margin: 0 auto 14px; letter-spacing: 0.1px; text-align: center; display: block; }
-  .hero-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-  .btn-dark { background: var(--text); color: var(--bg); padding: 12px 28px; border-radius: 24px; border: none; font-size: 15px; cursor: pointer; text-decoration: none; display: inline-block; }
-  .btn-outline { background: transparent; color: var(--text); padding: 12px 28px; border-radius: 24px; border: 0.5px solid var(--border-strong); font-size: 15px; cursor: pointer; text-decoration: none; display: inline-block; }
-  .btn-dark:hover { opacity: 0.88; }
-  .btn-outline:hover { background: var(--card); }
+  .hero p { font-size: 14px; color: var(--text-3); }
 
   .divider { height: 0.5px; background: var(--border); margin: 0 28px; }
 
-  .section { padding: 32px 28px; }
-  .s-label { font-size: 11px; color: var(--text-3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
-  .s-title { font-size: 24px; font-weight: 800; color: var(--text); margin-bottom: 4px; letter-spacing: -0.8px; }
-  .s-sub { font-size: 13px; color: var(--text-3); margin-bottom: 22px; }
+  .grid-section { padding: 28px 28px; }
+  .grid-label { font-size: 11px; color: var(--text-3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 14px; }
+  .freebies-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
 
-  .portal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 4px; }
-  .portal-card { display: flex; align-items: flex-start; gap: 14px; background: var(--card); border: 0.5px solid var(--border); border-radius: 16px; padding: 22px; text-decoration: none; transition: border-color 0.15s, transform 0.1s; }
-  .portal-card:hover { border-color: var(--border-strong); transform: translateY(-1px); }
-  .portal-icon { font-size: 28px; flex-shrink: 0; }
-  .portal-body { flex: 1; }
-  .portal-title { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 5px; letter-spacing: -0.3px; }
-  .portal-desc { font-size: 12px; color: var(--text-2); line-height: 1.55; margin-bottom: 12px; }
-  .portal-cta { font-size: 12px; font-weight: 700; }
-  .portal-guitar .portal-cta  { color: var(--blue-tag); }
-  .portal-ukulele .portal-cta { color: var(--green-tag); }
-  .portal-freebies .portal-cta { color: var(--amber-tag); }
-  .portal-guitar:hover  { border-color: var(--blue-tag); }
-  .portal-ukulele:hover { border-color: var(--green-tag); }
-  .portal-freebies:hover { border-color: var(--amber-tag); }
+  .freebie-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; transition: border-color 0.15s; }
+  .freebie-card:hover { border-color: var(--border-strong); }
+  .freebie-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 12px; flex-shrink: 0; }
+  .freebie-icon-blue   { background: var(--blue-bg);   border: 0.5px solid rgba(24,95,165,0.2); }
+  .freebie-icon-green  { background: var(--teal-bg);   border: 0.5px solid var(--teal-border); }
+  .freebie-icon-purple { background: var(--purple-bg); border: 0.5px solid var(--purple-border); }
+  .freebie-icon-amber  { background: var(--amber-bg);  border: 0.5px solid var(--amber-border); }
+  .freebie-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-3); margin-bottom: 4px; }
+  .freebie-badge { display: inline-block; font-size: 10px; font-weight: 700; background: #E1F5EE; color: #0F6E56; border: 0.5px solid #9FE1CB; border-radius: 6px; padding: 2px 7px; margin-bottom: 8px; }
+  .freebie-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+  .freebie-desc { font-size: 12px; color: var(--text-2); line-height: 1.5; margin-bottom: 14px; flex: 1; }
+  .freebie-btn { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 0; border-radius: 22px; border: 0.5px solid var(--border-strong); background: transparent; color: var(--text); font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.15s; }
+  .freebie-btn:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
 
-  @media (max-width: 600px) { .portal-grid { grid-template-columns: 1fr; } }
-  .song-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 18px; cursor: pointer; transition: border-color 0.15s, transform 0.1s; }
-  .song-card:hover { border-color: var(--border-strong); }
-  .song-card:active { transform: scale(0.98); }
-  .song-card.selected { border-color: var(--red); border-width: 1.5px; }
-  .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 11px; }
-  .tag { font-size: 11px; border-radius: 10px; padding: 3px 9px; font-weight: 500; }
-  .tag-guitar  { color: var(--blue-tag);  background: var(--blue-bg); }
-  .tag-ukulele { color: var(--green-tag); background: var(--green-bg); }
-  .see-sample-btn { font-size: 11px; color: var(--red); background: none; border: none; cursor: pointer; padding: 0; }
-  .see-sample-btn:hover { text-decoration: underline; }
-  .song-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-  .song-movie { font-size: 11px; color: var(--text-3); margin-bottom: 6px; }
-  .song-style { font-size: 11px; color: var(--text-2); margin-bottom: 10px; }
-  .asset-pills { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 11px; }
-  .ap { font-size: 10px; padding: 2px 7px; border-radius: 8px; border: 0.5px solid var(--border); color: var(--text-2); }
-  .ap-pdf    { color: var(--purple-tag); background: var(--purple-bg); border-color: var(--purple-border); }
-  .ap-tracks { color: var(--teal-tag);   background: var(--teal-bg);   border-color: var(--teal-border); }
-  .ap-gp     { color: var(--amber-tag);  background: var(--amber-bg);  border-color: var(--amber-border); }
-  .card-foot { display: flex; justify-content: space-between; align-items: center; }
-  .from-price { font-size: 12px; color: var(--text-3); }
-  .from-price strong { font-size: 15px; font-weight: 600; color: var(--text); }
-
-  .detail-panel { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 22px; margin-top: 16px; }
-  .d-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
-  .d-title { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
-  .d-sub { font-size: 12px; color: var(--text-3); }
-  .close-btn { font-size: 22px; color: var(--text-3); background: none; border: none; cursor: pointer; line-height: 1; padding: 0 2px; }
-  .close-btn:hover { color: var(--text); }
-
-  .sample-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; cursor: pointer; }
-  .sample-overlay img { max-width: 100%; max-height: 90vh; border-radius: 8px; object-fit: contain; cursor: default; }
-  .sample-thumb { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; cursor: pointer; position: relative; }
-  .sample-thumb img { width: 100%; max-height: 160px; object-fit: cover; display: block; transition: opacity 0.15s; }
-  .sample-thumb:hover img { opacity: 0.85; }
-  .sample-thumb-label { position: absolute; bottom: 8px; right: 10px; font-size: 11px; background: rgba(0,0,0,0.6); color: #fff; padding: 3px 8px; border-radius: 10px; }
-  .sample-placeholder { padding: 24px; text-align: center; font-size: 13px; color: var(--text-3); }
-
-  .preview-player { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-  .play-btn { width: 36px; height: 36px; border-radius: 50%; background: var(--text); color: var(--bg); border: none; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .play-btn:hover { opacity: 0.85; }
-  .preview-info { flex: 1; }
-  .preview-label { font-size: 12px; font-weight: 500; color: var(--text); }
-  .preview-note  { font-size: 11px; color: var(--text-3); }
-  audio { display: none; }
-
-  .choose-label { font-size: 12px; color: var(--text-3); margin-bottom: 10px; }
-  .asset-rows { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
-  .a-row { display: flex; align-items: center; gap: 12px; padding: 13px 15px; border: 0.5px solid var(--border); border-radius: var(--radius); cursor: pointer; transition: border-color 0.12s; }
-  .a-row:hover { border-color: var(--border-strong); }
-  .a-row.on { border-color: var(--red); background: var(--red-bg); }
-  .a-row input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--red); flex-shrink: 0; cursor: pointer; }
-  .a-info { flex: 1; }
-  .a-name { font-size: 13px; font-weight: 600; color: var(--text); }
-  .a-meta { font-size: 11px; color: var(--text-2); margin-top: 2px; }
-  .a-price { font-size: 14px; font-weight: 600; color: var(--text); }
-  .bundle-divider { height: 0.5px; background: var(--border); margin: 4px 0; }
-
-  .total-row { display: flex; justify-content: space-between; align-items: center; padding: 13px 0; border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); margin-bottom: 14px; }
-  .total-row span { font-size: 13px; color: var(--text-2); }
-  .total-row strong { font-size: 20px; font-weight: 600; color: var(--text); }
-  .order-fields { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
-  .order-fields input { flex: 1; min-width: 130px; padding: 10px 13px; border: 0.5px solid var(--border-strong); border-radius: var(--radius); font-size: 14px; background: var(--bg); color: var(--text); }
-  .order-fields input:focus { outline: none; border-color: var(--red); }
-  .wa-btn { width: 100%; background: var(--wa); color: #fff; border: none; border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer; margin-bottom: 8px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px; }
-  .wa-btn:hover { opacity: 0.9; }
-  .or-row { text-align: center; font-size: 12px; color: var(--text-3); margin: 6px 0; }
-  .em-btn { width: 100%; background: var(--text); color: var(--bg); border: none; border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer; font-weight: 500; }
-  .em-btn:hover { opacity: 0.88; }
-
-  .freebies-section { padding: 32px 28px; }
-  .freebies-portal-card { display: flex; justify-content: space-between; align-items: center; gap: 20px; background: #1a1a1a; border-radius: 16px; padding: 24px; text-decoration: none; transition: opacity 0.15s; }
-  .freebies-portal-card:hover { opacity: 0.92; }
-  .fpc-left { flex: 1; }
-  .fpc-icons { font-size: 22px; margin-bottom: 10px; letter-spacing: 4px; }
-  .fpc-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; }
-  .fpc-desc { font-size: 13px; color: #888; line-height: 1.55; margin-bottom: 14px; }
-  .fpc-pills { display: flex; gap: 6px; flex-wrap: wrap; }
-  .fpc-pill { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 8px; background: rgba(255,255,255,0.08); color: #bbb; }
-  .fpc-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
-  .fpc-cta { font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap; }
-  .fpc-count { font-size: 11px; color: #555; white-space: nowrap; }
-
-  @media (max-width: 600px) {
-    .freebies-section { padding: 26px 16px; }
-    .freebies-portal-card { flex-direction: column; align-items: flex-start; }
-    .fpc-right { align-items: flex-start; }
-  }
-  .faq-section { padding: 32px 28px; }
-  .faq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
-  .faq-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 20px; cursor: pointer; transition: border-color 0.15s; }
-  .faq-card:hover { border-color: var(--border-strong); }
-  .faq-card.open { border-color: var(--red); }
-  .faq-card-num { font-size: 28px; font-weight: 900; color: rgba(0,0,0,0.06); line-height: 1; margin-bottom: 10px; }
-  .faq-card-q { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 0; line-height: 1.4; }
-  .faq-card-a { font-size: 12px; color: var(--text-2); line-height: 1.6; margin-top: 10px; display: none; }
-  .faq-card.open .faq-card-a { display: block; }
-  .faq-card.open .faq-card-num { color: rgba(226,75,74,0.15); }
-
-  .gp-card-section { padding: 0 28px 32px; }
-  .gp-card { background: #1a1a1a; border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 18px; }
-  .gp-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--amber-bg); border: 1px solid var(--amber-border); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
-  .gp-body { flex: 1; }
-  .gp-label { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--amber-tag); background: var(--amber-bg); border: 0.5px solid var(--amber-border); border-radius: 6px; padding: 2px 8px; display: inline-block; margin-bottom: 8px; }
-  .gp-title { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; }
-  .gp-desc { font-size: 13px; color: #888; line-height: 1.6; margin-bottom: 14px; }
-  .gp-badges { display: flex; gap: 8px; flex-wrap: wrap; }
-  .gp-badge { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 8px; }
-  .gp-badge-green { background: rgba(52,199,89,0.15); color: #34c759; }
-  .gp-badge-blue  { background: rgba(10,132,255,0.15); color: #0a84ff; }
-  .gp-badge-red   { background: rgba(255,69,58,0.15); color: #ff453a; }
-
-  footer { background: var(--card); border-top: 0.5px solid var(--border); padding: 16px 28px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; overflow: hidden; }
-  .foot-left { font-size: 13px; color: var(--text-2); line-height: 1.5; }
-  .foot-left strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 2px; }
-  .foot-center { display: flex; justify-content: center; overflow: hidden; }
-  .foot-center img { height: 120px; width: auto; opacity: 1; margin: -30px 0; }
-  .foot-links { display: flex; justify-content: flex-end; gap: 18px; }
-  .foot-links a { font-size: 13px; color: var(--text-3); text-decoration: none; display: flex; align-items: center; gap: 5px; }
-  .foot-links a:hover { color: var(--text); }
-
-  .tut-section { padding: 32px 28px; }
-  .tut-header { text-align: center; margin-bottom: 24px; }
-  .tut-progress { height: 3px; background: var(--border); border-radius: 2px; margin-bottom: 20px; overflow: hidden; }
-  .tut-progress-fill { height: 100%; background: var(--text); border-radius: 2px; transition: width 0.3s ease; }
-  .tut-step-nav { display: flex; justify-content: center; align-items: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
-  .tut-dot { width: 30px; height: 30px; border-radius: 50%; border: 0.5px solid var(--border-strong); background: var(--card); font-size: 12px; font-weight: 700; color: var(--text-3); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s; }
-  .tut-dot.active { background: var(--text); color: var(--bg); border-color: var(--text); }
-  .tut-dot.done { background: #E1F5EE; border-color: #9FE1CB; color: #0F6E56; }
-  .tut-connector { width: 20px; height: 0.5px; background: var(--border-strong); }
-  .tut-panel { display: none; }
-  .tut-panel.active { display: block; animation: tutFade 0.2s ease; }
-  @keyframes tutFade { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-  .tut-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 22px; margin-bottom: 14px; }
-  .tut-step-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-  .tut-badge { width: 34px; height: 34px; border-radius: 50%; background: var(--text); color: var(--bg); font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .tut-step-title { font-size: 17px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
-  .tut-step-desc { font-size: 14px; color: var(--text-2); line-height: 1.65; margin-bottom: 16px; }
-  .tut-mockup { background: var(--bg); border: 0.5px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 14px; }
-  .tut-mockup-label { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
-  .tut-song-card { background: var(--card); border: 1.5px solid var(--red); border-radius: 10px; padding: 13px; }
-  .tut-song-top { display: flex; justify-content: space-between; margin-bottom: 7px; }
-  .tut-tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 6px; background: var(--blue-bg); color: var(--blue-tag); }
-  .tut-sample-lnk { font-size: 11px; color: var(--red); font-weight: 600; }
-  .tut-song-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-  .tut-song-movie { font-size: 11px; color: var(--text-3); margin-bottom: 7px; }
-  .tut-pills { display: flex; gap: 4px; margin-bottom: 8px; }
-  .tut-pill-pdf { font-size: 10px; padding: 2px 7px; border-radius: 5px; font-weight: 600; background: var(--purple-bg); color: var(--purple-tag); }
-  .tut-pill-trk { font-size: 10px; padding: 2px 7px; border-radius: 5px; font-weight: 600; background: var(--teal-bg); color: var(--teal-tag); }
-  .tut-pill-gp  { font-size: 10px; padding: 2px 7px; border-radius: 5px; font-weight: 600; background: var(--amber-bg); color: var(--amber-tag); }
-  .tut-price-row { display: flex; justify-content: space-between; align-items: center; }
-  .tut-from { font-size: 11px; color: var(--text-3); }
-  .tut-from strong { font-size: 14px; font-weight: 800; color: var(--text); }
-  .tut-select { font-size: 11px; color: var(--text-3); }
-  .tut-arow { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 0.5px solid var(--border); border-radius: 8px; margin-bottom: 6px; }
-  .tut-arow.checked { border-color: var(--red); background: var(--red-bg); }
-  .tut-cb { width: 15px; height: 15px; border-radius: 3px; border: 1.5px solid var(--border-strong); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 9px; }
-  .tut-cb.on { background: var(--red); border-color: var(--red); color: #fff; }
-  .tut-ainfo { flex: 1; }
-  .tut-aname { font-size: 12px; font-weight: 600; color: var(--text); }
-  .tut-ameta { font-size: 10px; color: var(--text-2); }
-  .tut-aprice { font-size: 13px; font-weight: 700; color: var(--text); }
-  .tut-total-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0 0; border-top: 0.5px solid var(--border); margin-top: 4px; }
-  .tut-total-label { font-size: 13px; color: var(--text-2); }
-  .tut-total-amt { font-size: 18px; font-weight: 800; color: var(--text); }
-  .tut-form-row { display: flex; gap: 8px; margin: 10px 0; }
-  .tut-input { flex: 1; padding: 8px 10px; border: 0.5px solid var(--border-strong); border-radius: 6px; font-size: 12px; color: var(--text-3); background: var(--card); }
-  .tut-wa-btn { width: 100%; background: var(--wa); color: #fff; border: none; border-radius: 22px; padding: 11px; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px; }
-  .tut-tip { background: #E6F1FB; border: 0.5px solid #B5D4F4; border-radius: 10px; padding: 11px 13px; font-size: 13px; color: #185FA5; line-height: 1.5; margin-bottom: 4px; }
-  .tut-upi { text-align: center; padding: 14px; }
-  .tut-qr { width: 90px; height: 90px; background: var(--card); border: 0.5px solid var(--border); border-radius: 6px; margin: 0 auto 8px; display: grid; grid-template-columns: repeat(7,1fr); gap: 2px; padding: 7px; }
-  .tut-qr-c { background: var(--text); border-radius: 1px; }
-  .tut-qr-e { background: transparent; }
-  .tut-upi-label { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
-  .tut-upi-sub { font-size: 11px; color: var(--text-3); }
-  .tut-delivery { background: #E1F5EE; border: 0.5px solid #9FE1CB; border-radius: 10px; padding: 13px 15px; display: flex; align-items: center; gap: 12px; }
-  .tut-delivery-icon { width: 34px; height: 34px; background: #1D9E75; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; font-size: 16px; }
-  .tut-delivery-t { font-size: 13px; font-weight: 700; color: #0F6E56; margin-bottom: 2px; }
-  .tut-delivery-s { font-size: 11px; color: #0F6E56; opacity: 0.8; }
-  .tut-btn-row { display: flex; gap: 10px; justify-content: flex-end; }
-  .tut-btn-prev { padding: 9px 20px; border-radius: 20px; border: 0.5px solid var(--border-strong); background: transparent; color: var(--text); font-size: 13px; font-weight: 600; cursor: pointer; }
-  .tut-btn-next { padding: 9px 20px; border-radius: 20px; border: none; background: var(--text); color: var(--bg); font-size: 13px; font-weight: 600; cursor: pointer; }
-
-  @media (max-width: 600px) {
-    .tut-section { padding: 26px 16px; }
-  }
+  footer { background: var(--card); border-top: 0.5px solid var(--border); padding: 20px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  footer p { font-size: 13px; color: var(--text-2); }
+  .foot-link { font-size: 13px; color: var(--text-3); text-decoration: none; display: flex; align-items: center; gap: 5px; }
+  .foot-link:hover { color: var(--text); }
 
   @media (max-width: 600px) {
     nav { padding: 14px 16px; }
-    .nav-links { display: none; }
-    .hero { padding: 20px 16px 10px; }
-    .section, .how-section, .faq-section { padding: 26px 16px; }
-    .gp-card-section { padding: 0 16px 26px; }
+    .hero { padding: 28px 16px 20px; }
+    .grid-section { padding: 20px 16px; }
     .divider { margin: 0 16px; }
-    footer { grid-template-columns: 1fr; text-align: center; padding: 14px 16px; gap: 10px; overflow: hidden; }
-
-    .faq-grid { grid-template-columns: 1fr; }
-    .foot-center img { height: 90px; margin: -22px 0; }
-    .foot-links { justify-content: center; }
-    .gp-card { flex-direction: column; gap: 12px; }
+    footer { padding: 16px; }
+    .freebies-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -275,277 +78,75 @@
     <img src="logo.png" alt="">
     <span class="logo-text">rohit<span class="red">tabs</span></span>
   </a>
-  <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="guitar.html">Guitar</a>
-    <a href="ukulele.html">Ukulele</a>
-    <a href="#how-to-order">How to order</a>
-    <a href="freebies.html">Freebies</a>
-    <a href="#faq">FAQ</a>
-  </div>
-  <a href="#catalog" class="nav-cta">Browse tabs</a>
+  <a href="/" class="back-btn">← Back to store</a>
 </nav>
 
-<section class="hero">
-  <h1>Your <em>tab</em> store.</h1>
-  <div class="hero-sub" style="text-align:center;">PDFs · Tracks · Backing Tracks · Guitar Pro files</div>
-  <div class="hero-btns">
-    <a href="#catalog" class="btn-dark">Browse tabs</a>
-    <a href="guitar.html" class="btn-outline">See samples</a>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="section" id="catalog">
-  <div class="s-label">Browse</div>
-  <div class="s-title">Tabs <span style="color:var(--red);">&</span> Freebies</div>
-  <div class="s-sub">Pick an instrument or browse free downloads</div>
-  <div class="portal-grid">
-
-    <a href="guitar.html" class="portal-card portal-guitar">
-      <div class="portal-icon">🎸</div>
-      <div class="portal-body">
-        <div class="portal-title">Guitar tabs</div>
-        <div class="portal-desc">Fingerpicking, chord melody, fingerstyle and more. PDF, tracks and Guitar Pro files.</div>
-        <div class="portal-cta">Browse guitar songs →</div>
-      </div>
-    </a>
-
-    <a href="ukulele.html" class="portal-card portal-ukulele">
-      <div class="portal-icon">🎵</div>
-      <div class="portal-body">
-        <div class="portal-title">Ukulele tabs</div>
-        <div class="portal-desc">Strumming, fingerpicking and melody arrangements for ukulele players.</div>
-        <div class="portal-cta">Browse ukulele songs →</div>
-      </div>
-    </a>
-
-    <a href="freebies.html" class="portal-card portal-freebies">
-      <div class="portal-icon">🎁</div>
-      <div class="portal-body">
-        <div class="portal-title">Freebies</div>
-        <div class="portal-desc">Chord charts, blank tab sheets, Circle of 5ths and more. All free, all printable.</div>
-        <div class="portal-cta">Browse free downloads →</div>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<div class="gp-card-section" id="gp-info">
-  <div class="gp-card">
-    <div class="gp-icon" style="padding:0;background:none;border:none;overflow:hidden;"><img src="Guitar_Pro_8_icon.png" alt="Guitar Pro" style="width:48px;height:48px;border-radius:12px;display:block;"></div>
-    <div class="gp-body">
-      <div class="gp-label">Guitar Pro files</div>
-      <div class="gp-title">Interactive tabs. Password protected.</div>
-      <div class="gp-desc">Guitar Pro (.gp) files let you follow the notation bar by bar, slow down tricky sections, and hear the arrangement play back. Every file from rohittabs.in is password protected for content security.</div>
-      <div class="gp-badges">
-        <span class="gp-badge gp-badge-green">✓ View notation</span>
-        <span class="gp-badge gp-badge-blue">✓ Play back audio</span>
-        <span class="gp-badge gp-badge-red">✕ Cannot edit content</span>
-      </div>
-    </div>
-  </div>
+<div class="hero">
+  <div class="s-label">Free downloads</div>
+  <h1>Freebies for <em>musicians</em></h1>
+  <p>No sign up, no payment. Download, print, and use.</p>
 </div>
 
 <div class="divider"></div>
 
-<section class="tut-section" id="how-to-order">
-  <div class="s-label">Tutorial</div>
-  <div class="s-title">How to order</div>
-  <div style="font-size:13px;color:var(--text-3);margin-bottom:20px;">Four simple steps, takes less than a minute</div>
+<div class="grid-section">
+  <div class="freebies-grid">
 
-  <div class="tut-progress"><div class="tut-progress-fill" id="tprog" style="width:25%"></div></div>
+    <div class="freebie-card">
+      <div class="freebie-icon freebie-icon-blue">🎸</div>
+      <div class="freebie-tag">Guitar</div>
+      <div class="freebie-badge">Free</div>
+      <div class="freebie-title">Guitar Chord Chart</div>
+      <div class="freebie-desc">Essential open chords, barre chords, and chord shapes for beginners and intermediate players.</div>
+      <a href="freebies/guitar-chord-chart.png" download class="freebie-btn">⬇ Download PNG</a>
+    </div>
 
-  <div class="tut-step-nav">
-    <div class="tut-dot active" id="tdot-1" onclick="tutGoStep(1)">1</div>
-    <div class="tut-connector"></div>
-    <div class="tut-dot" id="tdot-2" onclick="tutGoStep(2)">2</div>
-    <div class="tut-connector"></div>
-    <div class="tut-dot" id="tdot-3" onclick="tutGoStep(3)">3</div>
-    <div class="tut-connector"></div>
-    <div class="tut-dot" id="tdot-4" onclick="tutGoStep(4)">4</div>
+    <div class="freebie-card">
+      <div class="freebie-icon freebie-icon-purple">📄</div>
+      <div class="freebie-tag">Guitar</div>
+      <div class="freebie-badge">Free</div>
+      <div class="freebie-title">Blank Guitar Tab Sheet</div>
+      <div class="freebie-desc">Printable blank staff and tab paper for guitar. Write your own tabs or transcribe songs by ear.</div>
+      <a href="freebies/blank-guitar-tab-sheet.pdf" download class="freebie-btn">⬇ Download PDF</a>
+    </div>
+
+    <div class="freebie-card">
+      <div class="freebie-icon freebie-icon-green">🎵</div>
+      <div class="freebie-tag">Ukulele</div>
+      <div class="freebie-badge">Free</div>
+      <div class="freebie-title">Ukulele Chord Chart</div>
+      <div class="freebie-desc">Common ukulele chords laid out clearly, perfect to print and keep on your practice desk.</div>
+      <a href="freebies/ukulele-chord-chart.png" download class="freebie-btn">⬇ Download PNG</a>
+    </div>
+
+    <div class="freebie-card">
+      <div class="freebie-icon freebie-icon-purple">📄</div>
+      <div class="freebie-tag">Ukulele</div>
+      <div class="freebie-badge">Free</div>
+      <div class="freebie-title">Blank Ukulele Tab Sheet</div>
+      <div class="freebie-desc">Printable blank staff and tab paper for ukulele. Great for writing arrangements or practice notes.</div>
+      <a href="freebies/blank-ukulele-tab-sheet.pdf" download class="freebie-btn">⬇ Download PDF</a>
+    </div>
+
+    <div class="freebie-card">
+      <div class="freebie-icon freebie-icon-amber">🎼</div>
+      <div class="freebie-tag">Music Theory</div>
+      <div class="freebie-badge">Free</div>
+      <div class="freebie-title">Circle of 5ths</div>
+      <div class="freebie-desc">A clear, printable Circle of 5ths to understand keys, scales, and chord relationships at a glance.</div>
+      <a href="freebies/circle-of-5ths.pdf" download class="freebie-btn">⬇ Download PDF</a>
+    </div>
+
   </div>
-
-  <div class="tut-panel active" id="tpanel-1">
-    <div class="tut-card">
-      <div class="tut-step-head"><div class="tut-badge">1</div><div class="tut-step-title">Pick a song</div></div>
-      <div class="tut-step-desc">Browse the catalog and tap any song card to open it. Each card shows the instrument, playing style, and which file types are available for that song.</div>
-      <div class="tut-mockup">
-        <div class="tut-mockup-label">Song catalog</div>
-        <div class="tut-song-card">
-          <div class="tut-song-top"><span class="tut-tag">Guitar</span><span class="tut-sample-lnk">👁 See sample</span></div>
-          <div class="tut-song-title">Ajeeb Daastan Hai Yeh</div>
-          <div class="tut-song-movie">Dil Apna Aur Preet Parayi</div>
-          <div class="tut-pills"><span class="tut-pill-pdf">PDF</span><span class="tut-pill-trk">Tracks</span><span class="tut-pill-gp">Guitar Pro</span></div>
-          <div class="tut-price-row"><div class="tut-from">from <strong>₹79</strong></div><span class="tut-select">Select →</span></div>
-        </div>
-      </div>
-      <div class="tut-tip">Tap "See sample" to preview the first page of the PDF before buying.</div>
-    </div>
-    <div class="tut-btn-row"><button class="tut-btn-next" onclick="tutGoStep(2)">Next →</button></div>
-  </div>
-
-  <div class="tut-panel" id="tpanel-2">
-    <div class="tut-card">
-      <div class="tut-step-head"><div class="tut-badge">2</div><div class="tut-step-title">Choose what you want</div></div>
-      <div class="tut-step-desc">After tapping a song, a panel opens below it. Tick the items you want: PDF, tracks, Guitar Pro file, or the full bundle. The total updates as you select.</div>
-      <div class="tut-mockup">
-        <div class="tut-mockup-label">Select your items</div>
-        <div class="tut-arow checked">
-          <div class="tut-cb on">✓</div>
-          <div class="tut-ainfo"><div class="tut-aname">PDF, staff notation and tabs</div><div class="tut-ameta">3 pages · Staff notation and tabs</div></div>
-          <div class="tut-aprice">₹79</div>
-        </div>
-        <div class="tut-arow">
-          <div class="tut-cb"></div>
-          <div class="tut-ainfo"><div class="tut-aname">Track and backing track</div><div class="tut-ameta">For play along, reference and practice</div></div>
-          <div class="tut-aprice">₹149</div>
-        </div>
-        <div class="tut-arow">
-          <div class="tut-cb"></div>
-          <div class="tut-ainfo"><div class="tut-aname">Guitar Pro file (.gp)</div><div class="tut-ameta">View and play only, password protected</div></div>
-          <div class="tut-aprice">₹199</div>
-        </div>
-        <div class="tut-total-row"><span class="tut-total-label">Total</span><span class="tut-total-amt">₹79</span></div>
-      </div>
-      <div class="tut-tip">Want everything? Pick the full bundle, it costs less than buying each item separately.</div>
-    </div>
-    <div class="tut-btn-row">
-      <button class="tut-btn-prev" onclick="tutGoStep(1)">← Back</button>
-      <button class="tut-btn-next" onclick="tutGoStep(3)">Next →</button>
-    </div>
-  </div>
-
-  <div class="tut-panel" id="tpanel-3">
-    <div class="tut-card">
-      <div class="tut-step-head"><div class="tut-badge">3</div><div class="tut-step-title">Send your order</div></div>
-      <div class="tut-step-desc">Enter your name and email address, then tap the WhatsApp button. A pre-filled message with your song, selected items, and total is sent to Rohit. No extra typing needed.</div>
-      <div class="tut-mockup">
-        <div class="tut-mockup-label">Place your order</div>
-        <div class="tut-form-row">
-          <div class="tut-input">Your name</div>
-          <div class="tut-input">Email address</div>
-        </div>
-        <div class="tut-wa-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Send order via WhatsApp
-        </div>
-      </div>
-      <div class="tut-tip">Rohit will reply with a UPI QR code for payment, usually within a few hours.</div>
-    </div>
-    <div class="tut-btn-row">
-      <button class="tut-btn-prev" onclick="tutGoStep(2)">← Back</button>
-      <button class="tut-btn-next" onclick="tutGoStep(4)">Next →</button>
-    </div>
-  </div>
-
-  <div class="tut-panel" id="tpanel-4">
-    <div class="tut-card">
-      <div class="tut-step-head"><div class="tut-badge">4</div><div class="tut-step-title">Pay and get your files</div></div>
-      <div class="tut-step-desc">Scan the UPI QR code Rohit sends you, using any UPI app. Once payment is done, your files are delivered to you on the same channel you ordered from.</div>
-      <div class="tut-mockup">
-        <div class="tut-mockup-label">Scan to pay</div>
-        <div class="tut-upi">
-          <div class="tut-qr" aria-label="Sample UPI QR code illustration">
-            <div class="tut-qr-c"></div><div class="tut-qr-c"></div><div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-c"></div><div class="tut-qr-c"></div>
-            <div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div>
-            <div class="tut-qr-c"></div><div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-c"></div>
-            <div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-e"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-e"></div>
-            <div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-c"></div>
-            <div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div>
-            <div class="tut-qr-c"></div><div class="tut-qr-c"></div><div class="tut-qr-c"></div><div class="tut-qr-e"></div><div class="tut-qr-c"></div><div class="tut-qr-c"></div><div class="tut-qr-c"></div>
-          </div>
-          <div class="tut-upi-label">rohittabs@gmail.com</div>
-          <div class="tut-upi-sub">GPay · PhonePe · Paytm · BHIM</div>
-        </div>
-      </div>
-      <div class="tut-delivery">
-        <div class="tut-delivery-icon">✓</div>
-        <div><div class="tut-delivery-t">Files on their way!</div><div class="tut-delivery-s">Delivered via WhatsApp or email after payment</div></div>
-      </div>
-    </div>
-    <div class="tut-btn-row">
-      <button class="tut-btn-prev" onclick="tutGoStep(3)">← Back</button>
-      <button class="tut-btn-next" onclick="tutGoStep(1)" style="background:#25D366;">Start over</button>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="faq-section" id="faq">
-  <div class="s-label">FAQ</div>
-  <div class="s-title">Common questions</div>
-  <div class="faq-grid" id="faq-grid">
-    <div class="faq-card" onclick="this.classList.toggle('open')">
-      <div class="faq-card-num">01</div>
-      <div class="faq-card-q">How do I receive my files after payment?</div>
-      <div class="faq-card-a">Once you place your order and complete the UPI payment, your files will be sent to you via the same channel you used to order via WhatsApp or email.</div>
-    </div>
-    <div class="faq-card" onclick="this.classList.toggle('open')">
-      <div class="faq-card-num">02</div>
-      <div class="faq-card-q">How long does delivery take?</div>
-      <div class="faq-card-a">I always try to deliver as soon as I receive your request. In case of a delay your money is safe and delivery will be made at the earliest. Follow up via WhatsApp or call anytime.</div>
-    </div>
-    <div class="faq-card" onclick="this.classList.toggle('open')">
-      <div class="faq-card-num">03</div>
-      <div class="faq-card-q">Are payments refundable?</div>
-      <div class="faq-card-a">All sales are final. Since these are digital products, no refunds are offered once payment is made. Please check the sample before purchasing.</div>
-    </div>
-    <div class="faq-card" onclick="this.classList.toggle('open')">
-      <div class="faq-card-num">04</div>
-      <div class="faq-card-q">Which UPI apps are accepted?</div>
-      <div class="faq-card-a">You can pay via any UPI app: Google Pay, PhonePe, Paytm, BHIM, or any other UPI-enabled app. A QR code will be shared after you place your order.</div>
-    </div>
-    <div class="faq-card" onclick="this.classList.toggle('open')">
-      <div class="faq-card-num">05</div>
-      <div class="faq-card-q">What is a Guitar Pro file?</div>
-      <div class="faq-card-a">A .gp file opens in Guitar Pro or the free TuxGuitar app. It lets you view notation, slow down sections, and hear the arrangement. Password protected. View and play only, no editing.</div>
-    </div>
-    <div class="faq-card" onclick="this.classList.toggle('open')">
-      <div class="faq-card-num">06</div>
-      <div class="faq-card-q">Can I share the files with others?</div>
-      <div class="faq-card-a">Files are for personal use only and may not be shared, redistributed, or resold. Each purchase is a single-user license.</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
+</div>
 
 <footer>
-  <div class="foot-left">
-    <strong>rohittabs.in</strong>
-  </div>
-  <div class="foot-center">
-    <img src="Rohit-Mishra-black-high-res.png" alt="Rohit Mishra Music Educator">
-  </div>
-  <div class="foot-links">
-    <a href="https://wa.me/919711431855" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
-  </div>
+  <p>rohittabs.in</p>
+  <a href="https://wa.me/919711431855" target="_blank" class="foot-link">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
 </footer>
 
-<script>
-let tutCurrent = 1;
-const tutTotal = 4;
-
-function tutGoStep(n) {
-  document.getElementById('tpanel-' + tutCurrent).classList.remove('active');
-  document.getElementById('tdot-' + tutCurrent).classList.remove('active');
-  if (tutCurrent < n) document.getElementById('tdot-' + tutCurrent).classList.add('done');
-  else document.getElementById('tdot-' + tutCurrent).classList.remove('done');
-  tutCurrent = n;
-  document.getElementById('tpanel-' + tutCurrent).classList.add('active');
-  document.getElementById('tdot-' + tutCurrent).classList.add('active');
-  document.getElementById('tdot-' + tutCurrent).classList.remove('done');
-  for (let i = 1; i < tutCurrent; i++) { document.getElementById('tdot-' + i).classList.add('done'); document.getElementById('tdot-' + i).classList.remove('active'); }
-  for (let i = tutCurrent + 1; i <= tutTotal; i++) { document.getElementById('tdot-' + i).classList.remove('done'); document.getElementById('tdot-' + i).classList.remove('active'); }
-  document.getElementById('tprog').style.width = (tutCurrent / tutTotal * 100) + '%';
-  document.getElementById('how-to-order').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-</script>
 </body>
 </html>
