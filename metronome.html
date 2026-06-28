@@ -258,7 +258,12 @@ function buildBeatDots() {
 }
 
 function getCtx() {
-  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
   return audioCtx;
 }
 
@@ -305,13 +310,20 @@ function toggleMetronome() {
     document.getElementById('start-btn').classList.remove('running');
     document.querySelectorAll('.beat-dot').forEach(d => d.className = 'beat-dot');
   } else {
-    getCtx().resume();
-    isRunning = true;
-    currentBeat = 0;
-    nextBeatTime = audioCtx.currentTime + 0.05;
-    scheduler();
-    document.getElementById('start-btn').textContent = '⏹ Stop';
-    document.getElementById('start-btn').classList.add('running');
+    const ctx = getCtx();
+    const startScheduler = () => {
+      isRunning = true;
+      currentBeat = 0;
+      nextBeatTime = ctx.currentTime + 0.05;
+      scheduler();
+      document.getElementById('start-btn').textContent = '⏹ Stop';
+      document.getElementById('start-btn').classList.add('running');
+    };
+    if (ctx.state === 'suspended') {
+      ctx.resume().then(startScheduler);
+    } else {
+      startScheduler();
+    }
   }
 }
 
