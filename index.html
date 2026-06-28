@@ -50,19 +50,22 @@
   .s-title { font-size: 24px; font-weight: 800; color: var(--text); margin-bottom: 4px; letter-spacing: -0.8px; }
   .s-sub { font-size: 13px; color: var(--text-3); margin-bottom: 22px; }
 
-  .search-bar { display: flex; gap: 8px; margin-bottom: 16px; }
-  .search-input { flex: 1; padding: 10px 16px; border: 0.5px solid var(--border-strong); border-radius: 24px; font-size: 14px; background: var(--card); color: var(--text); outline: none; }
-  .search-input:focus { border-color: var(--red); }
-  .search-input::placeholder { color: var(--text-3); }
-  .search-clear { background: none; border: none; color: var(--text-3); font-size: 18px; cursor: pointer; padding: 0 4px; display: none; }
-  .search-clear.visible { display: block; }
+  .portal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 4px; }
+  .portal-card { display: flex; align-items: flex-start; gap: 14px; background: var(--card); border: 0.5px solid var(--border); border-radius: 16px; padding: 22px; text-decoration: none; transition: border-color 0.15s, transform 0.1s; }
+  .portal-card:hover { border-color: var(--border-strong); transform: translateY(-1px); }
+  .portal-icon { font-size: 28px; flex-shrink: 0; }
+  .portal-body { flex: 1; }
+  .portal-title { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 5px; letter-spacing: -0.3px; }
+  .portal-desc { font-size: 12px; color: var(--text-2); line-height: 1.55; margin-bottom: 12px; }
+  .portal-cta { font-size: 12px; font-weight: 700; }
+  .portal-guitar .portal-cta  { color: var(--blue-tag); }
+  .portal-ukulele .portal-cta { color: var(--green-tag); }
+  .portal-freebies .portal-cta { color: var(--amber-tag); }
+  .portal-guitar:hover  { border-color: var(--blue-tag); }
+  .portal-ukulele:hover { border-color: var(--green-tag); }
+  .portal-freebies:hover { border-color: var(--amber-tag); }
 
-  .filters { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
-  .f-btn { font-size: 13px; padding: 7px 16px; border-radius: 20px; border: 0.5px solid var(--border-strong); background: transparent; color: var(--text-2); cursor: pointer; transition: all 0.15s; }
-  .f-btn:hover { color: var(--text); border-color: var(--text); }
-  .f-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
-
-  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+  @media (max-width: 600px) { .portal-grid { grid-template-columns: 1fr; } }
   .song-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 18px; cursor: pointer; transition: border-color 0.15s, transform 0.1s; }
   .song-card:hover { border-color: var(--border-strong); }
   .song-card:active { transform: scale(0.98); }
@@ -132,7 +135,24 @@
   .em-btn { width: 100%; background: var(--text); color: var(--bg); border: none; border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer; font-weight: 500; }
   .em-btn:hover { opacity: 0.88; }
 
-  .faq-section { padding: 32px 28px; }
+  .freebies-section { padding: 32px 28px; }
+  .freebies-portal-card { display: flex; justify-content: space-between; align-items: center; gap: 20px; background: #1a1a1a; border-radius: 16px; padding: 24px; text-decoration: none; transition: opacity 0.15s; }
+  .freebies-portal-card:hover { opacity: 0.92; }
+  .fpc-left { flex: 1; }
+  .fpc-icons { font-size: 22px; margin-bottom: 10px; letter-spacing: 4px; }
+  .fpc-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; }
+  .fpc-desc { font-size: 13px; color: #888; line-height: 1.55; margin-bottom: 14px; }
+  .fpc-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+  .fpc-pill { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 8px; background: rgba(255,255,255,0.08); color: #bbb; }
+  .fpc-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+  .fpc-cta { font-size: 14px; font-weight: 700; color: #fff; white-space: nowrap; }
+  .fpc-count { font-size: 11px; color: #555; white-space: nowrap; }
+
+  @media (max-width: 600px) {
+    .freebies-section { padding: 26px 16px; }
+    .freebies-portal-card { flex-direction: column; align-items: flex-start; }
+    .fpc-right { align-items: flex-start; }
+  }
   .faq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
   .faq-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 20px; cursor: pointer; transition: border-color 0.15s; }
   .faq-card:hover { border-color: var(--border-strong); }
@@ -256,12 +276,13 @@
   </a>
   <div class="nav-links">
     <a href="/">Home</a>
-    <a href="#catalog">Guitar</a>
-    <a href="#catalog">Ukulele</a>
+    <a href="guitar.html">Guitar</a>
+    <a href="ukulele.html">Ukulele</a>
     <a href="#how-to-order">How to order</a>
+    <a href="freebies.html">Freebies</a>
     <a href="#faq">FAQ</a>
   </div>
-  <a href="#catalog" class="nav-cta">Order now</a>
+  <a href="#catalog" class="nav-cta">Browse tabs</a>
 </nav>
 
 <section class="hero">
@@ -269,27 +290,46 @@
   <div class="hero-sub" style="text-align:center;">PDFs · Tracks · Backing Tracks · Guitar Pro files</div>
   <div class="hero-btns">
     <a href="#catalog" class="btn-dark">Browse tabs</a>
-    <a href="#catalog" class="btn-outline">See samples</a>
+    <a href="guitar.html" class="btn-outline">See samples</a>
   </div>
 </section>
 
 <div class="divider"></div>
 
 <section class="section" id="catalog">
-  <div class="s-label">Pick a song</div>
-  <div class="s-title">Available <span style="color:var(--red);">tabs</span></div>
-  <div class="s-sub">Every <span style="color:var(--red);font-weight:500;">tab</span> you need: PDF, Tracks, Backing Tracks, Guitar Pro</div>
-  <div class="search-bar">
-    <input class="search-input" id="search-input" type="search" placeholder="Search songs..." oninput="onSearch(this.value)">
-    <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Clear search">×</button>
+  <div class="s-label">Browse</div>
+  <div class="s-title">Tabs <span style="color:var(--red);">&</span> Freebies</div>
+  <div class="s-sub">Pick an instrument or browse free downloads</div>
+  <div class="portal-grid">
+
+    <a href="guitar.html" class="portal-card portal-guitar">
+      <div class="portal-icon">🎸</div>
+      <div class="portal-body">
+        <div class="portal-title">Guitar tabs</div>
+        <div class="portal-desc">Fingerpicking, chord melody, fingerstyle and more. PDF, tracks and Guitar Pro files.</div>
+        <div class="portal-cta">Browse guitar songs →</div>
+      </div>
+    </a>
+
+    <a href="ukulele.html" class="portal-card portal-ukulele">
+      <div class="portal-icon">🎵</div>
+      <div class="portal-body">
+        <div class="portal-title">Ukulele tabs</div>
+        <div class="portal-desc">Strumming, fingerpicking and melody arrangements for ukulele players.</div>
+        <div class="portal-cta">Browse ukulele songs →</div>
+      </div>
+    </a>
+
+    <a href="freebies.html" class="portal-card portal-freebies">
+      <div class="portal-icon">🎁</div>
+      <div class="portal-body">
+        <div class="portal-title">Freebies</div>
+        <div class="portal-desc">Chord charts, blank tab sheets, Circle of 5ths and more. All free, all printable.</div>
+        <div class="portal-cta">Browse free downloads →</div>
+      </div>
+    </a>
+
   </div>
-  <div class="filters" id="filters">
-    <button class="f-btn active" data-filter="all">All</button>
-    <button class="f-btn" data-filter="Guitar">Guitar</button>
-    <button class="f-btn" data-filter="Ukulele">Ukulele</button>
-  </div>
-  <div class="cards" id="cards-grid"></div>
-  <div id="detail-panel"></div>
 </section>
 
 <div class="divider"></div>
@@ -487,273 +527,7 @@
   </div>
 </footer>
 
-<div id="sample-overlay" class="sample-overlay" style="display:none;" onclick="closeSampleOverlay()">
-  <img id="overlay-img" src="" alt="Sample" onclick="event.stopPropagation()">
-</div>
-
 <script>
-const YOUR_WHATSAPP = '919711431855';
-const YOUR_EMAIL    = 'rohittabs@gmail.com';
-
-const WA_SVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
-
-let songs        = [];
-let activeFilter = 'all';
-let searchQuery  = '';
-let selectedSong = null;
-let checked      = { pdf: false, tracks: false, gp: false, bundle: false };
-let audioEl      = null;
-let isPlaying    = false;
-
-async function loadSongs() {
-  const res = await fetch('songs.json');
-  songs = await res.json();
-  renderGrid();
-}
-
-function minPrice(s) {
-  return Math.min(...Object.values(s.assets).map(a => a.price));
-}
-
-function pillsHTML(s) {
-  let h = '';
-  if (s.assets.pdf)    h += '<span class="ap ap-pdf">PDF</span>';
-  if (s.assets.tracks) h += '<span class="ap ap-tracks">Tracks</span>';
-  if (s.assets.gp)     h += '<span class="ap ap-gp">Guitar Pro</span>';
-  return h;
-}
-
-function getFilteredList() {
-  let list = activeFilter === 'all' ? songs : songs.filter(s => s.type === activeFilter);
-  if (searchQuery) {
-    const q = searchQuery.toLowerCase();
-    list = list.filter(s => s.title.toLowerCase().includes(q) || s.movie.toLowerCase().includes(q) || s.style.toLowerCase().includes(q));
-  }
-  return list;
-}
-
-function renderGrid() {
-  const list = getFilteredList();
-  const grid = document.getElementById('cards-grid');
-  if (!list.length) {
-    grid.innerHTML = `<div class="empty">${searchQuery ? 'No songs found for "' + searchQuery + '"' : 'No songs in this category yet, check back soon.'}</div>`;
-    return;
-  }
-  grid.innerHTML = list.map(s => `
-    <div class="song-card${selectedSong && selectedSong.id === s.id ? ' selected' : ''}"
-         onclick="openDetail(${s.id})" role="button" tabindex="0" aria-label="Select ${s.title}">
-      <div class="card-top">
-        <span class="tag tag-${s.type.toLowerCase()}">${s.type}</span>
-        ${s.sample ? `<button class="see-sample-btn" onclick="event.stopPropagation(); openDetail(${s.id})">👁 See sample</button>` : ''}
-      </div>
-      <div class="song-title">${s.title}</div>
-      <div class="song-movie">${s.movie}</div>
-      <div class="song-style">${s.style}</div>
-      <div class="asset-pills">${pillsHTML(s)}</div>
-      <div class="card-foot">
-        <div class="from-price">from <strong>₹${minPrice(s)}</strong></div>
-        <span style="font-size:11px;color:var(--text-3);">Select →</span>
-      </div>
-    </div>`).join('');
-}
-
-function onSearch(val) {
-  searchQuery = val.trim();
-  document.getElementById('search-clear').classList.toggle('visible', searchQuery.length > 0);
-  selectedSong = null;
-  document.getElementById('detail-panel').innerHTML = '';
-  renderGrid();
-}
-
-function clearSearch() {
-  document.getElementById('search-input').value = '';
-  onSearch('');
-}
-
-function setFilter(f) {
-  activeFilter = f;
-  selectedSong = null;
-  checked = { pdf: false, tracks: false, gp: false, bundle: false };
-  stopAudio();
-  document.querySelectorAll('.f-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
-  renderGrid();
-  document.getElementById('detail-panel').innerHTML = '';
-}
-
-document.getElementById('filters').addEventListener('click', e => {
-  const btn = e.target.closest('.f-btn');
-  if (btn) setFilter(btn.dataset.filter);
-});
-
-function calcTotal() {
-  if (!selectedSong) return 0;
-  let t = 0;
-  if (checked.pdf    && selectedSong.assets.pdf)    t += selectedSong.assets.pdf.price;
-  if (checked.tracks && selectedSong.assets.tracks) t += selectedSong.assets.tracks.price;
-  if (checked.gp     && selectedSong.assets.gp)     t += selectedSong.assets.gp.price;
-  if (checked.bundle && selectedSong.assets.bundle) t += selectedSong.assets.bundle.price;
-  return t;
-}
-
-function updateTotal() {
-  const el = document.getElementById('order-total');
-  if (el) el.textContent = '₹' + calcTotal();
-}
-
-function toggleAsset(key) {
-  checked[key] = !checked[key];
-  const row = document.getElementById('arow-' + key);
-  const cb  = document.getElementById('cb-' + key);
-  if (row) row.classList.toggle('on', checked[key]);
-  if (cb)  cb.checked = checked[key];
-  updateTotal();
-}
-
-function assetRowHTML(key, label, saving = '') {
-  const a = selectedSong.assets[key];
-  if (!a) return '';
-  let meta = '';
-  if (key === 'pdf') meta = `${a.pages} page${a.pages !== 1 ? 's' : ''} · ${a.note}`;
-  else meta = a.note;
-  const savingBadge = saving ? `<span style="font-size:10px;background:#E1F5EE;color:#0F6E56;border:0.5px solid #9FE1CB;border-radius:8px;padding:2px 7px;margin-left:6px;">${saving}</span>` : '';
-  return `
-    <div class="a-row" id="arow-${key}" onclick="toggleAsset('${key}')">
-      <input type="checkbox" id="cb-${key}" onclick="event.stopPropagation(); toggleAsset('${key}')" aria-label="${label}">
-      <div class="a-info">
-        <div class="a-name">${label}${savingBadge}</div>
-        <div class="a-meta">${meta}</div>
-      </div>
-      <div class="a-price">₹${a.price}</div>
-    </div>`;
-}
-
-function stopAudio() {
-  if (audioEl) { audioEl.pause(); audioEl.currentTime = 0; }
-  isPlaying = false;
-  const btn = document.getElementById('play-btn');
-  if (btn) btn.textContent = '▶';
-}
-
-function togglePlay() {
-  if (!audioEl) return;
-  if (isPlaying) {
-    audioEl.pause(); isPlaying = false;
-    document.getElementById('play-btn').textContent = '▶';
-  } else {
-    audioEl.play(); isPlaying = true;
-    document.getElementById('play-btn').textContent = '⏸';
-  }
-}
-
-function openDetail(id) {
-  stopAudio();
-  selectedSong = songs.find(s => s.id === id);
-  checked = { pdf: false, tracks: false, gp: false, bundle: false };
-  renderGrid();
-
-  const sampleBlock = selectedSong.sample
-    ? `<div class="sample-thumb" onclick="openSampleOverlay('${selectedSong.sample}')">
-         <img src="${selectedSong.sample}" alt="Sample from ${selectedSong.title}"
-              onerror="this.parentElement.innerHTML='<div class=\\'sample-placeholder\\'>Sample loads from your repo</div>'">
-         <span class="sample-thumb-label">Tap to enlarge</span>
-       </div>` : '';
-
-  const previewBlock = selectedSong.preview
-    ? `<div class="preview-player">
-         <button class="play-btn" id="play-btn" onclick="togglePlay()">▶</button>
-         <div class="preview-info">
-           <div class="preview-label">Preview</div>
-           <div class="preview-note">Short clip, get a feel for the arrangement</div>
-         </div>
-         <audio id="preview-audio" src="${selectedSong.preview}" onended="stopAudio()"></audio>
-       </div>` : '';
-
-  document.getElementById('detail-panel').innerHTML = `
-    <div class="detail-panel">
-      <div class="d-head">
-        <div>
-          <div class="d-title">${selectedSong.title}</div>
-          <div class="d-sub">${selectedSong.movie} · ${selectedSong.type} · ${selectedSong.style}</div>
-        </div>
-        <button class="close-btn" onclick="closeDetail()" aria-label="Close">×</button>
-      </div>
-      ${sampleBlock}
-      ${previewBlock}
-      <div class="choose-label">Choose what you want</div>
-      <div class="asset-rows">
-        ${assetRowHTML('pdf',    'PDF, staff notation and tabs')}
-        ${assetRowHTML('tracks', 'Track and backing track')}
-        ${assetRowHTML('gp',     'Guitar Pro file (.gp)')}
-        ${selectedSong.assets.bundle ? (() => {
-          const individualTotal = (selectedSong.assets.pdf ? selectedSong.assets.pdf.price : 0) + (selectedSong.assets.tracks ? selectedSong.assets.tracks.price : 0) + (selectedSong.assets.gp ? selectedSong.assets.gp.price : 0);
-          const saving = individualTotal - selectedSong.assets.bundle.price;
-          return '<div class="bundle-divider"></div>' + assetRowHTML('bundle', 'Full bundle', saving > 0 ? `Save ₹${saving}` : '');
-        })() : ''}
-      </div>
-      <div class="total-row">
-        <span>Total</span>
-        <strong id="order-total">₹0</strong>
-      </div>
-      <div class="order-fields">
-        <input type="text"  id="inp-name"  placeholder="Your name">
-        <input type="email" id="inp-email" placeholder="Email address">
-      </div>
-      <button class="wa-btn" onclick="sendWhatsApp()">${WA_SVG} Send order via WhatsApp</button>
-      <div class="or-row">or</div>
-      <button class="em-btn" onclick="sendEmail()">✉ Send order via email</button>
-    </div>`;
-
-  audioEl = document.getElementById('preview-audio');
-  document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-
-function closeDetail() {
-  stopAudio();
-  selectedSong = null;
-  checked = { pdf: false, tracks: false, gp: false, bundle: false };
-  renderGrid();
-  document.getElementById('detail-panel').innerHTML = '';
-}
-
-function openSampleOverlay(src) {
-  document.getElementById('overlay-img').src = src;
-  document.getElementById('sample-overlay').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-
-function closeSampleOverlay() {
-  document.getElementById('sample-overlay').style.display = 'none';
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSampleOverlay(); });
-
-function buildOrderSummary() {
-  const name  = (document.getElementById('inp-name')?.value  || '').trim() || 'not provided';
-  const email = (document.getElementById('inp-email')?.value || '').trim() || 'not provided';
-  const items = [];
-  if (checked.pdf    && selectedSong.assets.pdf)    items.push(`PDF ₹${selectedSong.assets.pdf.price}`);
-  if (checked.tracks && selectedSong.assets.tracks) items.push(`Track and backing track ₹${selectedSong.assets.tracks.price}`);
-  if (checked.gp     && selectedSong.assets.gp)     items.push(`Guitar Pro file ₹${selectedSong.assets.gp.price}`);
-  if (checked.bundle && selectedSong.assets.bundle) items.push(`Full bundle ₹${selectedSong.assets.bundle.price}`);
-  return { name, email, items, total: calcTotal() };
-}
-
-function sendWhatsApp() {
-  const o = buildOrderSummary();
-  if (!o.items.length) { alert('Please select at least one item.'); return; }
-  const text = `Hi Rohit!\n\nOrder request:\nSong: ${selectedSong.title} (${selectedSong.type})\nItems: ${o.items.join(', ')}\nTotal: ₹${o.total}\nName: ${o.name}\nEmail: ${o.email}\n\nPlease send the UPI QR. Thanks!`;
-  window.open(`https://wa.me/${YOUR_WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank');
-}
-
-function sendEmail() {
-  const o = buildOrderSummary();
-  if (!o.items.length) { alert('Please select at least one item.'); return; }
-  const subject = `Tab order: ${selectedSong.title}`;
-  const body    = `Hi Rohit,\n\nOrder request:\nSong: ${selectedSong.title} (${selectedSong.type})\nItems: ${o.items.join(', ')}\nTotal: ₹${o.total}\nName: ${o.name}\nReply to: ${o.email}\n\nPlease send the UPI QR. Thanks!`;
-  window.open(`mailto:${YOUR_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
-}
-
 let tutCurrent = 1;
 const tutTotal = 4;
 
@@ -767,12 +541,10 @@ function tutGoStep(n) {
   document.getElementById('tdot-' + tutCurrent).classList.add('active');
   document.getElementById('tdot-' + tutCurrent).classList.remove('done');
   for (let i = 1; i < tutCurrent; i++) { document.getElementById('tdot-' + i).classList.add('done'); document.getElementById('tdot-' + i).classList.remove('active'); }
-  for (let i = tutCurrent + 1; i <= tutTotal; i++) { document.getElementById('tdot-' + i).classList.remove('done','active'); }
+  for (let i = tutCurrent + 1; i <= tutTotal; i++) { document.getElementById('tdot-' + i).classList.remove('done'); document.getElementById('tdot-' + i).classList.remove('active'); }
   document.getElementById('tprog').style.width = (tutCurrent / tutTotal * 100) + '%';
   document.getElementById('how-to-order').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
-
-loadSongs();
 </script>
 </body>
 </html>
