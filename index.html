@@ -167,17 +167,18 @@
   .faq-card.open .faq-card-num { color: rgba(226,75,74,0.15); }
 
   .gp-card-section { padding: 0 28px 32px; }
-  .gp-card { background: #1a1a1a; border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 18px; }
-  .gp-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--amber-bg); border: 1px solid var(--amber-border); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .gp-card { background: var(--card); border: 0.5px solid var(--border); border-left: 3px solid var(--amber-tag); border-radius: 10px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 14px; }
+  .gp-icon { flex-shrink: 0; margin-top: 2px; }
   .gp-body { flex: 1; }
+  .gp-note-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--amber-tag); margin-bottom: 5px; display: flex; align-items: center; gap: 5px; }
   .gp-label { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--amber-tag); background: var(--amber-bg); border: 0.5px solid var(--amber-border); border-radius: 6px; padding: 2px 8px; display: inline-block; margin-bottom: 8px; }
-  .gp-title { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; }
-  .gp-desc { font-size: 13px; color: #888; line-height: 1.6; margin-bottom: 14px; }
-  .gp-badges { display: flex; gap: 8px; flex-wrap: wrap; }
-  .gp-badge { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 8px; }
-  .gp-badge-green { background: rgba(52,199,89,0.15); color: #34c759; }
-  .gp-badge-blue  { background: rgba(10,132,255,0.15); color: #0a84ff; }
-  .gp-badge-red   { background: rgba(255,69,58,0.15); color: #ff453a; }
+  .gp-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .gp-desc { font-size: 12px; color: var(--text-2); line-height: 1.6; margin-bottom: 10px; }
+  .gp-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+  .gp-badge { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 6px; }
+  .gp-badge-green { background: #E1F5EE; color: #0F6E56; }
+  .gp-badge-blue  { background: #E6F1FB; color: #185FA5; }
+  .gp-badge-red   { background: #FCEBEB; color: #E24B4A; }
 
   footer { background: var(--card); border-top: 0.5px solid var(--border); padding: 16px 28px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; overflow: hidden; }
   .foot-left { font-size: 13px; color: var(--text-2); line-height: 1.5; }
@@ -349,10 +350,10 @@
 
 <div class="gp-card-section" id="gp-info">
   <div class="gp-card">
-    <div class="gp-icon" style="padding:0;background:none;border:none;overflow:hidden;"><img src="Guitar_Pro_8_icon.png" alt="Guitar Pro" style="width:48px;height:48px;border-radius:12px;display:block;"></div>
+    <div class="gp-icon"><img src="Guitar_Pro_8_icon.png" alt="Guitar Pro" style="width:36px;height:36px;border-radius:8px;display:block;"></div>
     <div class="gp-body">
-      <div class="gp-label">Guitar Pro files</div>
-      <div class="gp-title">Interactive tabs. Password protected.</div>
+      <div class="gp-label"><img src="Guitar_Pro_8_icon.png" alt="" style="width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:5px;">About Guitar Pro files</div>
+      <div class="gp-title">Interactive tabs, password protected</div>
       <div class="gp-desc">Guitar Pro (.gp) files let you follow the notation bar by bar, slow down tricky sections, and hear the arrangement play back. Every file from rohittabs.in is password protected for content security.</div>
       <div class="gp-badges">
         <span class="gp-badge gp-badge-green">✓ View notation</span>
