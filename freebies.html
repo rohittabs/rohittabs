@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freebies · Rohit Tabs</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red: #E24B4A;
+    --blue-tag: #185FA5; --blue-bg: #E6F1FB;
+    --green-tag: #3B6D11; --green-bg: #EAF3DE;
+    --purple-tag: #534AB7; --purple-bg: #EEEDFE; --purple-border: #AFA9EC;
+    --teal-tag: #0F6E56; --teal-bg: #E1F5EE; --teal-border: #9FE1CB;
+    --amber-tag: #854F0B; --amber-bg: #FAEEDA; --amber-border: #FAC775;
+    --text: #1a1a1a; --text-2: #555; --text-3: #888;
+    --bg: #f5f5f3; --card: #fff;
+    --border: rgba(0,0,0,0.1); --border-strong: rgba(0,0,0,0.18);
+    --radius: 8px;
+  }
+  html { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color-scheme: light; }
+  body { background: var(--bg); color: var(--text); }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 28px; border-bottom: 0.5px solid var(--border); background: var(--bg); }
+  .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .logo img { height: 32px; width: auto; }
+  .logo-text { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; color: var(--text); }
+  .logo-text .red { color: var(--red); }
+  .back-btn { font-size: 13px; color: var(--text-2); text-decoration: none; display: flex; align-items: center; gap: 5px; }
+  .back-btn:hover { color: var(--text); }
+
+  .hero { padding: 40px 28px 28px; }
+  .hero .s-label { font-size: 11px; color: var(--text-3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
+  .hero h1 { font-size: 32px; font-weight: 800; color: var(--text); letter-spacing: -1px; margin-bottom: 8px; }
+  .hero h1 em { font-style: normal; color: var(--red); }
+  .hero p { font-size: 14px; color: var(--text-3); }
+
+  .divider { height: 0.5px; background: var(--border); margin: 0 28px; }
+
+  .grid-section { padding: 28px 28px; }
+  .grid-label { font-size: 11px; color: var(--text-3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 14px; }
+  .freebies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+
+  .freebie-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; transition: border-color 0.15s; }
+  .freebie-card:hover { border-color: var(--border-strong); }
+  .freebie-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 12px; flex-shrink: 0; }
+  .freebie-icon-blue   { background: var(--blue-bg);   border: 0.5px solid rgba(24,95,165,0.2); }
+  .freebie-icon-green  { background: var(--teal-bg);   border: 0.5px solid var(--teal-border); }
+  .freebie-icon-purple { background: var(--purple-bg); border: 0.5px solid var(--purple-border); }
+  .freebie-icon-amber  { background: var(--amber-bg);  border: 0.5px solid var(--amber-border); }
+  .freebie-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-3); margin-bottom: 4px; }
+  .freebie-badge { display: inline-block; font-size: 10px; font-weight: 700; background: #E1F5EE; color: #0F6E56; border: 0.5px solid #9FE1CB; border-radius: 6px; padding: 2px 7px; margin-bottom: 8px; }
+  .freebie-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+  .freebie-desc { font-size: 12px; color: var(--text-2); line-height: 1.5; margin-bottom: 14px; flex: 1; }
+  .freebie-btn { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 0; border-radius: 22px; border: 0.5px solid var(--border-strong); background: transparent; color: var(--text); font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.15s; }
+  .freebie-btn:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+  footer { background: var(--card); border-top: 0.5px solid var(--border); padding: 20px 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  footer p { font-size: 13px; color: var(--text-2); }
+  .foot-link { font-size: 13px; color: var(--text-3); text-decoration: none; display: flex; align-items: center; gap: 5px; }
+  .foot-link:hover { color: var(--text); }
+
+  @media (max-width: 600px) {
+    nav { padding: 14px 16px; }
+    .hero { padding: 28px 16px 20px; }
+    .grid-section { padding: 20px 16px; }
+    .divider { margin: 0 16px; }
+    footer { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">
+    <img src="logo.png" alt="">
+    <span class="logo-text">rohit<span class="red">tabs</span></span>
+  </a>
+  <a href="/" class="back-btn">← Back to store</a>
+</nav>
+
+<div class="hero">
+  <div class="s-label">Free downloads</div>
+  <h1>Freebies for <em>musicians</em></h1>
+  <p>No sign up, no payment. Download, print, and use.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="grid-section">
+  <div class="grid-label">Guitar</div>
+  <div class="freebies-grid" style="margin-bottom:28px;">
+
+    <div class="freebie-card">
+      <div class="freebie-icon freebie-icon-blue">🎸</div>
+      <div class="freebie-tag">Guitar</div>
+      <div class="freebie-badge">Free</div>
+      <div class="freebie-title">Guitar Chord Chart</div>
+      <div class="freebie-desc">Essential open chords, barre chords, and chord shapes for beginners and intermediate players.</div>
+      <a href="freebies/guitar-chord-chart.png" download class="freebie-btn">⬇ Download PNG</a>
+    </div>
+
+    <div class="freebie-card">
+      <div class="freebie-icon freebie-icon-purple">📄</div>
+      <div class="freebie-tag">Guitar</div>
+      <div class="freebie-badge">Free</div>
+      <div class="freebie-title">Blank Guitar Tab Sheet</div>
+      <div class="freebie-desc">Printable blank staff and tab paper for guitar. Write your own tabs or transcribe songs by ear.</div>
+      <a href="freebies/blank-guitar-tab-sheet.pdf" download class="freebie-btn">⬇ Download PDF</a>
+    </div>
+
+  </div>
+
+  <div class="grid-label">Ukulele</div>
+  <div class="freebies-grid" style="margin-bottom:28px;">
+
+    <div class="freebie-card">
+      <div class="freebie-icon freebie-icon-green">🪗</div>
+      <div class="freebie-tag">Ukulele</div>
+      <div class="freebie-badge">Free</div>
+      <div class="freebie-title">Ukulele Chord Chart</div>
+      <div class="freebie-desc">Common ukulele chords laid out clearly, perfect to print and keep on your practice desk.</div>
+      <a href="freebies/ukulele-chord-chart.png" download class="freebie-btn">⬇ Download PNG</a>
+    </div>
+
+    <div class="freebie-card">
+      <div class="freebie-icon freebie-icon-purple">📄</div>
+      <div class="freebie-tag">Ukulele</div>
+      <div class="freebie-badge">Free</div>
+      <div class="freebie-title">Blank Ukulele Tab Sheet</div>
+      <div class="freebie-desc">Printable blank staff and tab paper for ukulele. Great for writing arrangements or practice notes.</div>
+      <a href="freebies/blank-ukulele-tab-sheet.pdf" download class="freebie-btn">⬇ Download PDF</a>
+    </div>
+
+  </div>
+
+  <div class="grid-label">Music Theory</div>
+  <div class="freebies-grid">
+
+    <div class="freebie-card">
+      <div class="freebie-icon freebie-icon-amber">🎼</div>
+      <div class="freebie-tag">Music Theory</div>
+      <div class="freebie-badge">Free</div>
+      <div class="freebie-title">Circle of 5ths</div>
+      <div class="freebie-desc">A clear, printable Circle of 5ths to understand keys, scales, and chord relationships at a glance.</div>
+      <a href="freebies/circle-of-5ths.pdf" download class="freebie-btn">⬇ Download PDF</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>rohittabs.in</p>
+  <a href="https://wa.me/919711431855" target="_blank" class="foot-link">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</footer>
+
+</body>
+</html>
