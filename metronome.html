@@ -202,6 +202,35 @@ let nextBeatTime = 0;
 let timerID = null;
 let audioCtx = null;
 let tapTimes = [];
+let lastTap = 0;
+
+// iOS Safari requires AudioContext to be created AND resumed from a user gesture
+// We also need to play a silent buffer to "warm up" the context on iOS
+function initAudio() {
+  if (audioCtx) return audioCtx;
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  // Play a silent buffer to unlock iOS audio
+  const buf = audioCtx.createBuffer(1, 1, 22050);
+  const src = audioCtx.createBufferSource();
+  src.buffer = buf;
+  src.connect(audioCtx.destination);
+  src.start(0);
+  return audioCtx;
+}
+
+// Unlock on any touch/click anywhere on page
+function unlockAudio() {
+  if (!audioCtx) {
+    initAudio();
+  }
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+}
+
+['touchstart', 'touchend', 'mousedown', 'keydown'].forEach(evt => {
+  document.body.addEventListener(evt, unlockAudio, false);
+});
 
 const TEMPO_NAMES = [
   [20,  'Larghissimo'],
@@ -258,12 +287,8 @@ function buildBeatDots() {
 }
 
 function getCtx() {
-  if (!audioCtx) {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  }
-  if (audioCtx.state === 'suspended') {
-    audioCtx.resume();
-  }
+  if (!audioCtx) initAudio();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
   return audioCtx;
 }
 
@@ -311,23 +336,22 @@ function toggleMetronome() {
     document.querySelectorAll('.beat-dot').forEach(d => d.className = 'beat-dot');
   } else {
     const ctx = getCtx();
-    const startScheduler = () => {
+    const doStart = () => {
       isRunning = true;
       currentBeat = 0;
-      nextBeatTime = ctx.currentTime + 0.05;
+      nextBeatTime = ctx.currentTime + 0.1;
       scheduler();
       document.getElementById('start-btn').textContent = '⏹ Stop';
       document.getElementById('start-btn').classList.add('running');
     };
-    if (ctx.state === 'suspended') {
-      ctx.resume().then(startScheduler);
+    if (ctx.state === 'running') {
+      doStart();
     } else {
-      startScheduler();
+      ctx.resume().then(doStart);
     }
   }
 }
 
-let lastTap = 0;
 function tapTempo() {
   const now = Date.now();
   if (lastTap && now - lastTap < 3000) {
