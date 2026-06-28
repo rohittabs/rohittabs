@@ -37,7 +37,6 @@
   .hero h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; line-height: 1.12; letter-spacing: -1.5px; color: var(--text); margin-bottom: 12px; }
   .hero h1 em { font-style: normal; color: var(--red); }
   .hero-sub { font-size: 17px; color: var(--text-3); margin: 0 auto 14px; letter-spacing: 0.1px; text-align: center; display: block; }
-  .hero p { font-size: 15px; color: var(--text-2); max-width: 420px; margin: 0 auto 18px; line-height: 1.65; }
   .hero-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .btn-dark { background: var(--text); color: var(--bg); padding: 12px 28px; border-radius: 24px; border: none; font-size: 15px; cursor: pointer; text-decoration: none; display: inline-block; }
   .btn-outline { background: transparent; color: var(--text); padding: 12px 28px; border-radius: 24px; border: 0.5px solid var(--border-strong); font-size: 15px; cursor: pointer; text-decoration: none; display: inline-block; }
@@ -127,7 +126,7 @@
   .order-fields { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
   .order-fields input { flex: 1; min-width: 130px; padding: 10px 13px; border: 0.5px solid var(--border-strong); border-radius: var(--radius); font-size: 14px; background: var(--bg); color: var(--text); }
   .order-fields input:focus { outline: none; border-color: var(--red); }
-  .wa-btn { width: 100%; background: var(--wa); color: #fff; border: none; border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer; margin-bottom: 8px; font-weight: 500; }
+  .wa-btn { width: 100%; background: var(--wa); color: #fff; border: none; border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer; margin-bottom: 8px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px; }
   .wa-btn:hover { opacity: 0.9; }
   .or-row { text-align: center; font-size: 12px; color: var(--text-3); margin: 6px 0; }
   .em-btn { width: 100%; background: var(--text); color: var(--bg); border: none; border-radius: 24px; padding: 13px; font-size: 15px; cursor: pointer; font-weight: 500; }
@@ -141,36 +140,28 @@
   .step p { font-size: 11px; color: var(--text-3); line-height: 1.4; }
 
   .faq-section { padding: 32px 28px; }
-  .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 20px; }
-  .faq-item { border-top: 0.5px solid var(--border); padding: 16px 0; cursor: pointer; }
-  .faq-item:last-child { border-bottom: 0.5px solid var(--border); }
-  .faq-q { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-  .faq-q span { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.4; }
-  .faq-icon { font-size: 18px; color: var(--text-3); flex-shrink: 0; transition: transform 0.2s; }
-  .faq-item.open .faq-icon { transform: rotate(45deg); }
-  .faq-a { font-size: 13px; color: var(--text-2); line-height: 1.65; margin-top: 10px; display: none; }
-  .faq-item.open .faq-a { display: block; }
+  .faq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
+  .faq-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 20px; cursor: pointer; transition: border-color 0.15s; }
+  .faq-card:hover { border-color: var(--border-strong); }
+  .faq-card.open { border-color: var(--red); }
+  .faq-card-num { font-size: 28px; font-weight: 900; color: rgba(0,0,0,0.06); line-height: 1; margin-bottom: 10px; }
+  .faq-card-q { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 0; line-height: 1.4; }
+  .faq-card-a { font-size: 12px; color: var(--text-2); line-height: 1.6; margin-top: 10px; display: none; }
+  .faq-card.open .faq-card-a { display: block; }
+  .faq-card.open .faq-card-num { color: rgba(226,75,74,0.15); }
 
-  .reviews-section { padding: 32px 28px; }
-  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 20px; margin-bottom: 28px; }
-  .review-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 12px; padding: 18px; }
-  .review-stars { color: #F5A623; font-size: 14px; margin-bottom: 8px; letter-spacing: 1px; }
-  .review-text { font-size: 13px; color: var(--text-2); line-height: 1.6; margin-bottom: 12px; }
-  .review-author { font-size: 12px; font-weight: 600; color: var(--text); }
-  .review-song { font-size: 11px; color: var(--text-3); margin-top: 2px; }
-  .review-form { background: var(--card); border: 0.5px solid var(--border); border-radius: 12px; padding: 20px; }
-  .review-form h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
-  .star-picker { display: flex; gap: 6px; margin-bottom: 12px; }
-  .star-picker button { font-size: 22px; background: none; border: none; cursor: pointer; opacity: 0.3; transition: opacity 0.1s; padding: 0; line-height: 1; }
-  .star-picker button.lit { opacity: 1; }
-  .rf-row { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-  .rf-row input, .rf-row select { flex: 1; min-width: 120px; padding: 10px 13px; border: 0.5px solid var(--border-strong); border-radius: var(--radius); font-size: 13px; background: var(--bg); color: var(--text); }
-  .rf-row input:focus, .rf-row select:focus { outline: none; border-color: var(--red); }
-  .rf-textarea { width: 100%; padding: 10px 13px; border: 0.5px solid var(--border-strong); border-radius: var(--radius); font-size: 13px; background: var(--bg); color: var(--text); resize: vertical; min-height: 80px; font-family: inherit; margin-bottom: 12px; }
-  .rf-textarea:focus { outline: none; border-color: var(--red); }
-  .rf-submit { background: var(--red); color: #fff; border: none; border-radius: 24px; padding: 12px 28px; font-size: 14px; font-weight: 500; cursor: pointer; }
-  .rf-submit:hover { opacity: 0.9; }
-  .review-success { text-align: center; padding: 20px; font-size: 14px; color: var(--teal-tag); display: none; }
+  .gp-card-section { padding: 0 28px 32px; }
+  .gp-card { background: #1a1a1a; border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 18px; }
+  .gp-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--amber-bg); border: 1px solid var(--amber-border); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .gp-body { flex: 1; }
+  .gp-label { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--amber-tag); background: var(--amber-bg); border: 0.5px solid var(--amber-border); border-radius: 6px; padding: 2px 8px; display: inline-block; margin-bottom: 8px; }
+  .gp-title { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; }
+  .gp-desc { font-size: 13px; color: #888; line-height: 1.6; margin-bottom: 14px; }
+  .gp-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .gp-badge { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 8px; }
+  .gp-badge-green { background: rgba(52,199,89,0.15); color: #34c759; }
+  .gp-badge-blue  { background: rgba(10,132,255,0.15); color: #0a84ff; }
+  .gp-badge-red   { background: rgba(255,69,58,0.15); color: #ff453a; }
 
   footer { background: var(--card); border-top: 0.5px solid var(--border); padding: 16px 28px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; overflow: hidden; }
   .foot-left { font-size: 13px; color: var(--text-2); line-height: 1.5; }
@@ -187,12 +178,15 @@
     nav { padding: 14px 16px; }
     .nav-links { display: none; }
     .hero { padding: 20px 16px 10px; }
-    .section, .how-section, .faq-section, .reviews-section { padding: 26px 16px; }
+    .section, .how-section, .faq-section { padding: 26px 16px; }
+    .gp-card-section { padding: 0 16px 26px; }
     .divider { margin: 0 16px; }
     footer { grid-template-columns: 1fr; text-align: center; padding: 14px 16px; gap: 10px; overflow: hidden; }
     .steps { grid-template-columns: repeat(2, 1fr); }
+    .faq-grid { grid-template-columns: 1fr; }
     .foot-center img { height: 90px; margin: -22px 0; }
     .foot-links { justify-content: center; }
+    .gp-card { flex-direction: column; gap: 12px; }
   }
 </style>
 </head>
@@ -228,12 +222,10 @@
   <div class="s-label">Pick a song</div>
   <div class="s-title">Available <span style="color:var(--red);">tabs</span></div>
   <div class="s-sub">Every <span style="color:var(--red);font-weight:500;">tab</span> you need: PDF, Tracks, Backing Tracks, Guitar Pro</div>
-
   <div class="search-bar">
     <input class="search-input" id="search-input" type="search" placeholder="Search songs..." oninput="onSearch(this.value)">
     <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Clear search">×</button>
   </div>
-
   <div class="filters" id="filters">
     <button class="f-btn active" data-filter="all">All</button>
     <button class="f-btn" data-filter="Guitar">Guitar</button>
@@ -258,58 +250,57 @@
 
 <div class="divider"></div>
 
-<section class="reviews-section" id="reviews">
-  <div class="s-label">What customers say</div>
-  <div class="s-title">Reviews</div>
-  <div class="reviews-grid" id="reviews-grid"></div>
-  <div class="review-form" id="review-form">
-    <h3>Leave a review</h3>
-    <div class="star-picker" id="star-picker">
-      <button onclick="setStar(1)">★</button>
-      <button onclick="setStar(2)">★</button>
-      <button onclick="setStar(3)">★</button>
-      <button onclick="setStar(4)">★</button>
-      <button onclick="setStar(5)">★</button>
+<div class="gp-card-section" id="gp-info">
+  <div class="gp-card">
+    <div class="gp-icon" style="padding:0;background:none;border:none;overflow:hidden;"><img src="Guitar_Pro_8_icon.png" alt="Guitar Pro" style="width:48px;height:48px;border-radius:12px;display:block;"></div>
+    <div class="gp-body">
+      <div class="gp-label">Guitar Pro files</div>
+      <div class="gp-title">Interactive tabs. Password protected.</div>
+      <div class="gp-desc">Guitar Pro (.gp) files let you follow the notation bar by bar, slow down tricky sections, and hear the arrangement play back. Every file from rohittabs.in is password protected for content security.</div>
+      <div class="gp-badges">
+        <span class="gp-badge gp-badge-green">✓ View notation</span>
+        <span class="gp-badge gp-badge-blue">✓ Play back audio</span>
+        <span class="gp-badge gp-badge-red">✕ Cannot edit content</span>
+      </div>
     </div>
-    <div class="rf-row">
-      <input type="text" id="rv-name" placeholder="Your name">
-      <input type="text" id="rv-song" placeholder="Song you purchased (optional)">
-    </div>
-    <textarea class="rf-textarea" id="rv-text" placeholder="Share your experience..."></textarea>
-    <button class="rf-submit" onclick="submitReview()">Submit review</button>
-    <div class="review-success" id="rv-success">Thank you for your review!</div>
   </div>
-</section>
+</div>
 
 <div class="divider"></div>
 
 <section class="faq-section" id="faq">
   <div class="s-label">FAQ</div>
   <div class="s-title">Common questions</div>
-  <div class="faq-list" id="faq-list">
-    <div class="faq-item">
-      <div class="faq-q"><span>How do I receive my files after payment?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">Once you place your order and complete the UPI payment, your files will be sent to you via the same channel you used to order via WhatsApp or email.</div>
+  <div class="faq-grid" id="faq-grid">
+    <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card-num">01</div>
+      <div class="faq-card-q">How do I receive my files after payment?</div>
+      <div class="faq-card-a">Once you place your order and complete the UPI payment, your files will be sent to you via the same channel you used to order — WhatsApp or email.</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q"><span>How long does delivery take?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">I always try to deliver as soon as I receive your request. In case of a delay it just means I'm tied up at the moment, but rest assured your money is safe and delivery will be made at the earliest. You're welcome to follow up via WhatsApp or call anytime.</div>
+    <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card-num">02</div>
+      <div class="faq-card-q">How long does delivery take?</div>
+      <div class="faq-card-a">I always try to deliver as soon as I receive your request. In case of a delay your money is safe and delivery will be made at the earliest. Follow up via WhatsApp or call anytime.</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q"><span>Are payments refundable?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">All sales are final. Since these are digital products, no refunds are offered once payment is made. Please check the sample before purchasing to make sure it suits your needs.</div>
+    <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card-num">03</div>
+      <div class="faq-card-q">Are payments refundable?</div>
+      <div class="faq-card-a">All sales are final. Since these are digital products, no refunds are offered once payment is made. Please check the sample before purchasing.</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q"><span>Which UPI apps are accepted?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">You can pay via any UPI app: Google Pay, PhonePe, Paytm, BHIM, or any other UPI-enabled app. A QR code will be shared with you after you place your order.</div>
+    <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card-num">04</div>
+      <div class="faq-card-q">Which UPI apps are accepted?</div>
+      <div class="faq-card-a">You can pay via any UPI app: Google Pay, PhonePe, Paytm, BHIM, or any other UPI-enabled app. A QR code will be shared after you place your order.</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q"><span>What is a Guitar Pro file?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">A Guitar Pro (.gp) file is an interactive tab file that you can open in Guitar Pro or the free TuxGuitar app. It lets you view the notation, slow down sections, and hear the arrangement. The file is password protected so you can view and play it but not edit the content.</div>
+    <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card-num">05</div>
+      <div class="faq-card-q">What is a Guitar Pro file?</div>
+      <div class="faq-card-a">A .gp file opens in Guitar Pro or the free TuxGuitar app. It lets you view notation, slow down sections, and hear the arrangement. Password protected — view and play only, no editing.</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q"><span>Can I share the files with others?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">Files are for personal use only and may not be shared, redistributed, or resold. Each purchase is a single-user license.</div>
+    <div class="faq-card" onclick="this.classList.toggle('open')">
+      <div class="faq-card-num">06</div>
+      <div class="faq-card-q">Can I share the files with others?</div>
+      <div class="faq-card-a">Files are for personal use only and may not be shared, redistributed, or resold. Each purchase is a single-user license.</div>
     </div>
   </div>
 </section>
@@ -319,7 +310,6 @@
 <footer>
   <div class="foot-left">
     <strong>rohittabs.in</strong>
-    High quality PDFs, Tracks, Backing Tracks and Guitar Pro files
   </div>
   <div class="foot-center">
     <img src="Rohit-Mishra-black-high-res.png" alt="Rohit Mishra Music Educator">
@@ -337,6 +327,8 @@
 const YOUR_WHATSAPP = '919711431855';
 const YOUR_EMAIL    = 'rohittabs@gmail.com';
 
+const WA_SVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
+
 let songs        = [];
 let activeFilter = 'all';
 let searchQuery  = '';
@@ -344,57 +336,6 @@ let selectedSong = null;
 let checked      = { pdf: false, tracks: false, gp: false, bundle: false };
 let audioEl      = null;
 let isPlaying    = false;
-let starRating   = 0;
-
-const STORAGE_KEY = 'rohittabs_reviews';
-
-const DEFAULT_REVIEWS = [];
-
-function loadReviews() {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    return stored ? JSON.parse(stored) : DEFAULT_REVIEWS;
-  } catch { return DEFAULT_REVIEWS; }
-}
-
-function saveReviews(reviews) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews)); } catch {}
-}
-
-function renderReviews() {
-  const reviews = loadReviews();
-  const grid = document.getElementById('reviews-grid');
-  if (!reviews.length) { grid.innerHTML = '<p style="color:var(--text-3);font-size:14px;">No reviews yet. Be the first!</p>'; return; }
-  grid.innerHTML = reviews.map(r => `
-    <div class="review-card">
-      <div class="review-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
-      <div class="review-text">${r.text}</div>
-      <div class="review-author">${r.name}</div>
-      ${r.song ? `<div class="review-song">Purchased: ${r.song}</div>` : ''}
-    </div>`).join('');
-}
-
-function setStar(n) {
-  starRating = n;
-  document.querySelectorAll('#star-picker button').forEach((b, i) => b.classList.toggle('lit', i < n));
-}
-
-function submitReview() {
-  const name = document.getElementById('rv-name').value.trim();
-  const text = document.getElementById('rv-text').value.trim();
-  if (!name || !text || !starRating) { alert('Please fill in your name, a review, and select a star rating.'); return; }
-  const song = document.getElementById('rv-song').value.trim();
-  const reviews = loadReviews();
-  reviews.unshift({ name, song, stars: starRating, text, date: new Date().toISOString().slice(0,10) });
-  saveReviews(reviews);
-  renderReviews();
-  document.getElementById('rv-name').value = '';
-  document.getElementById('rv-song').value = '';
-  document.getElementById('rv-text').value = '';
-  setStar(0);
-  document.getElementById('rv-success').style.display = 'block';
-  setTimeout(() => document.getElementById('rv-success').style.display = 'none', 3000);
-}
 
 async function loadSongs() {
   const res = await fetch('songs.json');
@@ -589,7 +530,7 @@ function openDetail(id) {
         <input type="text"  id="inp-name"  placeholder="Your name">
         <input type="email" id="inp-email" placeholder="Email address">
       </div>
-      <button class="wa-btn" onclick="sendWhatsApp()">📲 Send order via WhatsApp</button>
+      <button class="wa-btn" onclick="sendWhatsApp()">${WA_SVG} Send order via WhatsApp</button>
       <div class="or-row">or</div>
       <button class="em-btn" onclick="sendEmail()">✉ Send order via email</button>
     </div>`;
@@ -645,13 +586,7 @@ function sendEmail() {
   window.open(`mailto:${YOUR_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
 }
 
-document.getElementById('faq-list').addEventListener('click', e => {
-  const item = e.target.closest('.faq-item');
-  if (item) item.classList.toggle('open');
-});
-
 loadSongs();
-renderReviews();
 </script>
 </body>
 </html>
