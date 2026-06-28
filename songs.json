@@ -13,5 +13,20 @@
       "gp":      { "price": 199, "note": "Guitar Pro file, view and play only, password protected" },
       "bundle":  { "price": 349, "note": "PDF + Tracks + Guitar Pro file" }
     }
+  },
+  {
+    "id": 2,
+    "title": "Dil Aakhir Tu Kyun Rota Hai",
+    "movie": "Zindagi Na Milegi Dobara",
+    "type": "Guitar",
+    "style": "Fingerpicking",
+    "preview": "previews/Dil Aakhir Tu Kyun Rota Hai ~ ZNMD Theme_[cut_15sec].mp3",
+    "sample": "samples/dil_aakhir_tu_kyun_rota_hai_guitar_tabs.png",
+    "assets": {
+      "pdf":     { "price": 79,  "pages": 2, "note": "Staff notation and tabs" },
+      "tracks":  { "price": 149, "note": "Track and Backing Track for play along, reference and practice" },
+      "gp":      { "price": 199, "note": "Guitar Pro file, view and play only, password protected" },
+      "bundle":  { "price": 349, "note": "PDF + Tracks + Guitar Pro file" }
+    }
   }
 ]
