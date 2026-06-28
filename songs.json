@@ -28,5 +28,20 @@
       "gp":      { "price": 199, "note": "Guitar Pro file, view and play only, password protected" },
       "bundle":  { "price": 349, "note": "PDF + Tracks + Guitar Pro file" }
     }
+  },
+  {
+    "id": 3,
+    "title": "Sajni",
+    "movie": "Laapataa Ladies",
+    "type": "Ukulele",
+    "style": "Fingerpicking and Strumming",
+    "preview": "previews/Sajni (Ukulele) ~ Laapataa Ladies_[cut_15sec].mp3",
+    "sample": "samples/sajni_ukulele_tabs_sheet_music.png",
+    "assets": {
+      "pdf":     { "price": 79,  "pages": 8, "note": "Staff notation and tabs" },
+      "tracks":  { "price": 149, "note": "Track and Backing Track for play along, reference and practice" },
+      "gp":      { "price": 199, "note": "Guitar Pro file, view and play only, password protected" },
+      "bundle":  { "price": 349, "note": "PDF + Tracks + Guitar Pro file" }
+    }
   }
 ]
