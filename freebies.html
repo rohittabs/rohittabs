@@ -40,7 +40,7 @@
 
   .grid-section { padding: 28px 28px; }
   .grid-label { font-size: 11px; color: var(--text-3); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 14px; }
-  .freebies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .freebies-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
 
   .freebie-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; transition: border-color 0.15s; }
   .freebie-card:hover { border-color: var(--border-strong); }
@@ -67,6 +67,7 @@
     .grid-section { padding: 20px 16px; }
     .divider { margin: 0 16px; }
     footer { padding: 16px; }
+    .freebies-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
