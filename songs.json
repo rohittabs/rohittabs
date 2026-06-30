@@ -8,10 +8,10 @@
     "preview": "previews/Ajeeb Daastan Hai Yeh (Chord Melody)_[cut_15sec].mp3",
     "sample": "samples/ajeeb_daastan_hai_yeh_guitar_tab_page1.png",
     "assets": {
-      "pdf":     { "price": 79,  "pages": 3, "note": "Staff notation and tabs" },
-      "tracks":  { "price": 149, "note": "Track and Backing Track for play along, reference and practice" },
-      "gp":      { "price": 199, "note": "Guitar Pro file, view and play only, password protected" },
-      "bundle":  { "price": 349, "note": "PDF + Tracks + Guitar Pro file" }
+      "pdf":     { "price": 99,  "pages": 3, "note": "Staff notation and tabs" },
+      "tracks":  { "price": 199, "note": "Track and Backing Track for play along, reference and practice" },
+      "gp":      { "price": 299, "note": "Guitar Pro file, view and play only, password protected" },
+      "bundle":  { "price": 500, "note": "PDF + Tracks + Guitar Pro file" }
     }
   },
   {
@@ -23,10 +23,10 @@
     "preview": "previews/Dil Aakhir Tu Kyun Rota Hai ~ ZNMD Theme_[cut_15sec].mp3",
     "sample": "samples/dil_aakhir_tu_kyun_rota_hai_guitar_tabs.png",
     "assets": {
-      "pdf":     { "price": 79,  "pages": 2, "note": "Staff notation and tabs" },
-      "tracks":  { "price": 149, "note": "Track and Backing Track for play along, reference and practice" },
-      "gp":      { "price": 199, "note": "Guitar Pro file, view and play only, password protected" },
-      "bundle":  { "price": 349, "note": "PDF + Tracks + Guitar Pro file" }
+      "pdf":     { "price": 99,  "pages": 2, "note": "Staff notation and tabs" },
+      "tracks":  { "price": 199, "note": "Track and Backing Track for play along, reference and practice" },
+      "gp":      { "price": 299, "note": "Guitar Pro file, view and play only, password protected" },
+      "bundle":  { "price": 500, "note": "PDF + Tracks + Guitar Pro file" }
     }
   },
   {
@@ -38,10 +38,25 @@
     "preview": "previews/Sajni (Ukulele) ~ Laapataa Ladies_[cut_15sec].mp3",
     "sample": "samples/sajni_ukulele_tabs_sheet_music.png",
     "assets": {
-      "pdf":     { "price": 79,  "pages": 8, "note": "Staff notation and tabs" },
-      "tracks":  { "price": 149, "note": "Track and Backing Track for play along, reference and practice" },
-      "gp":      { "price": 199, "note": "Guitar Pro file, view and play only, password protected" },
-      "bundle":  { "price": 349, "note": "PDF + Tracks + Guitar Pro file" }
+      "pdf":     { "price": 99,  "pages": 8, "note": "Staff notation and tabs" },
+      "tracks":  { "price": 199, "note": "Track and Backing Track for play along, reference and practice" },
+      "gp":      { "price": 299, "note": "Guitar Pro file, view and play only, password protected" },
+      "bundle":  { "price": 500, "note": "PDF + Tracks + Guitar Pro file" }
+    }
+  },
+  {
+    "id": 4,
+    "title": "November Rain",
+    "movie": "Guns N' Roses",
+    "type": "Guitar",
+    "style": "Acoustic Solo",
+    "preview": "previews/November Rain Acoustic Solo ~ Guns N' Roses_[cut_15sec].mp3",
+    "sample": "samples/november_rain_acoustic_solo_guitar_tab_page1.png",
+    "assets": {
+      "pdf":     { "price": 99,  "pages": 2, "note": "Staff notation and tabs" },
+      "tracks":  { "price": 199, "note": "Track and Backing Track for play along, reference and practice" },
+      "gp":      { "price": 299, "note": "Guitar Pro file, view and play only, password protected" },
+      "bundle":  { "price": 500, "note": "PDF + Tracks + Guitar Pro file" }
     }
   }
 ]
