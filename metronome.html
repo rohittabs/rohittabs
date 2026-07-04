@@ -55,6 +55,8 @@
   .note-btn:hover { border-color: var(--text); }
   .note-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
   .note-btn .note-sym { display: flex; justify-content: center; align-items: center; height: 32px; margin-bottom: 4px; }
+  .note-sym img { height: 30px; width: auto; display: block; }
+  .note-btn.active .note-sym img { filter: invert(1); }
 
   .ts-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 20px; }
   .ts-label { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-3); margin-bottom: 12px; }
@@ -118,53 +120,28 @@
     <div class="note-label">Note value</div>
     <div class="note-grid" id="note-grid">
       <button class="note-btn" data-mult="4" onclick="setNote(this)">
-        <span class="note-sym">
-          <svg width="24" height="28" viewBox="0 0 24 28" fill="none"><ellipse cx="12" cy="22" rx="8" ry="5" stroke="currentColor" stroke-width="2"/></svg>
-        </span>Whole
+        <span class="note-sym"><img src="notes/whole_note.png" alt="Whole note"></span>Whole
       </button>
       <button class="note-btn" data-mult="2" onclick="setNote(this)">
-        <span class="note-sym">
-          <svg width="24" height="28" viewBox="0 0 24 28" fill="none"><ellipse cx="10" cy="22" rx="7" ry="4.5" stroke="currentColor" stroke-width="2"/><line x1="17" y1="22" x2="17" y2="2" stroke="currentColor" stroke-width="2"/></svg>
-        </span>Half
+        <span class="note-sym"><img src="notes/half_note.png" alt="Half note"></span>Half
       </button>
       <button class="note-btn active" data-mult="1" onclick="setNote(this)">
-        <span class="note-sym">
-          <svg width="24" height="28" viewBox="0 0 24 28" fill="currentColor"><ellipse cx="10" cy="22" rx="7" ry="4.5"/><rect x="16.5" y="2" width="2" height="20"/></svg>
-        </span>Quarter
+        <span class="note-sym"><img src="notes/quarter_note.png" alt="Quarter note"></span>Quarter
       </button>
       <button class="note-btn" data-mult="0.5" onclick="setNote(this)">
-        <span class="note-sym">
-          <svg width="22" height="32" viewBox="0 0 22 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="7" cy="27" rx="6" ry="4" transform="rotate(-15 7 27)"/>
-            <rect x="12.5" y="5" width="2" height="22"/>
-            <path d="M14.5 5 C19 8 19 12 14.5 16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>8th
+        <span class="note-sym"><img src="notes/eigth_note.png" alt="8th note"></span>8th
       </button>
       <button class="note-btn" data-mult="0.25" onclick="setNote(this)">
-        <span class="note-sym">
-          <svg width="22" height="32" viewBox="0 0 22 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="7" cy="27" rx="6" ry="4" transform="rotate(-15 7 27)"/>
-            <rect x="12.5" y="5" width="2" height="22"/>
-            <path d="M14.5 5 C19 8 19 12 14.5 16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M14.5 14 C19 17 19 21 14.5 25" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>16th
+        <span class="note-sym"><img src="notes/sixteenth_note.png" alt="16th note"></span>16th
       </button>
       <button class="note-btn" data-mult="3" onclick="setNote(this)">
-        <span class="note-sym">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><ellipse cx="10" cy="22" rx="7" ry="4.5" stroke="currentColor" stroke-width="2"/><line x1="17" y1="22" x2="17" y2="2" stroke="currentColor" stroke-width="2"/><circle cx="23" cy="20" r="2" fill="currentColor"/></svg>
-        </span>Dotted half
+        <span class="note-sym"><img src="notes/dotted_half_note.png" alt="Dotted half note"></span>Dotted half
       </button>
       <button class="note-btn" data-mult="1.5" onclick="setNote(this)">
-        <span class="note-sym">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor"><ellipse cx="10" cy="22" rx="7" ry="4.5"/><rect x="16.5" y="2" width="2" height="20"/><circle cx="23" cy="20" r="2"/></svg>
-        </span>Dotted quarter
+        <span class="note-sym"><img src="notes/dotted_quarter_note.png" alt="Dotted quarter note"></span>Dotted quarter
       </button>
       <button class="note-btn" data-mult="0.75" onclick="setNote(this)">
-        <span class="note-sym">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor"><ellipse cx="10" cy="22" rx="7" ry="4.5"/><rect x="16.5" y="2" width="2" height="20"/><path d="M18.5 2 Q24 6 18.5 10" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="24" cy="20" r="2"/></svg>
-        </span>Dotted 8th
+        <span class="note-sym"><img src="notes/dotted_eighth_note.png" alt="Dotted 8th note"></span>Dotted 8th
       </button>
     </div>
   </div>
