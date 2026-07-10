@@ -58,5 +58,20 @@
       "gp":      { "price": 299, "note": "Guitar Pro file, view and play only, password protected" },
       "bundle":  { "price": 500, "note": "PDF + Tracks + Guitar Pro file" }
     }
+  },
+  {
+    "id": 5,
+    "title": "GTA - San Andreas Theme",
+    "movie": "Rockstar Games",
+    "type": "Guitar",
+    "style": "Fingerstyle Solo",
+    "preview": "previews/GTA - San Andreas Theme (Fingerstyle Arrangement)_[cut_15sec].mp3",
+    "sample": "samples/gta_san_andreas_theme_fingerstyle_tablature_page1.png",
+    "assets": {
+      "pdf":     { "price": 99,  "pages": 2, "note": "Staff notation and tabs" },
+      "tracks":  { "price": 199, "note": "Practice track, no backing track since this is a solo fingerstyle arrangement" },
+      "gp":      { "price": 299, "note": "Guitar Pro file, view and play only, password protected" },
+      "bundle":  { "price": 450, "note": "PDF + Track + Guitar Pro file" }
+    }
   }
 ]
